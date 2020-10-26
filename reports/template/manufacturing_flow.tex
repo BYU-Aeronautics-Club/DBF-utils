@@ -1,0 +1,97 @@
+% expanded CO architecture diagram produced by the TikZ package
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{tikz}
+
+% Define the set of tikz packages to be included in the architecture diagram document
+
+\usetikzlibrary{arrows.meta,chains,positioning,scopes,shapes.geometric,shapes.misc,shadows} 
+
+% Set the border around all of the architecture diagrams to be tight to the diagrams themselves
+% (i.e. no longer need to tinker with page size parameters)
+
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength{\PreviewBorder}{5pt}
+
+\begin{document}
+% Style definition outside any picture
+\input{diagram_styles.tex}
+
+\begin{tikzpicture}
+	% Use a matrix to line up all the nodes
+	\matrix[MatrixSetup]{
+		% First row
+		& 
+		\node [Inputs] (Input_0) {Mission Requirements};
+		\\
+		% Second row
+		&
+		\node [Inputs] (Input_1) {Sub-system Requirements};
+		\\
+		\\
+		% Third row
+		\node [CAD] (Output_0) {Final CAD}; 
+		& 
+		\node [Design,stack,text width=2.3cm] (Design) {Design Iterations}; 
+		&
+		\node [CAD] (Concept_CAD) {Concept CAD}; 
+		&
+		\node [CAD] (Preliminary_CAD) {Preliminary CAD}; 
+		&
+		\node [CAD] (Detailed_CAD) {Detailed CAD}; 
+		\\
+		% 4th row
+		\node [Prototype] (Output_1) {Final Aircraft}; 
+		& 
+		\node [Testing] (Concept_test) {Concept Testing}; 
+		& 
+		\node [Prototype,text width=1.8cm] (Concept_prototype) {Concept Prototype};
+		\\
+		% 5th row
+		& 
+		\node [Testing] (Preliminary_test) {Preliminary Testing}; 
+		& 
+		&
+		\node [Prototype,text width=1.8cm] (Preliminary_prototype) {Preliminary Prototype};
+		\\
+		% 6th row
+		& 
+		\node [Testing] (Detailed_test) {Detailed Testing}; 
+		&
+		&
+		&
+		\node [Prototype,stack1,text width=2cm] (Detailed_prototype) {Detailed Prototype(s)};
+		\\
+	};
+
+	\draw [-{Latex[length=1.5mm]},draw=\BYUblue] 
+			   (Input_0) edge (Input_1) 
+			   (Input_1) edge (Design) 
+			   (Design) edge (Concept_CAD) 
+			   (Concept_CAD) edge (Preliminary_CAD) 
+			   (Preliminary_CAD) edge (Detailed_CAD) 
+			   (Detailed_CAD) edge (Detailed_prototype)
+			   (Detailed_prototype) edge (Detailed_test) 
+			   (Detailed_test) edge (Preliminary_test) 
+			   (Preliminary_test) edge (Concept_test) 
+			   (Concept_test) edge (Design) 
+			   (Design) edge (Output_0) 
+			   (Output_0) edge (Output_1);
+	\draw [-{Latex[length=1.5mm]},draw=\BYUblue] 
+			   (Concept_CAD) edge (Concept_prototype) 
+			   (Concept_prototype) edge (Concept_test);
+   	\draw [-{Latex[length=1.5mm]},draw=\BYUblue] 
+   			   (Preliminary_CAD) edge (Preliminary_prototype) 
+			   (Preliminary_prototype) edge (Preliminary_test);
+	\draw [-{Latex[length=1.5mm]},draw=\BYUblue] 
+			   (Detailed_CAD) edge (Detailed_prototype) 
+			   (Detailed_prototype) edge (Detailed_test);
+
+\end{tikzpicture}
+
+\end{document}

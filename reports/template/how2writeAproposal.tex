@@ -1,0 +1,196 @@
+% !TeX spellcheck = en_US 
+\documentclass[proposal]{byu-aero}
+
+\newcommand{\nextyear}{2020}
+
+%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
+%!!!!!!! UNLESS YOU KNOW WHAT YOU'RE DOING, DO NOT TOUCH ANYTHING ABOVE THIS LINE !!!!!!!%
+%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%   Text Body   %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%   Executive Summary   %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Executive Summary (10 Points)}
+\label{sec:ExecutiveSummary}
+
+The key to the executive summary is to write it last (like an abstract). You should have the rest of the proposal done before starting on the Executive Summary.  In terms used by kids these days, the executive summary is the tl;dr version of the proposal. You should be able to gather \textit{all} of the important information from reading the executive summary, and it should be distilled down to concise terms. Generally, you should keep the executive summary to no more than a single page in length. Important things to include in the executive summary are:
+
+\begin{itemize}
+    \item Objective Statement
+    \item Planned approach to achieve all objectives
+    \item Main points from subsequent sections
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%   Management Summary   %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Management Summary (40 Points)}
+\label{sec:ManagementSummary}
+%\begin{itemize}
+%	\item Describe the organization, the roles of each team and individual skill sets required
+%	\item Organization chart (by team/function, individual names are not required for the proposal)
+%	\item Schedule / Major Milestone chart
+%	\item Budget (not only for expected materials and manufacturing of the airplane, but for travel to the
+%	competition site and any other expenses associated with the competition)
+%\end{itemize}
+
+You'll want to begin here with a paragraph describing the organization of the design team, citing \cref{fig:personnelassignments}. It's probably easiest to figure this out by diagramming it on a white board, and then creating a your flow chart in powerpoint, or something. You'll 
+
+\input{team_organization.tex}
+
+\Cref{fig:plannedtiming} shows our planned project schedule. We have subdivided the project into four phases, each lasting six weeks %Wrapped Figure Example. [#of lines the figure is long]{where (capitalization matters)}{how much it is moved}
+\begin{wrapfigure}[6]{r}{5cm}
+	\includegraphics[width=1.5in]{draft.pdf}
+	\caption{Example of Wrapped figure}
+	\label{fig:wrappedfig}
+\end{wrapfigure} (with an additional 5 week buffer for the final manufacturing of our design). Since the conceptual design is a major deliverable for this proposal, we have already completed this phase, and have moved on to Phase II: Preliminary Design. For the sake of brevity of this proposal, we will forgo including the beginnings of our preliminary design, and report its entirety in the final design report.
+
+\input{ganttchart.tex}
+
+\subsection{Budget}
+\label{ssec:budget}
+
+Put together a budget. Not much to it.
+
+Here is an example of a wrapped table just in case you need more room. Note that the wrapped figures and tables need to be sandwiched between text in order to work.  Also note that if you don't have a lot of text, 
+% Project Budget
+\begin{wraptable}[]{r}{5cm}
+	\centering
+	\renewcommand*{\arraystretch}{1.2}
+	\caption{Project Budget}
+	\label{tab:budget}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ |c|c| } 
+		\hline
+		\rowcolor{BYUbluemid}
+		Item & Cost (\$) \\ 
+		\hline
+		&  \\ 
+		&  \\ 
+		&  \\ 
+		&  \\ 
+		\hline
+		\textbf{Total} & \textbf{} \\ 
+		\hline
+		
+	\end{tabular}
+\end{wraptable}
+weird spacing occurs. Wrapped tables and figures also just do weird stuff in general (like not staying withing the text bounds of the page and making weird white spaces where you don't want them.) In general, they should be avoided, especially for important things.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%   Conceptual Design   %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conceptual Design Approach (20 Points)}
+\label{sec:ConceptualDesign}
+%\begin{itemize}
+%    \item Decomposition of mission requirements into sub-system requirements.
+%    \item Preliminary design / sizing results; concept sketch, if available (does not have to be representative of the final design) 
+%    \item Sensitivity Study of Design Parameters
+%\end{itemize}
+
+\subsection{Mission Requirements}
+\label{ssec:missionreqs}
+
+Decomposition of mission requirements into sub-system requirements.
+
+\subsubsection{Aerodynamic Requirements}
+\label{sssec:aeroreqs}
+
+\subsubsection{Structural Requirements}
+\label{sssec:structreqs}
+
+\subsubsection{Propulsion Requirements}
+\label{sssec:propreqs}
+
+\subsubsection{Specialty Requirements} %change this to be specifically what it is (like bomb drop or whatever the specific mission is)
+\label{sssec:specialreqs}
+
+\subsection{Preliminary Design}
+\label{ssec:preliminarydesign}
+
+Preliminary design / sizing results; concept sketch, if available (does not have to be representative of the final design) 
+
+
+%\begin{figure}[h!]
+%	\centering
+%	\begin{subfigure}[t]{0.475\textwidth} % width of left subfigure
+%		\centering
+%		\includegraphics[width=\textwidth]{draft.pdf}
+%		\caption{The left side image}
+%		\label{fig:a}
+%	\end{subfigure}
+%	\hfill
+%	\begin{subfigure}[t]{0.475\textwidth} % width of right subfigure
+%		\centering
+%		\includegraphics[width=\textwidth]{draft.pdf}
+%		\caption{The rigth side image}
+%		\label{fig:b}
+%	\end{subfigure}
+%	\caption{This is an example of a subfigure figure.}
+%	\label{fig:subex}
+%\end{figure}
+
+% Concept Sketch
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=3.5in]{draft.pdf}
+	\caption{Here we show a concept sketch of our current design iteration.}
+	\label{fig:conceptsketch}
+\end{figure}
+
+\subsection{Sensitivity Studies}
+\label{ssec:sensitivitystudies}
+
+Sensitivity Study of Design Parameters
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%   Manufacturing Plan   %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Manufacturing Plan (15 Points)}
+\label{sec:ManufacturingPlan}
+\begin{itemize}
+    \item Preliminary manufacturing flow
+    \item Describe critical processes or technologies required
+\end{itemize}
+
+% Manufacturing Flow Chart
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=4.5in]{manufacturing_flow.pdf}
+	\caption{We show here an extended design structure matrix of our proposed manufacturing plan.}
+	\label{fig:manufacturingplan}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%   Testing Plan   %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Testing Plan (15 points)}
+\label{sec:TestingPlan}
+\begin{itemize}
+    \item Component and ground test plan
+    \item Flight test plan 
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%   Bibliography   %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Bibliography (5 Points)
+%\item List of all published works referenced in the text must be present in this section.
+%\item Any material taken from a published source in all previous sections must have a numerical subscript corresponding to the appropriate citation in this section.
+%\item References should appear in numerical order.
+%\item Format should match AIAA provided guidelines:
+%\newpage
+%\clearpage
+%\bibliography{ref}{}
+%\bibliographystyle{aiaa}
+
+\end{document}

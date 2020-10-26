@@ -1,0 +1,82 @@
+%TEAM ORGANIZATION
+%USE THIS ONE IF IT'S MORE COMPLICATED
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[
+	block/.style={rectangle,rounded corners,draw=\BYUblue,fill=\BYUbluelite,text width=6em,align=center},
+	grandchild/.style={grow=down,xshift=1em,anchor=west,
+		edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}},
+	first/.style={level distance=6ex},
+	second/.style={level distance=10ex},
+	third/.style={level distance=14ex},
+	level 1/.style={sibling distance=10em}]
+	% Parents
+	\coordinate
+	%THIS IS WHERE YOU CHANGE SOME THINGS, BUT DON'T TOUCH ANYTHING ABOVE UNLESS YOU KNOW WHAT YOU'RE DOING.
+	child[grow=left] {node[block,anchor=east]{Engineering Lead}}
+	child[grow=right] {node[block,anchor=west]{Project Manager}}
+	child[grow=down,level distance=0ex]
+	[edge from parent fork down]
+	% Children and grandchildren
+	child{node[block] {Aerodynamics}
+		child[grandchild,first] {node[block]{Lift/Drag}}
+		child[grandchild,second] {node[block]{Efficiency}}
+		child[grandchild,third] {node[block] {Stability}}}
+	child{node[block] {Structures}
+		child[grandchild,first] {node[block]{Wing}}
+		child[grandchild,second] {node[block]{Fuselage}}}
+	child {node[block] {Propulsion}
+		child[grandchild,first] {node[block]{Motor/Prop}}
+		child[grandchild,second] {node[block]{Efficiency}}}
+	child {node[block]{Manufacturing}
+		child[grandchild,first] {node[block]{Prototyping}}
+		child[grandchild,second] {node[block]{Final Build}}}
+	child {node[block]{Graphics}
+		child[grandchild,first] {node[block]{CAD}}
+		child[grandchild,second] {node[block]{Marketing}}};
+	\end{tikzpicture}
+	\caption{This chart depicts the design personnel and assignment areas within our team structure.}
+	\label{fig:personnelassignments}
+\end{figure}
+
+%USE THIS ONE IF IT'S REALLY SIMPLY (NO MORE THAT 4 LEADS)
+%\begin{figure}[h!]
+%	\centering
+%	\begin{forest}
+%		arrow to/.style n args=2{%
+%			delay={%
+%				tikz+={%
+%					\draw [every edge, line] () -- (!#1) node [above, midway] {#2};
+%				},
+%			},
+%			!u.s sep+=30pt,
+%		},
+%		before typesetting nodes={%
+%			where n=1{%
+%				edge label/.wrap value={%
+%					node [left,pos=.75, anchor=mid east] {#1}
+%				},
+%			}{%
+%				edge label/.wrap value={%
+%					node [right,pos=.75, anchor=mid west] {#1}
+%				},
+%			},
+%		},
+%		for tree={%
+%			parent anchor=children,
+%			child anchor=parent,
+%			block,
+%			edge={line},
+%			l sep+=10pt,
+%		},
+%		forked edges
+%		%% HERE IS WHERE YOU CHANGE STUFF!!! DON'T TOUCH ANYTHING ABOVE THIS, NO ONE KNOWS WHAT IT DOES.
+%		[Project Lead
+%			[Aerodynamics Lead]
+%			[Structures Lead]
+%			[Propulsion Lead]
+%		]
+%	\end{forest}    
+%	\caption{This chart depicts the design personnel and assignment areas within our team structure.}
+%	\label{fig:personnelassignments}
+%\end{figure}
