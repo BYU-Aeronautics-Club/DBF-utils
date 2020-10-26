@@ -1,0 +1,160 @@
+% !TeX spellcheck = en_US 
+\documentclass[journal]{byu-aero}
+
+%\usepackage[utf8]{inputenc}
+
+%graphics packages
+\usepackage[]{graphicx}
+\graphicspath{{./figures/}}
+%\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage{wrapfig}
+
+%tikz
+%\usepackage{pgf,tikz,pgfplots}
+%\usetikzlibrary{arrows.meta}
+%tables
+%\usepackage{booktabs}
+
+%mathpackages
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{mathrsfs}
+\newcommand{\vect}{\overset{\rightharpoonup}}
+\usepackage{nicefrac}
+
+%referencing packages
+\usepackage{hyperref}
+\usepackage[noabbrev]{cleveref}
+
+\usepackage{fancyhdr}   % simple control of headers and footers
+\newlength{\myoddoffset}
+\setlength{\myoddoffset}{\marginparwidth + \marginparsep}
+
+\pagestyle{fancy}
+%\fancyheadoffset[leh,roh]{1in}
+\fancyheadoffset[loh,reh]{0.875in}
+\fancyhf{}
+\lhead{\includegraphics[height=0.75in]{Logo5.png} }
+\fancypagestyle{firstpage}{\lhead{}}
+%
+%
+%\usepackage{xcolor}
+%\usepackage{sectsty}
+%\sectionfont{\color{BYUblue}}  % sets colour of sections
+
+
+%% Text Body
+\begin{document}
+
+%\thispagestyle{firstpage}
+\setcounter{page}{2}
+
+\tableofcontents %1pt
+\phantomsection
+\addcontentsline{toc}{section}{Table of Contents}
+\markboth{Table of Contents}{Table of Contents}
+
+\newpage
+
+
+\section{Executive Summary (5 Points)}
+\label{sec:ExecutiveSummary}
+\begin{itemize}
+\item Maximum of 1 page. If exceeded, score as 0 points
+\item Summary description of selected design and why it best meets the mission requirements
+\item Main points from subsequent sections
+\item Document the performance/capabilities of your system solution
+\end{itemize}
+
+\section{Management Summary (5 Points)}
+\label{sec:ManagementSummary}
+\begin{itemize}
+\item Describe the organization of the design team
+\item Chart of design personnel and assignments areas
+\item Milestone chart showing planned and actual timing of major elements
+\end{itemize}
+
+\section{Conceptual Design (15 Points)}
+\label{sec:ConceptualDesign}
+\begin{itemize}
+\item Describes mission requirements (problem statement)
+\item Translate mission requirements into sub system design requirements
+\item Present a scoring sensitivity analysis.
+\item Review solution concepts/configurations considered
+\item Describe concept weighting and selection process and results
+\end{itemize}
+
+\section{Preliminary Design (20 Points)}
+\label{sec:PreliminaryDesign}
+\begin{itemize}
+\item Describe design/analysis methodology
+\item Document design/sizing trades
+\item Describe/document methodology for prediction of aircraft performance (include capabilities and uncertainties)
+\item Provide estimates of the aircraft lift, drag and stability characteristics and method of prediction
+\item Provide estimates of the aircraft mission performance Detail Design (15 Points + 15 Points for Drawing Package)
+\item Document dimensional parameters of final design
+\item Document structural characteristics/capabilities of final design
+\item Document systems and sub-systems selection/integration/architecture
+\item Document Weight and Balance for final design
+\item Must include Weight \& Balance table empty and with each possible payload/configuration
+\item Document flight performance parameters for final design
+\item Document mission performance for final design
+\item Drawing package:
+	\begin{itemize}
+	\item 3-View drawing with dimensions of all configurations
+	\item Structural arrangement drawing
+	\item Systems layout/location drawing
+	\item Payload(s) accommodation drawing(s)
+	\end{itemize}
+\end{itemize}
+
+\section{Manufacturing Plan (5 Points)}
+\label{sec:ManufacturingPlan}
+\begin{itemize}
+\item Document the process selected for major component manufacture
+\item Manufacturing processes investigated and selection process and results
+\item Manufacturing milestones chart: plan and actual
+\end{itemize}
+
+\section{Testing Plan (5 points)}
+\label{sec:TestingPlan}
+\begin{itemize}
+\item Describe all major ground and flight tests performed.
+\item Objectives and schedule for each.
+\item Data to be collected and how applied.
+\item Test and flight check lists
+\end{itemize}
+
+\section{Performance Results (10 Points)}
+\label{sec:PerformanceResults}
+\begin{itemize}
+\item Describe the demonstrated performance of key subsystems following execution of testing plan
+\item Compare to predictions and explain any differences and improvements made
+\item Describe the demonstrated performance of your complete aircraft solution
+\item Compare to predictions and explain any differences and improvements made
+\end{itemize}
+
+%Bibliography (5 Points)
+%\item List of all published works referenced in the text must be present in this section.
+%\item Any material taken from a published source in all previous sections must have a numerical subscript corresponding to the appropriate citation in this section.
+%\item References should appear in numerical order.
+%\item Format should match AIAA provided guidelines:
+
+
+%\newpage
+%\clearpage
+\bibliography{ref,ref2}{}
+\bibliographystyle{aiaa}
+
+%\newpage
+%\clearpage
+\appendix
+%\section{Turbine Geometry}
+%\label{app:rotorgeom}
+
+%\section{Windcraft Geometry}
+%\label{app:windcraftgeom}
+
+
+\end{document}
