@@ -171,8 +171,8 @@
 }
 %XDSM Chart
 \RequirePackage{amsfonts}
-\let\Bbbk\relax
-\RequirePackage{amssymb}
+%\let\Bbbk\relax
+%\RequirePackage{amssymb}
 % Define the set of tikz packages to be included in the architecture diagram document
 \usetikzlibrary{arrows,chains,positioning,scopes,shapes.geometric,shapes.misc,shadows} 
 % Set the border around all of the architecture diagrams to be tight to the diagrams themselves
