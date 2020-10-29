@@ -14,7 +14,7 @@ m1 = makeline(0.0,x,b)
 
 x *= 100
 
-figure(figsize=(2.4,2))
+figure(figsize=(4.2,2.7))
 clf()
 plot(x,speed,label="Speed","C0")
 plot(x,loadunload,label="Load/Unload Time","C1")
