@@ -141,7 +141,7 @@
 	time slot unit=day,
 	x unit=0.0025\textwidth,
 	y unit title=0.4cm,
-	y unit chart=0.2cm,
+	y unit chart=0.3cm,
 	hgrid,
 	canvas/.append style={draw=\BYUblue},
 	%
@@ -156,10 +156,10 @@
 	group left peak tip position=0.0,
 	group peaks width=2.0,
 	group peaks height=0.25,
-	group label font = \bfseries\tiny,
+	group label font = \bfseries\small,
 	%
 	bar/.append style={fill=\BYUblue},
-	bar label font=\tiny,
+	bar label font=\small,
 	bar height = 0.25,
 %	bar top shift = 0.25,
 	progress label text = {},
@@ -167,7 +167,7 @@
 	milestone/.append style={fill=\BYUbluelite,draw=\BYUblue,xscale=4},
 	milestone height = 0.95,
 	milestone top shift = 0.0,
-	milestone label font = \itshape\tiny
+	milestone label font = \itshape\small
 }
 %XDSM Chart
 \RequirePackage{amsfonts}
