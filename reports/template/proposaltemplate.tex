@@ -1,6 +1,8 @@
 % !TeX spellcheck = en_US 
 \documentclass[proposal]{byu-aero}
 
+\usepackage{lipsum}
+
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
 %!!!!!!! UNLESS YOU KNOW WHAT YOU'RE DOING, DO NOT TOUCH ANYTHING ABOVE THIS LINE !!!!!!!%
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
@@ -10,72 +12,127 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Executive Summary   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Executive Summary (10 Points)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%         EXECUTIVE SUMMARY         %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Executive Summary} % (10 Points)
 \label{sec:ExecutiveSummary}
-\begin{itemize}
-    \item Objective Statement
-    \item Planned approach to achieve all objectives
-    \item Includes main points from subsequent sections
-\end{itemize}
+% Section Requirements:
+% 1) Objective Statement
+% 2) Planned approach to achieve all objectives
+% 3) \textbf{Includes main points from subsequent sections} (we lost points on this in 2020)
+
+{\color{BYUred}[THIS WILL DEPEND ON THE SPECIFIC DETAILS FOR THIS YEAR'S COMPETITION.]}
+\lipsum[1-2]
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Management Summary   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Management Summary (40 Points)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%         MANAGEMENT SUMMARY        %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Management Summary} % (40 Points)
 \label{sec:ManagementSummary}
-%\begin{itemize}
-%	\item Describe the organization, the roles of each team and individual skill sets required
-%	\item Organization chart (by team/function, individual names are not required for the proposal)
-%	\item Schedule / Major Milestone chart
-%	\item Budget (not only for expected materials and manufacturing of the airplane, but for travel to the
-%	competition site and any other expenses associated with the competition)
-%\end{itemize}
+% Section Requirements:
+% 1) Describe the organization, the roles of each team and individual skill sets required
+% 2) Organization chart (by team/function, individual names are not required for the proposal)
+% 4) Schedule / Major Milestone chart
+% 5) Budget (not only for expected materials and manufacturing of the airplane, but for travel to the competition site and any other expenses associated with the competition)
 
-Paragraph describing the organization of the design team, citing \cref{fig:personnelassignments}.
 
-\begin{figure}[h!]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% - Team Organization - %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Team Organization}
+\label{ssec:TeamOrganization}
+
+%Team Organization Chart:
+\input{team_organization.tex} %You can change the team_organization.tex file to update this and it will automatically update in this file.
+
+
+%Introduction
+\Cref{fig:personnelassignments} depicts the overall organization of our team structure.  Advisors include the professor overseeing our club as well as graduate student members of our team.  Each of the teams is lead by an individual who answers to the Engineering Lead and Project Manager.  The skills required for each position/team are as follows.
+
+
+
+
+%Team role descriptions continued.
+\subsubsection{Engineering Lead} As with the team leads, the Engineering Lead primarily requires good decision making and leadership skills, qualities the BYU Aero Club seeks to develop in all of its members.  In addition the Engineering Lead has a well rounded understanding of the various systems and both design and testing expertise.
+%schedule/milestone chart (since it fits here better.)  Note that you must modify this in the ganttchart.tex file, compile that file, and then compile this file again if you change the schedule.
+\begin{wrapfigure}[16]{R}{0pt}
 	\centering
-	\includegraphics[width=3.5in]{draft.pdf}
-	\caption{This chart depicts the design personnel and assignment areas within our team structure.}
-	\label{fig:personnelassignments}
-\end{figure}
+	\raisebox{0pt}[\dimexpr\height-.5\baselineskip\relax]{
+	\includegraphics[width=0.45\textwidth]{ganttchart.pdf}}
+	\caption{This milestone chart shows our 3-phase plan for the major elements of our design, manufacturing, and testing processes.}
+	\label{fig:plannedtiming}
+\end{wrapfigure}
+\subsubsection{Project Manager} The Project Manager has excellent organizational skills  and oversees the logistical side of the project: heading up report writing, budgeting tasks, scheduling, etc.
+\subsubsection{Aerodynamics} The Aerodyanmics team members have expertise in aerodynamic analysis and testing, including skills in hand calculations, computational analysis tools, wind tunnel and glide testing.
+\subsubsection{Structures} The Structures team members focus on skills in structural analysis and testing, employing hand calculations, computational tools, and various structural testing methods.
+\subsubsection{Propulsion} The Propulsion team focuses on analyzing and testing the propulsion system effectiveness and efficiency, but also has skills in electronics related to the propulsion system.
+\subsubsection{Systems} The Systems team works very closely with the Engineering Lead, as they oversee all systems interfacing, avionics, etc.  There is a sub-group of the Systems team that is assigned to work on the mission specific payload and related components, as well as related testing. %TODO: consider updating this sentence to reflect the actual specialized mission requirements for the year.
+\subsubsection{Manufacturing} The Manufacturing team oversees the manufacturing of all prototypes and testing apparatus.
+\subsubsection{Graphics} The Graphics team has skills in CAD design as well as graphical marketing for the team. 
 
-2nd paragraph about milestone chart shown in  \cref{fig:plannedvsactualtiming} (be brief).
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=3.5in]{draft.pdf}
-	\caption{This milestone chart shows our plan for major elements of our design process.}
-	\label{fig:plannedvsactualtiming}
-\end{figure}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% - Timeline - %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Schedule}
+\label{ssec:Schedule}
+
+%timeline description.
+\Cref{fig:plannedtiming} depicts our planned timeline for the year. \Cref{sec:ManufacturingPlan,sec:TestingPlan} describe the flow of our schedule in more detail. Note that at the time of submitting this proposal, we have completed the conceptual design presented herein and have moved on to our preliminary design phase. Also of note is that we began prototyping early in order to apply a ``fail fast, fail often'' methodology to quickly fill any gaps in understanding and allow our underclassmen to develop their aircraft design intuition faster than if we waited to prototype after completing all the design phases.
+
+%timeline figure included above since it looks better there.
+
+
+%%%%%%%%%%%%%%%%%%
+%%% - Budget - %%%
+%%%%%%%%%%%%%%%%%%
 \subsection{Budget}
-\label{ssec:budget}
+\label{ssec:Budget}
+
+%budget introduction
+\Cref{tab:budget} contains a breakdown of our budget estimates for the \the\year-\NextYear competition year. Note that we have not allocated any funds to aircraft shipping costs as it is more cost effective for us to drive rather than fly to the fly-off location; therefore, we can transport our aircraft ourselves at no additional cost. %We lost points in 2020 for not explicitly saying this...
+
+%Funding acquisition details
+To obtain funding for our team this year, we will be {\color{BYUred}[NEED TO TALK ABOUT HOW YOU'RE GETTING FUNDS: CLUB, PREVIOUS YEARS WINNINGS, WEIDMANN CENTER, ETC.]} %we lost points in 2020 for not discussing this.
+\lipsum[2]
 
 % Project Budget
-\begin{table}[h!]
+%TODO:	NEED TO FILL OUT THE DETAILS OF THIS BUDGET, HOW MANY OF EACH THINGS WILL YOU NEED? WILL YOU NEED OTHER THINGS? WILL YOU NOT NEED SOME THINGS LISTED HERE?
+\begin{table}[htb!]
 	\centering
-	\caption{Project Budget}
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Project Budget Breakdown}
 	\label{tab:budget}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c| } 
+	\begin{tabular}{ |l|l|l| } 
 		\hline
 		\rowcolor{BYUbluemid}
-		Item & Cost (\$) \\ 
+		Category & Items & Cost (\$) \\ 
 		\hline
-		&  \\ 
+		Propulsion &  Brushless Motors (Qty?) | Propellers (Qty?) | ESCs (Qty?) &  \\
 		\hline
-		&  \\ 
+		Power & (how many cells?) Lipo Batteries (Qty?) & \\ 
 		\hline
-		&  \\ 
+		Structures & Balsa Wood (Qty?) | Monokote (Qty?) | ABS Filament (Qty?) | Foam (Qty?) & \\ 
 		\hline
-		&  \\ 
+		Composites & Carbon Fiber Spars (Qty?) | Fiber Glass (Qty?) | Epoxy (Qty?) &  \\ 
 		\hline
-		\textbf{Total} & \textbf{} \\ 
+		Electronics & Servos (Qty?) | Receiver (Qty?) &  \\
+		\hline
+		Travel & Vehicle Rental | Gas (Qty?) &  \\
+		\hline
+		Food \& Lodging & Airbnb (Qty?) | Meals (Qty?) &  \\
+		\hline 
+		\textbf{Total Cost} & & \textbf{} \\ 
 		\hline
 		
 	\end{tabular}
@@ -83,92 +140,221 @@ Paragraph describing the organization of the design team, citing \cref{fig:perso
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Conceptual Design   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conceptual Design Approach (20 Points)}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%         CONCEPTUAL DESIGN         %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conceptual Design Approach} % (20 Points)
 \label{sec:ConceptualDesign}
-%\begin{itemize}
-%    \item Decomposition of mission requirements into sub-system requirements.
-%    \item Preliminary design / sizing results; concept sketch, if available (does not have to be representative of the final design) 
-%    \item Sensitivity Study of Design Parameters
-%\end{itemize}
+% Section Requirements:
+% 1) Decomposition of mission requirements into sub-system requirements.
+% 2) Preliminary design / sizing results; concept sketch, if available (does not have to be representative of the final design) 
+% 3) Sensitivity Study of Design Parameters
 
-\subsection{Mission Requirements}
-\label{ssec:missionreqs}
 
-Decomposition of mission requirements into sub-system requirements.
 
-\subsubsection{Aerodynamic Requirements}
-\label{sssec:aeroreqs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% - Sub-system Reqs - %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mission Requirements Decomposition}
+\label{ssec:MissionReqs}
+
+We have organized our sub-system requirements into aerodynamics, structure, propulsion, and specialty requirements explained below.
+
+\subsubsection{Aerodynamics Requirements}
+\label{sssec:AerodynamicReqs}
 
 \subsubsection{Structural Requirements}
-\label{sssec:structreqs}
+\label{sssec:StructuralReqs}
+
 
 \subsubsection{Propulsion Requirements}
-\label{sssec:propreqs}
+\label{sssec:PropulsionReqs}
 
 \subsubsection{Specialty Requirements} %change this to be specifically what it is (like bomb drop or whatever the specific mission is)
-\label{sssec:specialreqs}
+\label{sssec:SpecialReqs}
 
+\lipsum[1]
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% - Preliminary Design/Sizing - %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Preliminary Design}
-\label{ssec:preliminarydesign}
+\label{ssec:PreliminaryDesign}
 
-Preliminary design / sizing results; concept sketch, if available (does not have to be representative of the final design) 
-
-% Concept Sketch
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% - Concept Sketch - %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%3 drawing views and rendered view of latest CAD models:  Make sure the aspect ratios match the draft figure names.
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=3.5in]{draft.pdf}
-	\caption{Here we show a concept sketch of our current design iteration.}
-	\label{fig:conceptsketch}
+	\begin{subfigure}[b]{0.475\textwidth}
+		\includegraphics[width=\textwidth]{draft2x1}
+		\caption{Top View}
+		\label{fig:topview}
+	\end{subfigure}
+	%
+	\begin{subfigure}[b]{0.475\textwidth}
+		\includegraphics[width=\textwidth]{draft2x1}
+		\caption{Side View}
+		\label{fig:sideview}
+	\end{subfigure}
+
+	\begin{subfigure}[b]{0.475\textwidth}
+		\includegraphics[width=\textwidth]{draft2x1}
+		\caption{Front View}
+		\label{fig:frontview}
+	\end{subfigure}
+	%
+	\begin{subfigure}[b]{0.475\textwidth}
+		\includegraphics[width=\textwidth]{draft2x1}
+		\caption{Rendered View}
+		\label{fig:renderedview}
+	\end{subfigure}
+	\caption{Current drawings and rendering of our conceptual aircraft design.}
+	\label{fig:prelimdrawings}
 \end{figure}
 
+%Preliminary design / sizing results
+\lipsum[1-5]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% - Sensitivity Study - %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Sensitivity Studies}
-\label{ssec:sensitivitystudies}
+\label{ssec:SensitivityStudies}
+%Sensitivity Study of Design Parameters.  This isn't just some linear plots of the ways to obtain points.  It's a sensitivity study of how the \textit{DESIGN PARAMETERS} relate to obtaining points. For example, how does weight affect the endurance and therefore number of laps that can be flown?
 
-Sensitivity Study of Design Parameters
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Manufacturing Plan   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Manufacturing Plan (15 Points)}
-\label{sec:ManufacturingPlan}
-\begin{itemize}
-    \item Preliminary manufacturing flow
-    \item Describe critical processes or technologies required
-\end{itemize}
-
-% Manufacturing Flow Chart
-\begin{figure}[h!]
+%Figure related to sensitivity study
+\begin{wrapfigure}[10]{R}{0pt}
 	\centering
-	\includegraphics[width=3.5in]{draft.pdf}
+		\raisebox{0pt}[\dimexpr\height-2\baselineskip\relax]{
+	\includegraphics[width=0.4\textwidth]{draft4x3}}
+	\caption{}
+	\label{fig:sensitivity}
+\end{wrapfigure}
+\lipsum[1-2]
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%         MANUFACTURING PLAN        %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \section{Manufacturing Plan} % (15 Points)
+\label{sec:ManufacturingPlan}
+% Section Requirements:
+% 1) Preliminary manufacturing flow
+% 2) Describe critical processes or technologies required
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% - Manufacturing Flow - %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Manufacturing Flow}
+\label{ssec:ManufacturingFlow}
+\begin{wrapfigure}[9]{R}{0pt}
+	\centering
+		\raisebox{0pt}[\dimexpr\height-3\baselineskip\relax]{
+	\includegraphics[width=0.6\textwidth]{manufacturing_flow}}
 	\caption{We show here a flowchart of our proposed manufacturing plan.}
 	\label{fig:manufacturingplan}
-\end{figure}
+\end{wrapfigure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Testing Plan   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Testing Plan (15 points)}
+Our manufacturing flow follows the outline found in \cref{fig:plannedtiming} which includes three design-build-fly phases.  \Cref{fig:manufacturingplan} shows this flow with more clarity.  Note that for all phases, CAD will commence roughly a week after design starts, prototyping a week after that.
+
+\subsubsection{Phase 1} We began with a conceptual design along with conceptual CAD, from which we have built concept prototypes to be used in testing as described below. {\color{BYUred}[ADD A DETAIL ABOUT MATERIALS AND/OR PROCESSES.]}
+
+\subsubsection{Phase 2} We are currently beginning our preliminary design and CAD from which we will build preliminary prototypes for testing. {\color{BYUred}[ADD A DETAIL ABOUT MATERIALS AND/OR PROCESSES.]}
+
+\subsubsection{Phase 3} Around the new year, we will start on our detailed design and CAD, which will lead to our final testing prototypes.  After polishing the design and CAD after final testing, we will manufacture our final competition aircraft. {\color{BYUred}[ADD A DETAIL ABOUT MATERIALS AND/OR PROCESSES.]}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% - Critical Processes - %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Critical Processes}
+\label{ssec:CriticalProcesses}
+
+{\color{BYUred}[YOU NEED TO DISCUSS THE CRITICAL PROCESSES AND TECHNOLOGY BASED ON HOW YOU'VE DECIDED TO MANUFACTURE THINGS THIS YEAR.  FOAM CUTTING? 3D PRINTING? LASER CUTTING? ETC.]}
+\lipsum[3]
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%          TESTING PLAN         %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Testing Plan} % (15 points)
 \label{sec:TestingPlan}
-\begin{itemize}
-    \item Component and ground test plan
-    \item Flight test plan 
-\end{itemize}
+% Section Requirements:
+% 1) Component and ground test plan
+% 2) Flight test plan 
+
+As mentioned in \cref{ssec:ManufacturingFlow} and shown in \cref{fig:plannedtiming}, each of our design and build iterations culminate in testing.  Testing is divided into two categories as follows:
+{\color{BYUred}[NEED TO FLESH OUT DETAILS BELOW BASED ON THE SPECIFICS OF THE COMPETITION AND YOUR CONCEPTUAL DESIGN.]}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Bibliography   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% - Ground Testing - %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Component/Ground Test Plan}
+\label{ssec:GroundTestingPlan}
+
+For all phases, ground testing will start roughly a week after prototyping has commenced. 
+
+\subsubsection{Phase 1} We began by testing a quick series of concept prototypes for our {\color{BYUred}[PAYLOAD, WING FOLDING MECHANISM, LAUNCH STATION, OR WHATEVER THEY ARE THIS YEAR]} in order to quickly narrow down our brainstorming to the most viable solutions.
+
+\subsubsection{Phase 2} In our preliminary testing phase, we will be looking at functioning prototypes of {\color{BYUred}[PAYLOAD, WING FOLDING MECHANISM, LAUNCH STATION, OR WHATEVER THEY ARE THIS YEAR]} in order to nail down the major details of the design.  This will prepare us for integration in the next phase.  In this phase, we will also be begin performing preliminary wind tunnel testing to validate our propulsion system. In addition, we will perform preliminary structural testing of our anticipated wing and other critical structures.
+
+\subsubsection{Phase 3} Finally, we will integrate all the components and do dry runs of the ground mission, as well as final wind tunnel and structural testing to validate our detailed computational analyses.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% - Flight Testing - %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Flight Test Plan}
+\label{ssec:FlightTestingPlan}
+
+In all phases, flight tests will typically take place at the end of the phase, in the week following the termination of the prototyping.
+
+\subsubsection{Phase 1} Flight testing began with our concept prototype: a hand-launched, unpowered, uncontrolled glider.  Our primary goals for the concept test were to validate our static stability and general structural calculations, as well as illuminate any gotchas we may have missed in our initial design phase.
+
+\subsubsection{Phase 2} Our preliminary flight test prototype will be a powered, controlled aircraft, though without the full competition functionality.  Our goal for the preliminary test is to validate our preliminary designs before moving on to detailed design aspects and full system integration, as well as note any unexpected behavior in the aircraft dynamic responses. 
+
+\subsubsection{Phase 3} Our detailed design prototype will be complete enough that if desired, we could compete without building another iteration. Our goal for the final testing phase will be to fly the complete mission sequence, allowing for any final fine-tuning of the design before building our competition aircraft.
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%          BIBLIOGRAPHY         %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Bibliography (5 Points)
 %\item List of all published works referenced in the text must be present in this section.
 %\item Any material taken from a published source in all previous sections must have a numerical subscript corresponding to the appropriate citation in this section.
 %\item References should appear in numerical order.
 %\item Format should match AIAA provided guidelines:
-%\newpage
-%\clearpage
-%\bibliography{ref}{}
-%\bibliographystyle{aiaa}
+
+\bibliography{ref}{}
+\bibliographystyle{aiaa}
 
 \end{document}

@@ -1,61 +1,70 @@
-\begin{figure}[h!]
+% expanded CO architecture diagram produced by the TikZ package
+\documentclass[]{byu-aero}
+
+\def \nextyear {2021}
+
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength{\PreviewBorder}{0em}
+
+
+\begin{document}
+	\begin{figure}[h!]
 	\centering
 	\begin{ganttchart}[]{\the\year-09-01}{\nextyear-04-30}
 		\gantttitlecalendar{year, month=shortname} \\
 		%
 		%
 		%%--DESIGN--%%
-		\ganttgroup{Design}{\the\year-09-01}{\nextyear-01-15} \\
+		\ganttgroup{Design}{\the\year-09-14}{\nextyear-02-07} \\
 		%Conceptual Design should be fast, like really fast.
 		%Should have all major configuration decisions done as well as a preliminary sizing study (quick and dirty, and sufficient for a prototype)
-		\ganttbar[progress=100]{Conceptual Design}{\the\year-09-01}{\the\year-09-21} \\
-		\ganttbar[progress=100]{Concept CAD}{\the\year-09-14}{\the\year-09-28} \\
+		\ganttbar[progress=100]{Conceptual Design}{\the\year-09-14}{\the\year-10-07} \\
+		\ganttbar[progress=100]{Concept CAD}{\the\year-09-21}{\the\year-10-07} \\
 		%Submitting Conceptual Design to Dr. Ning for review 5 weeks before the proposal is due.
-		\ganttmilestone{Conceptual Design Review}{\the\year-09-21} \\
+		\ganttmilestone{Conceptual Design Review}{\the\year-10-07} \\
 		%Preliminary Design is likely going to be the most important design phase
-		\ganttbar[progress=96]{Preliminary Design}{\the\year-09-21}{\the\year-10-31} \\
-		\ganttbar[progress=75]{Preliminary CAD}{\the\year-10-07}{\the\year-11-07} \\
-		%Submit Proposal the day before it is due
-		\ganttmilestone{Submit Proposal}{\the\year-10-30} \\
+		\ganttbar[progress=0]{Preliminary Design}{\the\year-10-28}{\the\year-12-01} \\
+		\ganttbar[progress=0]{Preliminary CAD}{\the\year-11-01}{\the\year-12-07} \\
 		%Have a preliminary Design review at the same time the Proposal is due (proposal includes conceptual design)
-		\ganttmilestone{Preliminary Design Review}{\the\year-10-31} \\
-		\ganttbar[progress=0]{Detail Design}{\the\year-11-01}{\the\year-12-21} \\
+		\ganttmilestone{Preliminary Design Review}{\the\year-12-14} \\
+		\ganttbar[progress=0]{Detailed Design}{\the\year-12-28}{\nextyear-01-28} \\
+		\ganttbar[progress=0]{Detailed CAD}{\nextyear-01-01}{\nextyear-02-01} \\
 		%Have Final Design Review with Dr. Ning during finals week
-		\ganttmilestone{Critical Design Review}{\the\year-12-21} \\
-
-		
-		%Submit the Design Report a Day before it is due.
-		\ganttmilestone{Submit Design Report}{\nextyear-02-20} \\
+		\ganttmilestone{Critical Design Review}{\nextyear-02-07} \\
 		%
 		%
 		%%--PROTOTYPING--%%
 		%Begin Prototyping super early, like right after the concept design is done
-		\ganttgroup{Prototyping}{\the\year-09-27}{\nextyear-03-01} \\
-		\ganttbar[progress=100]{Flight Prototype I}{\the\year-09-28}{\the\year-10-21} \\
-		\ganttbar[progress=100]{Flight Prototype II}{\the\year-10-31}{\the\year-11-28} \\
-		\ganttbar[progress=100]{Flight Prototype III}{\the\year-12-07}{\the\year-12-31} \\
-		\ganttbar[progress=100]{Sub Component Prototype I}{\the\year-09-27}{\the\year-10-21} \\
-		\ganttbar[progress=100]{Sub Component Prototype II}{\the\year-10-31}{\the\year-11-28} \\
-		\ganttbar[progress=100]{Sub Component Prototype III}{\the\year-12-07}{\the\year-12-31} \\
-		%
+		\ganttgroup{Build}{\the\year-10-01}{\nextyear-03-21} \\
+		\ganttbar[progress=100]{Conceptual Prototypes}{\the\year-10-01}{\the\year-10-14} \\
+		\ganttbar[progress=0]{Preliminary Prototypes}{\the\year-11-14}{\the\year-12-14} \\
+		\ganttbar[progress=0]{Detailed Prototypes}{\nextyear-01-07}{\nextyear-02-01} \\
+%		\ganttbar[progress=100]{Sub Component Prototype I}{\the\year-09-27}{\the\year-10-21} \\
+%		\ganttbar[progress=100]{Sub Component Prototype II}{\the\year-10-31}{\the\year-11-28} \\
+%		\ganttbar[progress=100]{Sub Component Prototype III}{\the\year-12-07}{\the\year-12-31} \\
+		\ganttbar[progress=0]{Final Build}{\nextyear-02-21}{\nextyear-03-21}\\
 		%
 		%%--TESTING--%%
 		%Testing begins shortly after Prototyping
-		\ganttgroup{Testing}{\the\year-10-21}{\nextyear-04-01} \\
-		\ganttbar[progress=100]{Flight Testing I}{\the\year-10-21}{\the\year-10-31}\\
-		\ganttbar[progress=100]{Flight Testing II}{\the\year-11-28}{\the\year-12-07}\\
-		\ganttbar[progress=100]{Flight Testing I}{\the\year-12-31}{\nextyear-01-07}\\
-		%Critical Component Testing 1
-		%Critical Component Testing 2
-		%Critical Component Testing 3
-		%Flight Testing 1
-		%Flight Testing 2
-		%Flight Testing 3
+		\ganttgroup{Fly}{\the\year-10-07}{\nextyear-03-28} \\
+		\ganttbar[progress=100]{Conceptual Testing}{\the\year-10-07}{\the\year-10-28}\\
+		\ganttbar[progress=0]{Preliminary Testing}{\the\year-12-01}{\the\year-12-21}\\
+		\ganttbar[progress=0]{Detailed Testing}{\nextyear-01-14}{\nextyear-02-07}\\
+		\ganttbar[progress=0]{Practice Runs}{\nextyear-03-21}{\nextyear-03-28}\\
+		%
+		%
+		%%--COMPETING--%%
 		%Final Build happens after testing and everything for Design Report is completed. It's okay for this to take a while since we want it to be nice, but we still need to submit proof of flight.
-		\ganttgroup{Final Build}{\nextyear-03-01}{\nextyear-04-07} \\
+		\ganttgroup{Competition Milestones}{\the\year-10-30}{\nextyear-04-16} \\
+		%Submit Proposal the day before it is due
+		\ganttmilestone{Submit Proposal}{\the\year-10-30} \\
+		%Submit the Design Report a Day before it is due.
+		\ganttmilestone{Submit Design Report}{\nextyear-02-20} \\
+
 		\ganttmilestone{Submit Proof of Flight}{\nextyear-04-01} \\
 		\ganttmilestone{Fly-off}{\nextyear-04-16}
 	\end{ganttchart}
-	\caption{This milestone chart shows our plan for major elements of our design process. Note that at the time of submitting this proposal, we have completed the conceptual design presented herein and have moved on to our preliminary design phase. Also note that we will begin prototyping early in order to apply a ``fail fast, fail often'' methodology to quickly fill the gaps in understanding and allow our underclassmen to develop their aircraft design intuition faster than if we waited to prototype after completing the design phases.}
-	\label{fig:plannedtiming}
 \end{figure}
+
+\end{document}
