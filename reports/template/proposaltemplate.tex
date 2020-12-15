@@ -54,7 +54,7 @@
 
 
 %Introduction
-\Cref{fig:personnelassignments} depicts the overall organization of our team structure.  Advisors include the professor overseeing our club as well as graduate student members of our team.  Each of the teams is lead by an individual who answers to the Engineering Lead and Project Manager.  The skills required for each position/team are as follows.
+\Cref{fig:personnelassignments} depicts the overall organization of our team structure.  Each of the teams is lead by an individual who answers to the Engineering Lead and Project Manager.  The skills required for each position/team are as follows.
 
 
 
@@ -110,7 +110,7 @@ To obtain funding for our team this year, we will be {\color{BYUred}[NEED TO TAL
 \begin{table}[htb!]
 	\centering
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Project Budget Breakdown}
+	\caption{Our project budget is broken down into several categories as well as individual items as shown here.}
 	\label{tab:budget}
 	\rowcolors{2}{BYUbluelite}{white}
 	\begin{tabular}{ |l|l|l| } 
@@ -167,17 +167,22 @@ We have organized our sub-system requirements into aerodynamics, structure, prop
 \subsubsection{Aerodynamics Requirements}
 \label{sssec:AerodynamicReqs}
 
+Some of the major requirements for the aerodynamics sub-system are: Maximize aerodynamic efficiency in order to use less energy to overcome drag.  Design wing loading to be able to take off and fly with design payload weight.  Keep the wingspan within the maximum of {\color{BYUred}[max span constraint this year]}.  Choose airfoil(s) and configuration that will make take off feasible in the {\color{BYUred}[THIS YEAR'S TAKE-OFF REQUIREMENT]}
+
 \subsubsection{Structural Requirements}
 \label{sssec:StructuralReqs}
 
+The breakdown of mission requirements for the structures sub-system include: Minimize the structural weight while maintaining sufficient rigidity to keep the aerodynamics as designed, especially when full payload weight is in use.  Make sure the structure is sufficiently rigid to avoid aerodynamic flutter within the flight envelope.
 
 \subsubsection{Propulsion Requirements}
 \label{sssec:PropulsionReqs}
 
+The propulsion sub-system requirements are to: Have sufficient system efficiency and battery capacity to enable completion of the flight missions and maximizing endurance while also providing sufficient thrust for {\color{BYUred}[THIS YEAR'S TAKE-OFF REQUIREMENT]}
+
 \subsubsection{Specialty Requirements} %change this to be specifically what it is (like bomb drop or whatever the specific mission is)
 \label{sssec:SpecialReqs}
 
-\lipsum[1]
+{\color{BYUred}[REQUIREMENTS FOR THIS YEAR'S SPECIAL STUFF.]}
 
 
 
@@ -227,19 +232,21 @@ We have organized our sub-system requirements into aerodynamics, structure, prop
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% - Sensitivity Study - %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Sensitivity Studies}
-\label{ssec:SensitivityStudies}
+\subsection{Sensitivity Study}
+\label{ssec:SensitivityStudy}
 %Sensitivity Study of Design Parameters.  This isn't just some linear plots of the ways to obtain points.  It's a sensitivity study of how the \textit{DESIGN PARAMETERS} relate to obtaining points. For example, how does weight affect the endurance and therefore number of laps that can be flown?
+%In the code directory in the repository you found this template there is a sensitivity.jl code that produces the plot used here.
 
 %Figure related to sensitivity study
-\begin{wrapfigure}[10]{R}{0pt}
+\begin{wrapfigure}[12]{R}{0pt}
 	\centering
-		\raisebox{0pt}[\dimexpr\height-2\baselineskip\relax]{
-	\includegraphics[width=0.4\textwidth]{draft4x3}}
-	\caption{}
+	\raisebox{0pt}[\dimexpr\height-2\baselineskip\relax]{
+		\includegraphics[width=3.5in]{sensitivityobj}
+	}
+	\caption{This plot shows the effects of those design parameters that directly affect the increase/decrease in mission scoring beyond simple completion.}
 	\label{fig:sensitivity}
 \end{wrapfigure}
-\lipsum[1-2]
+For our sensitivity study, we first differentiated between design variables that could increase/decrease our score and those that were only related to the minimum constraints.  Based on the scoring metrics, we found the parameters that could affect the score to be: wing area, aircraft weight (including batteries), zero-lift parasitic drag coefficient, {\color{BYUred}[WHICHEVER PAYLOAD ITEMS ARE IMPORTANT]}, and available power.  To perform our study, we took our basic parameters and ran them through common hand calculations to find the mission objective scores. In order to normalize the scores as they are in the competition, we ran the analysis first without normalization, from which we saved the maximum scores like they are in competition. We then used those maxima as the normalization factors and re-ran the analysis, thus making sure all the sensitivities had the same order of magnitude.  In our analysis, we found that the wing area and parasitic drag coefficient had the same sensitivities, thus we want to minimize drag and maximize wing loading (while still being able to take off).  The available power was also important, and can be affected by increasing battery capacity, discharge rate, or voltage, or increasing system efficiency. {\color{BYUred}[TAKE AWAYS FROM PAYLOAD STUFF]}. We should also note that the aircraft weight had a negligible effect on the overall sensitivity, but is important to keep in mind when designing for a feasible aircraft.
 
 
 
@@ -266,7 +273,7 @@ We have organized our sub-system requirements into aerodynamics, structure, prop
 	\centering
 		\raisebox{0pt}[\dimexpr\height-3\baselineskip\relax]{
 	\includegraphics[width=0.6\textwidth]{manufacturing_flow}}
-	\caption{We show here a flowchart of our proposed manufacturing plan.}
+	\caption{Our 3-phase design, build, fly plan enables a more robust final aircraft.}
 	\label{fig:manufacturingplan}
 \end{wrapfigure}
 

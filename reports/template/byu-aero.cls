@@ -77,12 +77,12 @@
 \titleformat{\subsection}
   {\color{BYUblue}\normalsize\bfseries\singlespacing}
   {\Alph{subsection}.\space}{0pt}{#1}[]
-\titlespacing{\subsection}{1em}{0.0\baselineskip}{0pt}
+\titlespacing{\subsection}{1ex}{0.0\baselineskip}{0pt}
 \titleformat{\subsubsection}[runin]
 	{\normalfont\normalsize\slshape\color{\BYUblue}}
 	{}{0pt}{#1}[]
-\titlespacing{\subsubsection}{2em}{0.0\baselineskip}{1ex}
-\titlespacing{\paragraph}{2em}{0.0\baselineskip}{1ex}
+\titlespacing{\subsubsection}{0em}{0.0\baselineskip}{1ex}
+\titlespacing{\paragraph}{0em}{0.0\baselineskip}{1ex}
 
 
 \RequirePackage[tableposition=top,font=small,bf]{caption}
