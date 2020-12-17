@@ -376,6 +376,9 @@ THEN YOU NEED TO PICK WHICH ONES YOU WANT ON THE FINAL PLOT
 =#
 
 #identify the index of the variables you want
+#=
+Note: in this example, all the payload things have the same sensitivities, so we'll put them all together.  Also the wing loading and drag coefficient are the same, so they are together.  It also turns out that weight doesn't matter, so we'll  leave it out.  Furthermore, all the battery and efficiency stuff goes into available power, so we'll combine them under that heading.
+=#
 toplot = [2;5;10]
 #get the plot labels you want to show for those variables
 toplotlabels = ["Wing Area and Parasitic Drag"; "Payload"; "Available Power"]
