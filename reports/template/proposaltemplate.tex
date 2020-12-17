@@ -24,7 +24,14 @@
 % 3) \textbf{Includes main points from subsequent sections} (we lost points on this in 2020)
 
 {\color{BYUred}[THIS WILL DEPEND ON THE SPECIFIC DETAILS FOR THIS YEAR'S COMPETITION.]}
-\lipsum[1-2]
+
+{\color{BYUred}[STRONG OBJECTIVE STATEMENT.]}
+
+{\color{BYUred}[SEVERAL SENTENCES ABOUT YOUR PLANNED APPROACH TO ACHIEVE ALL OBJECTIVES.]}
+\lipsum[2]
+
+{\color{BYUred}[PARAGRAPH COVERING MAIN POINTS FROM ALL THE SECTIONS IN THE PROPOSAL.]}
+\lipsum[2]
 
 
 
@@ -182,7 +189,8 @@ The propulsion sub-system requirements are to: Have sufficient system efficiency
 \subsubsection{Specialty Requirements} %change this to be specifically what it is (like bomb drop or whatever the specific mission is)
 \label{sssec:SpecialReqs}
 
-{\color{BYUred}[REQUIREMENTS FOR THIS YEAR'S SPECIAL STUFF.]}
+{\color{BYUred}[REQUIREMENTS FOR THIS YEAR'S SPECIAL STUFF.]} 
+\lipsum[2]
 
 
 
@@ -226,7 +234,14 @@ The propulsion sub-system requirements are to: Have sufficient system efficiency
 \end{figure}
 
 %Preliminary design / sizing results
-\lipsum[1-4]
+
+After making some decisions about the overall configuration of our aircraft (details on our decision process will be included in the Design Report), we arrived at the configuration seen in \cref{fig:prelimdrawings}.
+{\color{BYUred}[COMMENT ON MAJOR FEATURES OF THE CONFIGURATION, GIVE SOME BASIC JUSTIFICATION, LIKE "WE CHOSE THIS BECAUSE IT WOULD WORK WELL FOR THIS REQUIREMENT"]}
+
+Using common hand calculation level formulas, we arrived at a conceptual design with the following specifications: a wing span of {\color{BYUred} [X.X ft]}, aspect ratio of {\color{BYUred} [X.X]}, wing loading of {\color{BYUred} [X.X lbs/ft$^2$]}, horizontal and vertical tail volume ratios of {\color{BYUred} [X.X]} and {\color{BYUred} [X.X]} respectively, stall velocity of {\color{BYUred} [X.X ft/sec]}, and take-off distance of {\color{BYUred} [X.X ft]}.  {\color{BYUred}[INCLUDE ANY OTHER PERTINENT PARAMETERS HERE AS WELL!]}
+{\color{BYUred}[DISCUSS ANY INTERESTING FEATURES SPECIFIC TO THIS YEAR'S REQUIREMENTS: ATTACHMENTS, FOLDING THINGS, DEPLOYMENT STUFF, ETC. THAT HAVE BEEN DECIDED IN THE CONCEPTUAL DESIGN.]}
+\lipsum[1]
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -237,17 +252,17 @@ The propulsion sub-system requirements are to: Have sufficient system efficiency
 %Sensitivity Study of Design Parameters.  This isn't just some linear plots of the ways to obtain points.  It's a sensitivity study of how the \textit{DESIGN PARAMETERS} relate to obtaining points. For example, how does weight affect the endurance and therefore number of laps that can be flown?
 %In the code directory in the repository you found this template there is a sensitivity.jl code that produces the plot used here.
 
-%Figure related to sensitivity study
-\begin{wrapfigure}[12]{R}{0pt}
+%Figure related to sensitivity study, move around to get formatting correct...
+\begin{wrapfigure}[11]{R}{0pt}
 	\centering
-	\raisebox{0pt}[\dimexpr\height-2\baselineskip\relax]{
-		\includegraphics[width=3.5in]{sensitivityobj}
-	}
+		\raisebox{0pt}[\dimexpr\height-2\baselineskip\relax]{
+	\includegraphics[width=3in]{sensitivityobj}
+		}
 	\caption{This plot shows the effects of those design parameters that directly affect the increase/decrease in mission scoring beyond simple completion.}
 	\label{fig:sensitivity}
 \end{wrapfigure}
-For our sensitivity study, we first differentiated between design variables that could increase/decrease our score and those that were only related to the minimum constraints.  Based on the scoring metrics, we found the parameters that could affect the score to be: wing area, aircraft weight (including batteries), zero-lift parasitic drag coefficient, {\color{BYUred}[WHICHEVER PAYLOAD ITEMS ARE IMPORTANT]}, and available power.  To perform our study, we took our basic parameters and ran them through common hand calculations to find the mission objective scores. In order to normalize the scores as they are in the competition, we ran the analysis first without normalization, from which we saved the maximum scores like they are in competition. We then used those maxima as the normalization factors and re-ran the analysis, thus making sure all the sensitivities had the same order of magnitude.  In our analysis (results shown in \cref{fig:sensitivity}), we found that the wing area and parasitic drag coefficient had the same sensitivities, thus we want to minimize drag and maximize wing loading (while still being able to take off).  The available power was also important, and can be affected by increasing battery capacity, discharge rate, or voltage, or increasing system efficiency. {\color{BYUred}[TAKE AWAYS FROM PAYLOAD STUFF]}. We should also note that the aircraft weight had a negligible effect on the overall sensitivity, but is important to keep in mind when designing for a feasible aircraft.
 
+For our sensitivity study, we first differentiated between design variables that could increase/decrease our score and those that were only related to the minimum constraints. Based on the scoring metrics, we found the parameters that could affect the score to be: wing area, aircraft weight (including batteries), zero-lift parasitic drag coefficient, {\color{BYUred}[WHICHEVER PAYLOAD ITEMS ARE IMPORTANT]}, and available power.  To perform our study, we took our basic parameters and ran them through common hand calculations to find the mission objective scores. In order to normalize the scores as they are in the competition, we ran the analysis first without normalization, from which we saved the maximum scores like they are in competition. We then used those maxima as the normalization factors and re-ran the analysis, thus making sure all the sensitivities had the same order of magnitude.  In our analysis (results shown in \cref{fig:sensitivity}), we found that the wing area and parasitic drag coefficient had the same sensitivities, thus we want to minimize drag and maximize wing loading (while still being able to take off).  The available power was also important, and can be affected by increasing battery capacity, discharge rate, or voltage, or increasing system efficiency. {\color{BYUred}[TAKE AWAYS FROM PAYLOAD STUFF]}. We should also note that the aircraft weight had a negligible effect on the overall sensitivity, but is important to keep in mind when designing for a feasible aircraft.
 
 
 
@@ -269,10 +284,13 @@ For our sensitivity study, we first differentiated between design variables that
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Manufacturing Flow}
 \label{ssec:ManufacturingFlow}
+
+%Manufacturing flow figure. Move around to get formatting right.
 \begin{wrapfigure}[9]{R}{0pt}
 	\centering
-		\raisebox{0pt}[\dimexpr\height-3\baselineskip\relax]{
-	\includegraphics[width=0.6\textwidth]{manufacturing_flow}}
+	\raisebox{0pt}[\dimexpr\height-3\baselineskip\relax]{ %NOTW: CHANGE THIS - VALUE TO SHIFT THE FIGURE UP INTO THE SECTION TITLE AREA IF YOU NEED TO.  OTHERWISE, COMMENT OUT THIS LINE
+		\includegraphics[width=0.6\textwidth]{manufacturing_flow}
+	} %NOTE: IFF YOU COMMENT OUT THE \RAISEBOX LINE ABOVE, COMMENT OUT THIS LINE TOO.
 	\caption{Our 3-phase design, build, fly plan enables a more robust final aircraft.}
 	\label{fig:manufacturingplan}
 \end{wrapfigure}
@@ -344,7 +362,6 @@ In all phases, flight tests will typically take place at the end of the phase, i
 \subsubsection{Phase 2} Our preliminary flight test prototype will be a powered, controlled aircraft, though without the full competition functionality.  Our goal for the preliminary test is to validate our preliminary designs before moving on to detailed design aspects and full system integration, as well as note any unexpected behavior in the aircraft dynamic responses. 
 
 \subsubsection{Phase 3} Our detailed design prototype will be complete enough that if desired, we could compete without building another iteration. Our goal for the final testing phase will be to fly the complete mission sequence, allowing for any final fine-tuning of the design before building our competition aircraft.
-
 
 
 
