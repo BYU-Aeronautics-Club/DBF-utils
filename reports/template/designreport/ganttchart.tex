@@ -12,72 +12,112 @@
 	\begin{figure}[h!]
 	\centering
 	\begin{ganttchart}[]{\the\year-09-01}{\nextyear-04-30}
+		%
 		\gantttitlecalendar{year, month=shortname} \\
 		%
-		%
 		%%--DESIGN--%%
-		\ganttgroup{Design}{\the\year-09-14}{\nextyear-02-07} \\
-		%Conceptual Design should be fast, like really fast.
-		%Should have all major configuration decisions done as well as a preliminary sizing study (quick and dirty, and sufficient for a prototype)
-		\ganttbar[progress=100]{Conceptual Design}{\the\year-09-14}{\the\year-10-07} \\
-%		\ganttbar[progress=100]{Concept CAD}{\the\year-09-21}{\the\year-10-07} \\
-		%Submitting Conceptual Design to Dr. Ning for review 5 weeks before the proposal is due.
-%		\ganttmilestone{Conceptual Design Review}{\the\year-10-07} \\
-		%Preliminary Design is likely going to be the most important design phase
-		\ganttbar[progress=0]{Preliminary Design}{\the\year-10-28}{\the\year-12-01} \\
-%		\ganttbar[progress=0]{Preliminary CAD}{\the\year-11-01}{\the\year-12-07} \\
-		%Have a preliminary Design review at the same time the Proposal is due (proposal includes conceptual design)
-		\ganttbar[progress=0]{Detailed Design}{\the\year-12-28}{\nextyear-01-28} \\
-%		\ganttbar[progress=0]{Detailed CAD}{\nextyear-01-01}{\nextyear-02-01} \\
-		%Have Final Design Review with Dr. Ning during finals week
-%		\ganttmilestone{Critical Design Review}{\nextyear-02-07} \\
+		\ganttgroup{Design}{\the\year-09-14}{\nextyear-02-07};
+		% ACTUAL
+		\ganttgroup[group/.append style={fill=\BYUredlite,draw=\BYUred}, group height = 0.125,
+		group top shift=0.5]{}{\the\year-09-14}{\nextyear-02-07}\\
 		%
+		% PLANNED
+		\ganttbar[progress=100]{Conceptual Design}{\the\year-09-14}{\the\year-10-07};
+		% ACTUAL
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		%
+		% PLANNED
+		\ganttbar[progress=100]{Preliminary Design}{\the\year-10-31}{\the\year-12-01};
+		% ACTUAL
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		%
+		% PLANNED
+		\ganttbar[progress=100]{Detailed Design}{\the\year-12-28}{\nextyear-01-28};
+		% ACTUAL
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
 		%
 		%%--PROTOTYPING--%%
-		%Begin Prototyping super early, like right after the concept design is done
-		\ganttgroup{Build}{\the\year-10-01}{\nextyear-03-21} \\
-		\ganttbar[progress=100]{Conceptual Prototypes}{\the\year-10-01}{\the\year-10-14} \\
-		\ganttbar[progress=0]{Preliminary Prototypes}{\the\year-11-14}{\the\year-12-14} \\
-		\ganttbar[progress=0]{Detailed Prototypes}{\nextyear-01-07}{\nextyear-02-01} \\
-%		\ganttbar[progress=100]{Sub Component Prototype I}{\the\year-09-27}{\the\year-10-21} \\
-%		\ganttbar[progress=100]{Sub Component Prototype II}{\the\year-10-31}{\the\year-11-28} \\
-%		\ganttbar[progress=100]{Sub Component Prototype III}{\the\year-12-07}{\the\year-12-31} \\
-%		\ganttbar[progress=0]{Final Build}{\nextyear-02-21}{\nextyear-03-21}\\
+		% PLANNED
+		\ganttgroup{Build}{\the\year-10-01}{\nextyear-03-21};
+		% ACTUAL
+		\ganttgroup[group/.append style={fill=\BYUredlite,draw=\BYUred}, group height = 0.125,
+		group top shift=0.375]{}{\the\year-09-14}{\nextyear-02-07}\\
+		%
+		% PLANNED
+		\ganttbar[progress=100]{Conceptual Prototypes}{\the\year-10-01}{\the\year-10-14};
+		% ACTUAL
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		%
+		% PLANNED
+		\ganttbar[progress=100]{Preliminary Prototypes}{\the\year-11-14}{\the\year-12-14};
+		% ACTUAL
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		%
+		% PLANNED
+		\ganttbar[progress=100]{Detailed Prototypes}{\nextyear-01-07}{\nextyear-02-01};
+		% ACTUAL
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		%
+		% PLANNED
+		\ganttbar[progress=100, bar/.append style={fill=\BYUgreen}]{Final Build}{\nextyear-02-20}{\nextyear-03-21}\\
 		%
 		%%--TESTING--%%
-		%Testing begins shortly after Prototyping
-		\ganttgroup{Fly}{\the\year-10-07}{\nextyear-03-28} \\
-		\ganttbar[progress=100]{Conceptual Testing}{\the\year-10-07}{\the\year-10-28}\\
-		\ganttbar[progress=0]{Preliminary Testing}{\the\year-12-01}{\the\year-12-21}\\
-		\ganttbar[progress=0]{Detailed Testing}{\nextyear-01-14}{\nextyear-02-07}\\
-		\ganttbar[progress=0]{Practice Runs}{\nextyear-03-21}{\nextyear-03-28}\\
 		%
+		% PLANNED
+		\ganttgroup{Fly}{\the\year-10-07}{\nextyear-03-28};
+		% ACTUAL
+		\ganttgroup[group/.append style={fill=\BYUredlite,draw=\BYUred}, group height = 0.125,
+		group top shift=0.375]{}{\the\year-09-14}{\nextyear-02-07}\\
 		%
+		% PLANNED
+		\ganttbar[progress=100]{Conceptual Testing}{\the\year-10-07}{\the\year-10-28};
+		% ACTUAL
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		%
+		% PLANNED
+		\ganttbar[progress=100]{Preliminary Testing}{\the\year-12-01}{\the\year-12-21};
+		% ACTUAL
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		%
+		% PLANNED
+		\ganttbar[progress=100]{Detailed Testing}{\nextyear-01-14}{\nextyear-02-07};
+		% ACTUAL
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		%
+		% PLANNED
+		\ganttbar[progress=100,bar/.append style={fill=\BYUgreen}]{Practice Runs}{\nextyear-03-21}{\nextyear-03-28} \\
+		%
+		% PLANNED
 		%%--COMPETING--%%
 		%Final Build happens after testing and everything for Design Report is completed. It's okay for this to take a while since we want it to be nice, but we still need to submit proof of flight.
 		\ganttgroup{Competition Milestones}{\the\year-10-30}{\nextyear-04-16} \\
 		%Submit Proposal the day before it is due
-		\ganttmilestone{Submit Proposal}{\the\year-10-30} \\
+		\ganttmilestone[milestone/.append style={fill=\BYUredlite}]{Submit Proposal}{\the\year-10-30} \\
 		%Submit the Design Report a Day before it is due.
-		\ganttmilestone{Preliminary Design Review}{\the\year-12-21} \\
-		\ganttmilestone{Submit Design Report}{\nextyear-02-20} \\
-		\ganttmilestone{Submit Proof of Flight}{\nextyear-04-01} \\
-		\ganttmilestone{Fly-off}{\nextyear-04-16}
+		\ganttmilestone{Preliminary Design Review}{\the\year-12-21};
+		% ACTUAL
+		\ganttmilestone[milestone/.append style={fill=\BYUredlite, draw=\BYUred}]{}{\the\year-12-28} \\
 		%
+		\ganttmilestone[milestone/.append style={fill=\BYUredlite}]{Submit Design Report}{\nextyear-02-20} \\
+		\ganttmilestone[milestone/.append style={fill=\BYUgreen}]{Submit Proof of Flight}{\nextyear-04-01} \\
+		\ganttmilestone[milestone/.append style={fill=\BYUgreen}]{Fly-off}{\nextyear-04-16}
+		%
+		%%--VERTICAL RULE--%%
+%		\ganttvrule[vrule/.append style={draw=\BYUgray}]{\tiny \textit{Current Date}}{\nextyear-02-20}
 		%
 		%%--LINKS--%%
 		%
-		\ganttlink[link/.append style={draw=\BYUblue}]{elem1}{elem5}
-		\ganttlink[link/.append style={draw=\BYUblue}]{elem5}{elem9}
-		\ganttlink[link/.append style={draw=\BYUblue}]{elem9}{elem14}
-		%
-		\ganttlink[link/.append style={draw=\BYUred}]{elem2}{elem6}
-		\ganttlink[link/.append style={draw=\BYUred}]{elem6}{elem10}
-		\ganttlink[link/.append style={draw=\BYUred}]{elem10}{elem15}
-		%
-		\ganttlink[link/.append style={draw=\BYUgreen}]{elem3}{elem7}
-		\ganttlink[link/.append style={draw=\BYUgreen}]{elem7}{elem11}
-		\ganttlink[link/.append style={draw=\BYUgreen}]{elem11}{elem16}
+%		\ganttlink[link/.append style={draw=\BYUblue}]{elem1}{elem5}
+%		\ganttlink[link/.append style={draw=\BYUblue}]{elem5}{elem9}
+%		\ganttlink[link/.append style={draw=\BYUblue}]{elem9}{elem14}
+%		%
+%		\ganttlink[link/.append style={draw=\BYUred}]{elem2}{elem6}
+%		\ganttlink[link/.append style={draw=\BYUred}]{elem6}{elem10}
+%		\ganttlink[link/.append style={draw=\BYUred}]{elem10}{elem15}
+%		%
+%		\ganttlink[link/.append style={draw=\BYUred}]{elem3}{elem7}
+%		\ganttlink[link/.append style={draw=\BYUred}]{elem7}{elem11}
+%		\ganttlink[link/.append style={draw=\BYUred}]{elem11}{elem16}
 	\end{ganttchart}
 \end{figure}
 

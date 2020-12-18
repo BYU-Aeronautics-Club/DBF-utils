@@ -25,12 +25,19 @@
 \definecolor{BYUbluelite}{RGB}{221,227,233}
 \definecolor{BYUbluemid}{RGB}{151,169,189}
 \definecolor{BYUred}{RGB}{162, 0, 0}
+\definecolor{BYUredlite}{RGB}{233,71,71}
+\definecolor{BYUgreen}{RGB}{93,162,93}
+\definecolor{BYUgreenlite}{RGB}{164,233,164}
+\definecolor{BYUgray}{RGB}{128,128,128}
 %tikz colors:
 \newcommand{\BYUblue}{rgb,255:red,0; green,46; blue,93}
 \newcommand{\BYUbluelite}{rgb,255:red,221; green,227; blue,233}
 \newcommand{\BYUbluemid}{rgb,255:red,151; green,169; blue,189}
 \newcommand{\BYUred}{rgb,255:red,162; green,0; blue,0}
+\newcommand{\BYUredlite}{rgb,255:red,223; green,71; blue,71}
 \newcommand{\BYUgreen}{rgb,255:red,93; green,162; blue,93}
+\newcommand{\BYUgreenlite}{rgb,255:red,164; green,233; blue,164}
+\newcommand{\BYUgray}{rgb,255:red,128; green,128; blue,128}
 
 
 \RequirePackage[T1]{fontenc}
@@ -193,6 +200,11 @@ draw
 	title label font=\bfseries\scriptsize,
 	title height=1,
 	title/.style={fill=\BYUbluelite,draw=\BYUblue},
+	%
+	today = \the\year-10-30,
+	today label = Current Date,
+	today label font=\itshape\tiny,
+	today rule/.style={draw=\BYUgray,dashed},
 	%
 	group/.append style={fill=\BYUbluemid,draw=\BYUblue},
 	group top shift=0.25,
