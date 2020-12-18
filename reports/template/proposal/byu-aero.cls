@@ -11,9 +11,9 @@
 \ProvidesClass{byu-aero}[2019/11/08, v1.0]
 
 \newif\if@proposal
-% \newif\if@report
+ \newif\if@report
 \DeclareOption{proposal}{\@proposaltrue}
-% \DeclareOption{report}{\@reporttrue}
+ \DeclareOption{report}{\@reporttrue}
 
 \ExecuteOptions{}
 \ProcessOptions\relax
@@ -258,10 +258,30 @@ draw
 }
 \fi
 
+\if@report %
+\chead{
+	\parbox[b][3em][t]{0.75\textwidth}{
+		\centering
+		\Large{\color{BYUblue} Brigham Young University Aeronautics Club}\\
+		\small{\NextYear~AIAA Design Build Fly Competition Design Report}}
+}
+\fi
+
+
 %Fix spacing in Table of Contents
 \RequirePackage{titletoc}
-\titlecontents{section}[3em]
+\titlecontents{section}
+[3em]
 {\addvspace{1em}\color{BYUblue}\bfseries}
+{\contentslabel{2em}}
+{\hspace*{1em}}
+{\hfill\contentspage}
+
+
+\titlecontents{subsection}
+[6em]
+{\addvspace{0em}\color{BYUblue}}
 {\contentslabel{3em}}
 {\hspace*{0em}}
 {\hfill\contentspage}
+
