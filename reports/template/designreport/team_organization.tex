@@ -1,0 +1,34 @@
+%TEAM ORGANIZATION
+\begin{wrapfigure}[7]{R}{0in}
+	\centering
+	\raisebox{0pt}[\dimexpr\height-3\baselineskip\relax]{
+\begin{tikzpicture}[node distance = 1cm, auto]
+
+	% Place nodes
+	\node [block] (Advisors) {\footnotesize Advisors};
+	\node [block, below left = 0.1 and -1.25cm  of Advisors] (Engineering Lead) {\footnotesize Engineering Lead};
+	\node [block, below right = 0.1 and -1.25cm   of Advisors] (Project Manager) {\footnotesize Project Manager};
+
+	\node [block2, below left = 0.9 and -1.25cm of Advisors] (Aerodynamics) {\footnotesize Aerodynamics};
+	\node [block2, below left = 1.8 and -1.25cm  of Advisors] (Structures) {\footnotesize Structures};
+	\node [block2, below left = 2.7 and -1.25cm  of Advisors] (Propulsion) {\footnotesize Propulsion};
+	\node [block2, below right = 0.9 and -1.25cm  of Advisors] (Systems) {\footnotesize Systems};
+	\node [block2, below right = 1.8 and -1.25cm  of Advisors] (Graphics) {\footnotesize Graphics};
+	\node [block2, below right = 2.7 and -1.25cm  of Advisors] (Manufacturing) {\footnotesize Manufacturing};
+
+	% Draw edges
+	\path[line] let \p1=(Advisors.south), \p2=(Engineering Lead.east) in (Advisors.south) --  +(0,0.55*\y2) -| node {} (Engineering Lead.east);
+	\path[line] let \p1=(Advisors.south), \p2=(Project Manager.west) in (Advisors.south) -- +(0,0.55*\y2) -| node {} (Project Manager.west);
+
+	\path[line] let \p1=(Advisors.south), \p2=(Aerodynamics.north) in (Advisors.south) -- +(0,0.65*\y2) -| node  {} (Aerodynamics.north);
+	\path[line] let \p1=(Advisors.south), \p2=(Systems.north) in (Advisors.south) -- +(0,0.65*\y2) -| node  {} (Systems.north);
+
+	\path[line] let \p1=(Advisors.south), \p2=(Structures.north) in (Advisors.south) -- +(0,0.8*\y2) -| node  {} (Structures.north);
+	\path[line] let \p1=(Advisors.south), \p2=(Graphics.north) in (Advisors.south) -- +(0,0.8*\y2) -| node  {} (Graphics.north);
+
+	\path[line] let \p1=(Advisors.south), \p2=(Propulsion.north) in (Advisors.south) -- +(0,0.85*\y2) -| node  {} (Propulsion.north);
+	\path[line] let \p1=(Advisors.south), \p2=(Manufacturing.north) in (Advisors.south) -- +(0,0.85*\y2) -| node  {} (Manufacturing.north);
+\end{tikzpicture}}
+	\caption{Here we show the structure of, and assignment areas within, our team organization.}
+	\label{fig:personnelassignments}
+\end{wrapfigure}

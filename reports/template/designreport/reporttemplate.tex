@@ -23,24 +23,24 @@
 \thispagestyle{tocpage} %This uses the alternate table of contents page header style
 \tableofcontents %This makes the table of contents
 %The following 3 lines add the Table of Contents "section" to the Table of Contents
-\phantomsection
-\addcontentsline{toc}{section}{Table of Contents}
-\markboth{Table of Contents}{Table of Contents}
+%\phantomsection
+%\addcontentsline{toc}{section}{Table of Contents}
+%\markboth{Table of Contents}{Table of Contents}
 
 \clearpage
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Executive Summary   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Executive Summary (5 Points)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%         EXECUTIVE SUMMARY         %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Executive Summary} % (5 Points)
 \label{sec:ExecutiveSummary}
-\begin{itemize}
-\item Maximum of 1 page. If exceeded, score as 0 points
-\item Summary description of selected design and why it best meets the mission requirements
-\item Main points from subsequent sections
-\item Document the performance/capabilities of your system solution
-\end{itemize}
+% Section Requirements
+% 1) Maximum of 1 page. If exceeded, score as 0 points
+% 2) Summary description of selected design and why it best meets the mission requirements
+% 3) Main points from subsequent sections
+% 4) Document the performance/capabilities of your system solution
+
 
 % Performance Summary Table
 \begin{table}[h!]
@@ -60,16 +60,16 @@
 	\end{tabular}
 \end{table}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Management Summary   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Management Summary (5 Points)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%         MANAGEMENT SUMMARY        %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Management Summary} % (5 Points)
 \label{sec:ManagementSummary}
-%\begin{itemize}
-%\item Describe the organization of the design team
-%\item Chart of design personnel and assignments areas
-%\item Milestone chart showing planned and actual timing of major elements
-%\end{itemize}
+% Section Requirements
+% 1) Describe the organization of the design team
+% 2) Chart of design personnel and assignments areas
+% 3) Milestone chart showing planned and actual timing of major elements
+
 
 Paragraph describing the organization of the design team, citing \cref{fig:personnelassignments}.
 
@@ -89,50 +89,53 @@ Paragraph describing the organization of the design team, citing \cref{fig:perso
 	\label{fig:plannedvsactualtiming}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Conceptual Design   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conceptual Design (15 Points)} %Note: this should be completed already as part of the proposal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%         CONCEPTUAL DESIGN         %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conceptual Design} % (15 Points) %Note: this should be completed already as part of the proposal
 \label{sec:ConceptualDesign}
-% \begin{itemize}
-% \item Describes mission requirements (problem statement)
-% \item Translate mission requirements into sub system design requirements
-% \item Present a scoring sensitivity analysis.
-% \item Review solution concepts/configurations considered
-% \item Describe concept weighting and selection process and results
-% \end{itemize}
+% Section Requirements
+% 1) Describes mission requirements (problem statement)
+% 2) Translate mission requirements into sub system design requirements
+% 3) Present a scoring sensitivity analysis.
+% 4) Review solution concepts/configurations considered
+% 5) Describe concept weighting and selection process and results
+
 
 \subsection{Mission Requirements}
 \label{ssec:missionreqs}
 
-Describes mission requirements (problem statement)
 
-Translate mission requirements into sub system design requirements
+
 \subsubsection{Aerodynamic Requirements}
 \label{sssec:aeroreqs}
+
 
 \subsubsection{Structural Requirements}
 \label{sssec:structreqs}
 
+
 \subsubsection{Propulsion Requirements}
 \label{sssec:propreqs}
+
 
 \subsubsection{Specialty Requirements} %change this to be specifically what it is (like bomb drop or whatever the specific mission is)
 \label{sssec:specialreqs}
 
+
+
 \subsection{Scoring Sensitivity Analysis}
 \label{ssec:scoringsensitivity}
 
-Present a scoring sensitivity analysis.
+
 
 \subsection{Concept Weighting and Selection Process}
 \label{ssec:selectionprocess}
 
-Review solution concepts/configurations considered
 
-Describe concept weighting and selection process and results
- 
-% Figure of Merit (i.e. the weights used in decision matrices)
+%----------------
+%---   Figure of Merit (i.e. the weights used in decision matrices)
+%----------------
 \begin{table}[h!]
 	\centering
 	\caption{Figures of Merit}
@@ -156,7 +159,11 @@ Describe concept weighting and selection process and results
 	\end{tabular}
 \end{table}
 
-%Example Decision Matrix.  Probably going to have a few of these.
+
+
+%----------------
+%---   Example Decision Matrix.  Probably going to have a few of these.
+%----------------
 \begin{table}[h!]
 	\centering
 	\caption{Weighted decision (Pugh) matrix.}
@@ -180,7 +187,10 @@ Describe concept weighting and selection process and results
 	\end{tabular}
 \end{table}
 
-%Figure of rejected concepts (this may be better as several figures showing options for different aspects of the design.
+
+%----------------
+%---  Figure of rejected concepts (this may be better as several figures showing options for different aspects of the design.
+%----------------
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=3.5in]{draft.pdf}
@@ -188,10 +198,14 @@ Describe concept weighting and selection process and results
 	\label{fig:rejecteddesigns}
 \end{figure}
 
+
+
 \subsubsection{Final Concept}
 \label{sssec:finalconcept}
 
-%Figure of the final concept
+%----------------
+%---  Figure of the final concept
+%----------------
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=3.5in]{draft.pdf}
@@ -199,97 +213,105 @@ Describe concept weighting and selection process and results
 	\label{fig:finalconcept}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Preliminary Design   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Preliminary Design (20 Points)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%         PRELIMINARY DESIGN        %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Preliminary Design} % (20 Points)
 \label{sec:PreliminaryDesign}
-% \begin{itemize}
-% \item Describe design/analysis methodology
-% \item Document design/sizing trades
-% \item Describe/document methodology for prediction of aircraft performance (include capabilities and uncertainties)
-% \item Provide estimates of the aircraft lift, drag and stability characteristics and method of prediction
-% \item Provide estimates of the aircraft mission performance 
-% \end{itemize}
+% Section Requirements
+% 1) Describe design/analysis methodology
+% 2) Document design/sizing trades
+% 3) Describe/document methodology for prediction of aircraft performance (include capabilities and uncertainties)
+% 4) Provide estimates of the aircraft lift, drag and stability characteristics and method of prediction
+% 5) Provide estimates of the aircraft mission performance 
+
 
 \subsection{Methodology}
 \label{ssec:methodology}
 
-Describe design/analysis methodology
+
+
 
 \subsection{Trade Studies}
 \label{ssec:tradestudies}
 
-Document design/sizing trades
+
+
 
 \subsection{Estimated Aircraft Performance}
 \label{ssec:estaircraftperfomance}
 
-Describe/document methodology for prediction of aircraft performance (include capabilities and uncertainties)
+
+
 
 \subsubsection{Uncertainty Analysis}
 \label{sssec:uncertaintyanalysis}
 
-Describe the capabilities and uncertainties of the tools used for performance estimation.
+
+
 
 \subsubsection{Lift and Drag}
 \label{sssec:liftdrag}
 
-Provide estimates of the aircraft lift, drag and stability characteristics and method of prediction
+
+
 
 \subsubsection{Stability}
 \label{sssec:stability}
 
+
+
 \subsubsection{Mission Performance}
 \label{sssec:missionperformance}
 
-Provide estimates of the aircraft mission performance 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%   Detail Design   %%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Detail Design (15 Points + 15 Points for Drawing Package)}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%           DETAIL DESIGN           %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Detail Design} % (15 Points + 15 Points for Drawing Package)
 \label{sec:detaildesign}
-% \begin{itemize}
-% \item Document dimensional parameters of final design
-% \item Document structural characteristics/capabilities of final design
-% \item Document systems and sub-systems selection/integration/architecture
-% \item Document Weight and Balance for final design
-% \item Must include Weight \& Balance table empty and with each possible payload/configuration
-% \item Document flight performance parameters for final design
-% \item Document mission performance for final design
-% \item Drawing package:
-% 	\begin{itemize}
-% 	\item 3-View drawing with dimensions of all configurations
-% 	\item Structural arrangement drawing
-% 	\item Systems layout/location drawing
-% 	\item Payload(s) accommodation drawing(s)
-% 	\end{itemize}
-% \end{itemize}
+% Section Requirements
+% 1) Document dimensional parameters of final design
+% 2) Document structural characteristics/capabilities of final design
+% 3) Document systems and sub-systems selection/integration/architecture
+% 4) Document Weight and Balance for final design
+% 5) Must include Weight \& Balance table empty and with each possible payload/configuration
+% 6) Document flight performance parameters for final design
+% 7) Document mission performance for final design
+
+
+
 
 \subsection{Sizing}
 \label{ssec:sizing}
 
-Document dimensional parameters of final design
+
+
 
 \subsection{Structures}
 \label{ssec:structures}
 
-Document structural characteristics/capabilities of final design
+
+
 
 \subsection{System Selection, Integration, and Architecture}
 \label{ssec:systemdetails}
 
-Document systems and sub-systems selection/integration/architecture
+
+
 
 \subsection{Weights and Balance}
 \label{ssec:weightsandbalance}
 
-Document Weight and Balance for final design
 
-Must include Weight \& Balance table empty and with each possible payload/configuration
-
-%Weight and Balance Table
+%----------------
+%---  Weight and Balance Table
+%----------------
 \begin{table}[h!]
 	\centering
 	\caption{Weight and Balance table including empty aircraft and each possible configuration.}
@@ -309,48 +331,63 @@ Must include Weight \& Balance table empty and with each possible payload/config
 	\end{tabular}
 \end{table}
 
+
+
 \subsection{Flight Performance Parameters}
 \label{ssec:flightperformanceparams}
 
-Document flight performance parameters for final design
+
+
 
 \subsection{Mission Performance}
 \label{ssec:missionperformance}
 
-Document mission performance for final design
+
+
  
 \subsection{Drawing Package}
 \label{ssec:drawings}
 
 The following are drawings including a 3-View drawing with dimensions of all configurations, a structural arrangement drawing, a systems layout/location drawing, and payload accommodation drawings.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%   DRAWING PACKAGE   %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Drawing package Requirements:
+% 1) 3-View drawing with dimensions of all configurations
+% 2) Structural arrangement drawing
+% 3) Systems layout/location drawing
+% 4) Payload(s) accommodation drawing(s)
+
+
+%----------------
 % 3-view drawing
 \includepdf[page=-]{draft.pdf}
+%----------------
 % Structural Arrangement Drawing
 \includepdf[page=-]{draft.pdf}
+%----------------
 % Systems Layout/Location Drawing
 \includepdf[page=-]{draft.pdf}
+%----------------
 % Payload Accommodation drawing
 \includepdf[page=-]{draft.pdf}
+%----------------
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Manufacturing Plan   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Manufacturing Plan (5 Points)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%          MANUFACTURING PLAN          %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Manufacturing Plan} % (5 Points)
 \label{sec:ManufacturingPlan}
-% \begin{itemize}
-% \item Document the process selected for major component manufacture
-% \item Manufacturing processes investigated and selection process and results
-% \item Manufacturing milestones chart: plan and actual
-% \end{itemize}
+% Section Requirements
+% 1) Document the process selected for major component manufacture
+% 2) Manufacturing processes investigated and selection process and results
+% 3) Manufacturing milestones chart: plan and actual
 
-Document the process selected for major component manufacture
-
-Manufacturing processes investigated and selection process and results
-
-Manufacturing milestones chart: plan and actual
-
-% Figure of Merit (i.e. the weights used in decision matrices)
+%----------------
+%---  Figure of Merit (i.e. the weights used in decision matrices)
+%----------------
 \begin{table}[h!]
 	\centering
 	\caption{Figures of Merit}
@@ -374,7 +411,10 @@ Manufacturing milestones chart: plan and actual
 	\end{tabular}
 \end{table}
 
-%Example Decision Matrix.  Probably going to have a few of these.
+
+%----------------
+%---  Example Decision Matrix.  Probably going to have a few of these.
+%----------------
 \begin{table}[h!]
 	\centering
 	\caption{Weighted decision (Pugh) matrix for manufacturing plan.}
@@ -398,6 +438,10 @@ Manufacturing milestones chart: plan and actual
 	\end{tabular}
 \end{table}
 
+
+%----------------
+% ---  Manufacturing Milestone chart
+%----------------
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=3.5in]{draft.pdf}
@@ -406,67 +450,71 @@ Manufacturing milestones chart: plan and actual
 \end{figure}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Testing Plan   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Testing Plan (5 points)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%           TESTING PLAN            %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Testing Plan} % (5 points)
 \label{sec:TestingPlan}
-%\begin{itemize}
-%\item Describe all major ground and flight tests performed.
-%\item Objectives and schedule for each.
-%\item Data to be collected and how applied.
-%\item Test and flight check lists
-%\end{itemize}
+% Section Requirements
+% 1) Describe all major ground and flight tests performed.
+% 2) Objectives and schedule for each.
+% 3) Data to be collected and how applied.
+% 4) Test and flight check lists
+
 
 \subsection{Completed Testing}
 \label{ssec:completedtesting}
 
-Describe all major ground and flight tests performed.
 
-Objectives and schedule for each.
 
-Data to be collected and how applied.
 
 \subsubsection{Ground Testing}
 \label{sssec:groundtesting}
 
+
+
 \subsubsection{Flight Testing}
 \label{sssec:flighttesting}
+
+
 
 \subsection{Planned Testing}
 \label{ssec:plannedtesting}
 
-Objectives and schedule for each.
 
-Data to be collected and how applied.
 
 \subsection{Test and Flight Checklists}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Performance Results   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Performance Results (10 Points)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%          PERFORMANCE RESULTS          %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Performance Results} % (10 Points)
 \label{sec:PerformanceResults}
-\begin{itemize}
-\item Describe the demonstrated performance of key subsystems following execution of testing plan
-\item Compare to predictions and explain any differences and improvements made
-\item Describe the demonstrated performance of your complete aircraft solution
-\item Compare to predictions and explain any differences and improvements made
-\end{itemize}
+% Section Requirements
+% ) Describe the demonstrated performance of key subsystems following execution of testing plan
+% ) Compare to predictions and explain any differences and improvements made
+% ) Describe the demonstrated performance of your complete aircraft solution
+% ) Compare to predictions and explain any differences and improvements made
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%   Bibliography   %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%           BIBLIOGRAPHY            %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Bibliography (5 Points)
-%\item List of all published works referenced in the text must be present in this section.
-%\item Any material taken from a published source in all previous sections must have a numerical subscript corresponding to the appropriate citation in this section.
-%\item References should appear in numerical order.
-%\item Format should match AIAA provided guidelines:
+% 1) List of all published works referenced in the text must be present in this section.
+% 2) Any material taken from a published source in all previous sections must have a numerical subscript corresponding to the appropriate citation in this section.
+% 3) References should appear in numerical order.
+% 4) Format should match AIAA provided guidelines:
 %\newpage
 %\clearpage
-%\bibliography{ref}{}
-%\bibliographystyle{aiaa}
+\bibliography{ref}{}
+\bibliographystyle{aiaa}
 
 \end{document}

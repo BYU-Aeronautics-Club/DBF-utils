@@ -1,0 +1,77 @@
+% Define all the styles used to produce XDSMs for MDO
+
+%Define flowColors
+\definecolor{flowGreyUltraLite}{RGB}{235,235,235}
+\definecolor{flowGreyLite}{RGB}{185,185,185}
+\definecolor{flowGreyMid}{RGB}{119,119,119}
+
+\definecolor{flowBlue}{RGB}{0,85,156}
+\definecolor{flowOrange}{RGB}{215,140,50}
+\definecolor{flowGreen}{RGB}{99,179,59}
+\definecolor{flowYellow}{RGB}{218,208,50}
+\definecolor{flowPurple}{RGB}{164,100,166}
+\definecolor{flowRed}{RGB}{194,63,70}
+
+\newcommand{\BYUblue}{rgb,255:red,0; green,46; blue,93}
+\newcommand{\BYUbluelite}{rgb,255:red,221; green,227; blue,233}
+\newcommand{\BYUbluemid}{rgb,255:red,151; green,169; blue,189}
+
+
+% Component types
+\tikzstyle{Design} = [rounded rectangle,draw=\BYUblue,fill=\BYUbluelite,inner sep=6pt,minimum height=1cm,text badly centered]
+\tikzstyle{Prototype} = [rectangle,draw=\BYUblue,fill=\BYUbluelite,inner sep=6pt,minimum height=1cm,text badly centered]
+%% A simple command to give the repeated structure look for components and data
+\tikzstyle{stack} = [double copy shadow]
+\tikzstyle{stack1} = [copy shadow]
+
+%% Simple fading commands for the lines
+\tikzstyle{fadeddata} = [color=black!20]
+\tikzstyle{fadedprocess} = [color=black!50]
+
+% Data types
+\tikzstyle{CAD} = [trapezium,trapezium left angle=105,trapezium right angle=75,draw=\BYUblue,fill=flowGreyUltraLite]
+\tikzstyle{Testing} = [trapezium,trapezium left angle=75,trapezium right angle=105,draw=\BYUblue,fill=flowGreyUltraLite]
+\tikzstyle{Inputs} = [rectangle,draw=\BYUblue]
+
+% Edges
+\tikzstyle{DataLine} = [color=flowGreyLite,line width=5pt]
+\tikzstyle{ProcessHV} = [-,line width=1pt,to path={-| (\tikztotarget)}]
+\tikzstyle{ProcessTip} = [-,line width=1pt]
+
+% Matrix options
+\tikzstyle{MatrixSetup} = [row sep=3mm, column sep=2mm]
+
+% Declare a background layer for showing node connections
+\pgfdeclarelayer{data}
+\pgfdeclarelayer{process}
+\pgfsetlayers{data,process,main}
+
+% A new command to split the component text over multiple lines
+\newcommand{\MultilineComponent}[3]
+{
+	\begin{minipage}{#1}
+	\begin{center}
+		#2 \linebreak #3
+	\end{center}
+	\end{minipage}
+}
+
+% A new command to split the component text over multiple columns
+\newcommand{\MultiColumnComponent}[5]
+{
+	\begin{minipage}{#1}
+	\begin{center}
+	#2 \linebreak #3
+	\end{center}
+	\begin{minipage}{0.49\textwidth}
+	\begin{center}
+	#4
+	\end{center}
+	\end{minipage}
+	\begin{minipage}{0.49\textwidth}
+	\begin{center}
+	#5
+	\end{center}
+	\end{minipage}
+	\end{minipage}
+}
