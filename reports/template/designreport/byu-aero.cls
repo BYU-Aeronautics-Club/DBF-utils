@@ -30,6 +30,7 @@
 \newcommand{\BYUbluelite}{rgb,255:red,221; green,227; blue,233}
 \newcommand{\BYUbluemid}{rgb,255:red,151; green,169; blue,189}
 \newcommand{\BYUred}{rgb,255:red,162; green,0; blue,0}
+\newcommand{\BYUgreen}{rgb,255:red,93; green,162; blue,93}
 
 
 \RequirePackage[T1]{fontenc}
@@ -211,7 +212,11 @@ draw
 	milestone/.append style={fill=\BYUbluelite,draw=\BYUblue,xscale=12},
 	milestone height = 0.95,
 	milestone top shift = 0.0,
-	milestone label font = \itshape\footnotesize
+	milestone label font = \itshape\footnotesize,
+	%
+%	link/.append style={draw=\BYUblue},
+	link tolerance = 10,
+	link bulge = 10,
 }
 %XDSM Chart
 \RequirePackage{amsfonts}

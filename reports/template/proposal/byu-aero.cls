@@ -11,9 +11,9 @@
 \ProvidesClass{byu-aero}[2019/11/08, v1.0]
 
 \newif\if@proposal
- \newif\if@report
+\newif\if@report
 \DeclareOption{proposal}{\@proposaltrue}
- \DeclareOption{report}{\@reporttrue}
+\DeclareOption{report}{\@reporttrue}
 
 \ExecuteOptions{}
 \ProcessOptions\relax
@@ -30,6 +30,7 @@
 \newcommand{\BYUbluelite}{rgb,255:red,221; green,227; blue,233}
 \newcommand{\BYUbluemid}{rgb,255:red,151; green,169; blue,189}
 \newcommand{\BYUred}{rgb,255:red,162; green,0; blue,0}
+\newcommand{\BYUgreen}{rgb,255:red,93; green,162; blue,93}
 
 
 \RequirePackage[T1]{fontenc}
@@ -39,16 +40,16 @@
 
 
 \RequirePackage[letterpaper,
-				left=0.35in,
-				right=0.35in,
-				top=0.75in,
-				bottom=0.5in,
-				footskip=0.25in,
-				headheight=0.75in,
-				headsep=0.125in,
-				marginparsep=0pt,
+left=0.35in,
+right=0.35in,
+top=0.75in,
+bottom=0.5in,
+footskip=0.25in,
+headheight=0.75in,
+headsep=0.125in,
+marginparsep=0pt,
 %				showframe
-				]{geometry}
+]{geometry}
 
 
 \RequirePackage{enumitem}
@@ -71,16 +72,16 @@
 \renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
 \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 \titleformat{\section}
-  {\color{BYUblue}\bfseries\singlespacing}
-  {\thesection.\space}{0pt}{#1}[]
+{\color{BYUblue}\bfseries\singlespacing}
+{\thesection.\space}{0pt}{#1}[]
 \titlespacing{\section}{0pt}{-5pt}{-5pt}
 \titleformat{\subsection}
-  {\color{BYUblue}\normalsize\bfseries\singlespacing}
-  {\Alph{subsection}.\space}{0pt}{#1}[]
+{\color{BYUblue}\normalsize\bfseries\singlespacing}
+{\Alph{subsection}.\space}{0pt}{#1}[]
 \titlespacing{\subsection}{1ex}{-7pt}{0pt}
 \titleformat{\subsubsection}[runin]
-	{\normalfont\normalsize\slshape\color{\BYUblue}}
-	{}{0pt}{#1}[]
+{\normalfont\normalsize\slshape\color{\BYUblue}}
+{}{0pt}{#1}[]
 \titlespacing{\subsubsection}{-1pt}{-1pt}{1ex}
 \titlespacing{\paragraph}{0em}{0.0pt}{1ex}
 
@@ -92,7 +93,7 @@
 \renewcommand{\thefigure}{\color{\BYUblue}\arabic{figure}}
 \renewcommand{\tablename}{\color{\BYUblue}Table}
 \renewcommand{\thetable}{\color{\BYUblue}\arabic{table}}
-\captionsetup*{labelsep=space}
+\captionsetup*{labelsep=quad}
 \RequirePackage{subcaption}
 \renewcommand{\thesubfigure}{\color{\BYUblue}\alph{subfigure})}
 \captionsetup[subfigure]{labelsep=space,labelformat=simple}
@@ -205,13 +206,17 @@ draw
 	bar/.append style={fill=\BYUblue,draw=\BYUblue},
 	bar label font=\footnotesize,
 	bar height = 0.25,
-%	bar top shift = 0.25,
+	%	bar top shift = 0.25,
 	progress label text = {},
 	%
 	milestone/.append style={fill=\BYUbluelite,draw=\BYUblue,xscale=12},
 	milestone height = 0.95,
 	milestone top shift = 0.0,
-	milestone label font = \itshape\footnotesize
+	milestone label font = \itshape\footnotesize,
+	%
+	%	link/.append style={draw=\BYUblue},
+	link tolerance = 10,
+	link bulge = 10,
 }
 %XDSM Chart
 \RequirePackage{amsfonts}
@@ -247,14 +252,14 @@ draw
 \renewcommand{\headrulewidth}{0pt} % This eliminates the line at the top of pages.
 
 \newcommand\NextYear{%
-   \advance\year by 1 \the\year\advance\year by -1}
-   
+	\advance\year by 1 \the\year\advance\year by -1}
+
 \if@proposal %
 \chead{
-\parbox[b][3em][t]{0.75\textwidth}{
-\centering
-\Large{\color{BYUblue} Brigham Young University Aeronautics Club}\\
-\small{\NextYear~AIAA Design Build Fly Competition Proposal}}
+	\parbox[b][3em][t]{0.75\textwidth}{
+		\centering
+		\Large{\color{BYUblue} Brigham Young University Aeronautics Club}\\
+		\small{\NextYear~AIAA Design Build Fly Competition Proposal}}
 }
 \fi
 
