@@ -4,6 +4,8 @@
 %This sets the visible levels shown on the Table of Contents. 2 will show the Sections and Subsections. This seems okay to save some space. If you want to show subsubsections change it to 3. 1 will just show the sections, but that seems too brief.
 \setcounter{tocdepth}{2}
 
+\usepackage{multirow}
+
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
 %!!!!!!! UNLESS YOU KNOW WHAT YOU'RE DOING, DO NOT TOUCH ANYTHING ABOVE THIS LINE !!!!!!!%
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
@@ -77,7 +79,7 @@
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=3.5in]{ganttchart.pdf}
+	\includegraphics[width=4.5in]{ganttchart.pdf}
 	\caption{This milestone chart reveals our {\color{\BYUblue} original plan} for major elements of our design process compared to the  {\color{\BYUred} actual timing} of these events.  Note that we submitted the proposal on time, as well as this report.  We anticipate remaining on schedule for the {\color{\BYUgreen} future elements} of this chart.}
 	\label{fig:plannedvsactualtiming}
 \end{figure}
@@ -99,6 +101,9 @@
 \label{ssec:missionreqs}
 
 
+
+\subsection{Sub-system Design Requirements}
+\label{ssec:systemreqs}
 
 \subsubsection{Aerodynamic Requirements}
 \label{sssec:aeroreqs}
@@ -137,17 +142,17 @@
 	\begin{tabular}{ |c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-    	Factor & Relative Importance (1-5) \\ 
+		Factor & Scale (1-5) \\ 
 		\hline
-	     &  \\ 
+		Weight & 5 \\ 
 		\hline
-		 &  \\ 
+		Drag & 4 \\ 
 		\hline
-		 &  \\ 
+		Simplicity & 3 \\ 
 		\hline
-		 &  \\ 
+		Stability & 2 \\ 
 		\hline
-		 &  \\ 
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 \\ 
 		\hline
 	\end{tabular}
 \end{table}
@@ -155,25 +160,29 @@
 
 
 %----------------
-%---   Example Decision Matrix.  Probably going to have a few of these.
+%---   Wing Configuration Decision Matrix (Convetional, Bi-Plane, Tandem Wing, etc.)
 %----------------
 \begin{table}[h!]
 	\centering
-	\caption{Weighted decision (Pugh) matrix.}
-	\label{tab:decisionmatrix1}
+	\caption{Weighted decision matrix for wing configuration.}
+	\label{tab:wingconfiguration}
 	\rowcolors{2}{BYUbluelite}{white}
 	\begin{tabular}{ |c|c|c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-    	Factor & Weight & Option 1 & Option 2 & Option 3 \\ 
+    	& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		\rowcolor{BYUbluemid}
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
 		\hline
-	     &  &  &  &  \\ 
+		Weight & 5 & & &\\ 
 		\hline
-		 &  &  &  &  \\ 
+		Drag & 4 & & & \\ 
 		\hline
-		 &  &  &  &  \\ 
+		Simplicity & 3 & & & \\ 
 		\hline
-		 &  &  &  &  \\ 
+		Stability & 2 & & & \\ 
+		\hline
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
 		\hline
 		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
 		\hline
@@ -182,14 +191,160 @@
 
 
 %----------------
-%---  Figure of rejected concepts (this may be better as several figures showing options for different aspects of the design.
+%---   Wing Placement Decision Matrix  (High, Mid, Low)
 %----------------
-\begin{figure}[h!]
+\begin{table}[h!]
 	\centering
-	\includegraphics[width=3.5in]{draft.pdf}
-	\caption{Here we show a sampling of the design concepts we rejected along the way as we honed in on our final design concept (see \cref{fig:finalconcept}).}
-	\label{fig:rejecteddesigns}
-\end{figure}
+	\caption{Weighted decision matrix for wing placement.}
+	\label{tab:wingplacement}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ |c|c|c|c|c| } 
+		\hline
+		\rowcolor{BYUbluemid}
+		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		\rowcolor{BYUbluemid}
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\hline
+		Weight & 5 & & &\\ 
+		\hline
+		Drag & 4 & & & \\ 
+		\hline
+		Simplicity & 3 & & & \\ 
+		\hline
+		Stability & 2 & & & \\ 
+		\hline
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		\hline
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\hline
+	\end{tabular}
+\end{table}
+
+
+%----------------
+%---  Tail Configuration Decision Matrix  (Conventional, H-tail, V-tail, Flying wing, etc.)
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Weighted decision matrix for tail configuration.}
+	\label{tab:tailconfiguration}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ |c|c|c|c|c| } 
+		\hline
+		\rowcolor{BYUbluemid}
+		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		\rowcolor{BYUbluemid}
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\hline
+		Weight & 5 & & &\\ 
+		\hline
+		Drag & 4 & & & \\ 
+		\hline
+		Simplicity & 3 & & & \\ 
+		\hline
+		Stability & 2 & & & \\ 
+		\hline
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		\hline
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\hline
+	\end{tabular}
+\end{table}
+
+
+%----------------
+%---   Propulsion Configuration Decision Matrix  (single prop, dual prop, distributed propulsion, etc.)
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Weighted decision matrix for propulsion configuration.}
+	\label{tab:propconfiguration}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ |c|c|c|c|c| } 
+		\hline
+		\rowcolor{BYUbluemid}
+		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		\rowcolor{BYUbluemid}
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\hline
+		Weight & 5 & & &\\ 
+		\hline
+		Drag & 4 & & & \\ 
+		\hline
+		Simplicity & 3 & & & \\ 
+		\hline
+		Stability & 2 & & & \\ 
+		\hline
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		\hline
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+%----------------
+%---   Propulsion Placement Decision Matrix  (tractor, pusher, etc)
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Weighted decision matrix for wing placement.}
+	\label{tab:propplacement}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ |c|c|c|c|c| } 
+		\hline
+		\rowcolor{BYUbluemid}
+		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		\rowcolor{BYUbluemid}
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\hline
+		Weight & 5 & & &\\ 
+		\hline
+		Drag & 4 & & & \\ 
+		\hline
+		Simplicity & 3 & & & \\ 
+		\hline
+		Stability & 2 & & & \\ 
+		\hline
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		\hline
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+%----------------
+%---   Payload Decision Matrix.
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Weighted decision matrix for {\color{\BYUred} [SPECIFY THIS YEAR'S PAYLOAD DESIGN]}.}
+	\label{tab:payloadconfiguration}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ |c|c|c|c|c| } 
+		\hline
+		\rowcolor{BYUbluemid}
+		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		\rowcolor{BYUbluemid}
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\hline
+		Weight & 5 & & &\\ 
+		\hline
+		Drag & 4 & & & \\ 
+		\hline
+		Simplicity & 3 & & & \\ 
+		\hline
+		Stability & 2 & & & \\ 
+		\hline
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		\hline
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\hline
+	\end{tabular}
+\end{table}
 
 
 
@@ -239,7 +394,7 @@
 
 
 
-\subsubsection{Uncertainty Analysis}
+\subsubsection{Performance Prediction Methodologies and Uncertainties}
 \label{sssec:uncertaintyanalysis}
 
 
@@ -315,11 +470,11 @@
 		\rowcolor{BYUbluemid}
     	Configuration & Weight (grams) & CG Location (mm) \\ 
 		\hline
-	    Empty &  &  \\ 
+	    Mission 1 &  &  \\ 
 		\hline
-		Config 1 &  &  \\ 
+		Mission 2 &  &  \\ 
 		\hline
-		Config 2 &  &  \\ 
+		Mission 3 &  &  \\ 
 		\hline
 	\end{tabular}
 \end{table}
@@ -406,31 +561,132 @@ The following are drawings including a 3-View drawing with dimensions of all con
 
 
 %----------------
-%---  Example Decision Matrix.  Probably going to have a few of these.
+%---   Wing Manufacture Decision Matrix  (single prop, dual prop, distributed propulsion, etc.)
 %----------------
 \begin{table}[h!]
 	\centering
-	\caption{Weighted decision (Pugh) matrix for manufacturing plan.}
-	\label{tab:decisionmatrixmanufacturing}
+	\caption{Weighted decision matrix for wing manufacturing technique.}
+	\label{tab:wingmanufacturedecision}
 	\rowcolors{2}{BYUbluelite}{white}
 	\begin{tabular}{ |c|c|c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-    	Factor & Weight & Option 1 & Option 2 & Option 3 \\ 
+		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		\rowcolor{BYUbluemid}
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
 		\hline
-	     &  &  &  &  \\ 
+		Weight & 5 & & &\\ 
 		\hline
-		 &  &  &  &  \\ 
+		Drag & 4 & & & \\ 
 		\hline
-		 &  &  &  &  \\ 
+		Simplicity & 3 & & & \\ 
 		\hline
-		 &  &  &  &  \\ 
+		Stability & 2 & & & \\ 
+		\hline
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
 		\hline
 		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
 		\hline
 	\end{tabular}
 \end{table}
 
+
+
+%----------------
+%---   Fuselage Manufacture Decision Matrix  (single prop, dual prop, distributed propulsion, etc.)
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Weighted decision matrix for fuselage manufacturing technique.}
+	\label{tab:fuselagemanufacturingdecision}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ |c|c|c|c|c| } 
+		\hline
+		\rowcolor{BYUbluemid}
+		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		\rowcolor{BYUbluemid}
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\hline
+		Weight & 5 & & &\\ 
+		\hline
+		Drag & 4 & & & \\ 
+		\hline
+		Simplicity & 3 & & & \\ 
+		\hline
+		Stability & 2 & & & \\ 
+		\hline
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		\hline
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+%----------------
+%---   Tail Manufacture Decision Matrix  (single prop, dual prop, distributed propulsion, etc.)
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Weighted decision matrix for tail manufacturing technique.}
+	\label{tab:tailmanufacturedecision}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ |c|c|c|c|c| } 
+		\hline
+		\rowcolor{BYUbluemid}
+		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		\rowcolor{BYUbluemid}
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\hline
+		Weight & 5 & & &\\ 
+		\hline
+		Drag & 4 & & & \\ 
+		\hline
+		Simplicity & 3 & & & \\ 
+		\hline
+		Stability & 2 & & & \\ 
+		\hline
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		\hline
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+
+
+%----------------
+%---   Payload Manufacture Decision Matrix  (single prop, dual prop, distributed propulsion, etc.)
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Weighted decision matrix for {\color{\BYUred} [SPECIFY THIS YEAR'S PAYLOAD DESIGN]}.}
+	\label{tab:payloadmanufacturedecision}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ |c|c|c|c|c| } 
+		\hline
+		\rowcolor{BYUbluemid}
+		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		\rowcolor{BYUbluemid}
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\hline
+		Weight & 5 & & &\\ 
+		\hline
+		Drag & 4 & & & \\ 
+		\hline
+		Simplicity & 3 & & & \\ 
+		\hline
+		Stability & 2 & & & \\ 
+		\hline
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		\hline
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\hline
+	\end{tabular}
+\end{table}
 
 %----------------
 % ---  Manufacturing Milestone chart
