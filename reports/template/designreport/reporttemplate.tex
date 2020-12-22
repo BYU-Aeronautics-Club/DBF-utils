@@ -139,61 +139,49 @@
 
 The mission requirements for this year's competition are as follows:
 
-\subsubsection{General Requirements:}
+\subsubsection{Airframe and Operational Constraints:}
 \begin{itemize}
-	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+	\item Safety Requirements:
+	\begin{itemize}
+		\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+	\end{itemize}
+	\item Airframe Requirements:
+	\begin{itemize}
+		\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+	\end{itemize}
+	\item Payload Requirements:
+	\begin{itemize}
+		\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+	\end{itemize}
+	\item {\color{\BYUred} [THIS YEAR'S SPECIAL REQUIREMENT(S)]}:
+	\begin{itemize}
+		\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+	\end{itemize}
 \end{itemize}
 
 
-\subsubsection{Safety Requirements:}
-\begin{itemize}
-	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
-\end{itemize}
+
+\subsubsection{Flight Mission Scoring:}
 
 
-\subsubsection{Airframe Requirements:}
-\begin{itemize}
-	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
-\end{itemize}
+
+\paragraph{Flight Mission 1:}
 
 
-\subsubsection{Payload Requirements:}
-\begin{itemize}
-	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
-\end{itemize}
+
+\paragraph{Flight Mission 2:}
 
 
-\subsubsection{Ground Mission Requirements:}
-\begin{itemize}
-	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
-\end{itemize}
+
+\paragraph{Flight Mission 3:}
 
 
-\subsubsection{Flight Mission 1 Requirements:}
-\begin{itemize}
-	\item Pass inspection; ready to fly configuration.
-	\item No payload.
-	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
-	\item Complete course and successfully land.
-\end{itemize}
 
+\subsubsection{Total Score Summary:}
 
-\subsubsection{Flight Mission 2 Requirements:}
-\begin{itemize}
-	\item Complete Flight Mission 1 and receive score; ready to fly configuration.
-	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
-		\item Complete course and successfully land.
-\end{itemize}
+\[TS = M_1 + M_2 + M_3 + GM + DR\]
 
-
-\subsubsection{Flight Mission 3 Requirements:}
-\begin{itemize}
-	\item Complete Flight Mission 2 and receive score; ready to fly configuration.
-	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
-	\item Complete course and successfully land. 
-\end{itemize}
-
-
+where \(TS\) is total score, \(M_i\) is the score associated with the mission number subscript, \(GM\) is the ground mission score, and \(DR\) is the design report score.
 
 \begin{figure}[h!]
 	\centering
@@ -205,27 +193,27 @@ The mission requirements for this year's competition are as follows:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% - Sub-system Reqs - %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Mission Requirements Decomposition}
+\subsection{Sub-system Design Requirements}
 \label{ssec:MissionReqs}
 
 We have organized our sub-system requirements into aerodynamics, structure, propulsion, and specialty requirements explained below.
 
-\paragraph{Aerodynamics Requirements}
+\subsubsection{Aerodynamics Requirements}
 \label{sssec:AerodynamicReqs}
 
 Some of the major requirements for the aerodynamics sub-system are: Maximize aerodynamic efficiency in order to use less energy to overcome drag for all flight missions.  Design wing loading to be able to take off and fly with design max payload weight.  Keep the wingspan within the maximum of {\color{BYUred}[MAX SPAN CONSTRAINT THIS YEAR]}.  Choose airfoil(s) and configuration that will make take off feasible in the {\color{BYUred}[THIS YEAR'S TAKE-OFF REQUIREMENT]}
 
-\paragraph{Structural Requirements}
+\subsubsection{Structural Requirements}
 \label{sssec:StructuralReqs}
 
 The breakdown of mission requirements for the structures sub-system include: Minimize the structural weight while maintaining sufficient rigidity to keep the aerodynamics as designed, especially when full payload weight is in use.  Make sure the structure is sufficiently rigid to avoid aerodynamic flutter within the flight envelope. {\color{BYUred}[OTHER MISC. STRUCTURES REQUIREMENTS THIS YEAR (E.G. FOLDING WINGS.)]}
 
-\paragraph{Propulsion Requirements}
+\subsubsection{Propulsion Requirements}
 \label{sssec:PropulsionReqs}
 
 The propulsion sub-system requirements are to: Have sufficient system efficiency and battery capacity to enable completion of the flight missions and maximizing speed with sufficient endurance while also providing sufficient thrust for {\color{BYUred}[THIS YEAR'S TAKE-OFF REQUIREMENT]}
 
-\paragraph{Specialty Requirements} %change this to be specifically what it is (like bomb drop or whatever the specific mission is)
+\subsubsection{Specialty Requirements} %change this to be specifically what it is (like bomb drop or whatever the specific mission is)
 \label{sssec:SpecialReqs}
 
 {\color{BYUred}[REQUIREMENTS FOR THIS YEAR'S SPECIAL STUFF.]} 
@@ -237,7 +225,7 @@ The propulsion sub-system requirements are to: Have sufficient system efficiency
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% - Sensitivity Study - %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Sensitivity Study}
+\subsection{Scoring Sensitivity Analysis}
 \label{ssec:SensitivityStudy}
 
 %Figure related to sensitivity study, move around to get formatting correct...
@@ -250,17 +238,23 @@ The propulsion sub-system requirements are to: Have sufficient system efficiency
 	\label{fig:sensitivity}
 \end{figure}
 
-For our sensitivity study, we first differentiated between design variables that could increase/decrease our score and those that were only related to the minimum constraints. Based on the scoring metrics, we found the parameters that could affect the score to be: wing area, aircraft weight (including batteries), zero-lift parasitic drag coefficient, {\color{BYUred}[WHICHEVER PAYLOAD ITEMS ARE IMPORTANT]}, and available power.  To perform our study, we took our basic parameters and ran them through common hand calculations to find the mission objective scores. In order to normalize the scores as they are in the competition, we ran the analysis first without normalization, from which we saved the maximum scores like they are in competition. We then used those maxima as the normalization factors and re-ran the analysis, thus making sure all the sensitivities had the same order of magnitude.  In our analysis (results shown in \cref{fig:sensitivity}), we found that the wing area and parasitic drag coefficient had the same sensitivities, thus we want to minimize drag and maximize wing loading (while still being able to take off).  The available power was also important, and can be affected by increasing battery capacity, discharge rate, or voltage, or increasing system efficiency. {\color{BYUred}[TAKE AWAYS FROM PAYLOAD STUFF]}. We should also note that the aircraft weight had a negligible effect on the overall sensitivity, but is important to keep in mind when designing for a feasible aircraft.
+For our sensitivity study, we first differentiated between design variables that could increase/decrease our score and those that were only related to the minimum constraints. Furthermore, some aspects of the score are insensitive by design parameters, such as the design report score, the ground mission score, and the Flight Mission 1 score.  Our total, design-sensitive score is simply the sum of scores from Flight Mission 2 and 3.
+
+{\color{\BYUred} [BREAKDOWN OF THE MATHS USED TO PERFORM THE SENSITIVITY STUDY.]}
+
+In order to normalize the scores as they are in the competition, we ran the analysis first without normalization, from which we saved the maximum scores like they are in competition. We then used those maxima as the normalization factors and re-ran the analysis. This way we could simulate the competition normalizations for the scoring and one mission would not dominate another unrealistically.
+
+In our analysis (results shown in \cref{fig:sensitivity}), we found that the wing area and parasitic drag coefficient induced negative sensitivities, thus we want to minimize drag and maximize wing loading (while still being able to take off).  The available power was also important, and can be affected by increasing battery capacity, discharge rate, or voltage, or increasing propulsive efficiency. {\color{BYUred}[TAKE AWAYS FROM PAYLOAD STUFF]}. We should also note that the aircraft weight had the lowest effect on the overall sensitivity, but is incredibly important to meeting the fixed constraints of the competition.
 
 
 
 
-\subsection{Concept Weighting and Selection Process}
+\subsection{Concept Review, Weighting, and Selection Process}
 \label{ssec:selectionprocess}
 
-\Cref{tab:fom} shows our general figures of merit for our conceptual design choices. Rather than having multiple figures of the same value, we chose to make each figure a distinct value, thereby requiring a true prioritization and less change of ambiguity during the selection process.
+Informed by our sensitivity study, \cref{tab:fom} shows our general figures of merit for our conceptual design choices. In addition to the primary mission sensitive parameters, we added some practical figures of merit as well.  In addition, rather than having multiple figures of the same value, we chose to make each figure a distinct value, thereby requiring a true prioritization and less change of ambiguity during the selection process.
 
-We chose weight as the most important factor because it not only relates to the mission objectives, but also concerns the take-off/landing constraints.  Drag was our next highest factor, as speed is important for maximizing flight mission scores.  We placed simplicity next, as we must be able to actually produce our chosen design with our current and realistic potential abilities.  We found stability to be important as well, since our aircraft needs to be controllable if we are to compete, but stability is relatively easy to achieve for most designs, so it was given a relatively lower value to match.  Finally {\color{\BYUred}[TALK ABOUT THE YEAR SPECIFIC METRIC IF THERE IS ONE.]} Each of the decision matrices has additional figures of merit associated with sub-system specific requirements.
+We chose weight as the most important factor because it not only relates to the mission objectives, but also concerns the take-off/landing constraints.  Drag was our next highest factor, as speed is important for maximizing flight mission scores.  We placed simplicity next, as we must be able to actually produce our chosen design with our current and realistic potential abilities.  We found stability to be important as well, since our aircraft needs to be controllable if we are to compete, but stability is relatively easy to achieve for most designs, so it was given a relatively lower value to match.  Finally {\color{\BYUred}[TALK ABOUT THE YEAR SPECIFIC METRIC IF THERE IS ONE.]} Each of the decision matrices has additional figures of merit associated with sub-system specific requirements. Note also, that parameters associated with available power were not included in the general list of figures of merit, but are included in propulsion specific decision matrices.
 
 %----------------
 %---   Figure of Merit (i.e. the weights used in decision matrices)
@@ -289,7 +283,7 @@ We chose weight as the most important factor because it not only relates to the 
 \end{table}
 
 
-\paragraph{Wing Configuration Selection}
+\subsubsection{Wing Configuration Selection}
 
 For our wing configuration, we needed to take overall potential lift into account, due to the take-off/landing requirements.  \Cref{tab:wingconfiguration} shows our scoring for single wing, tandem wing, and bi/tri-wing configurations.  Note that we eliminated flying wing/blended wing body configurations up front based on our previous experience with that concept.
 
@@ -328,7 +322,7 @@ For our wing configuration, we needed to take overall potential lift into accoun
 	\end{tabular}
 \end{table}
 
-\paragraph{Wing Placement Selection}
+\subsubsection{Wing Placement Selection}
 
 For the wing placement, we compared high, mid, and low wing placement.  An addition figure of merit here is the accessibility, that is, the accessibility of the payload and electronics.  This is important not only for the ground mission, but also for setting up the aircraft for flight.
 
@@ -367,7 +361,7 @@ For the wing placement, we compared high, mid, and low wing placement.  An addit
 	\end{tabular}
 \end{table}
 
-\paragraph{Empennage Configuration Selection}
+\subsubsection{Empennage Configuration Selection}
 
 For the tail configuration selection, we did not see the need for any further figures of merit.  We compared three families of configuration: T-tail family, including conventional, cruciform, and T-tail designs; V-tail family, including V- and inverted V-tail designs; and H-tail family, including U-, H-, and inverted U-tail designs.
 
@@ -408,7 +402,7 @@ For the tail configuration selection, we did not see the need for any further fi
 \end{table}
 
 
-\paragraph{Propulsion Configuration Selection}
+\subsubsection{Propulsion Configuration Selection}
 
 For the propulsion configuration, drag did not make sense as a figure of merit, since the system is in direct opposition to drag.  Therefore we exchanged drag for efficiency, since efficiency directly affects available power (which we found to be important in \cref{ssec:SensitivityStudy}).  We also included lift as a figure of merit for the propulsion system, because blown wing configurations can experience increased lift (due to higher induced velocities over the wing).
 
@@ -432,7 +426,7 @@ For the propulsion configuration, drag did not make sense as a figure of merit, 
 		\hline
 		Weight & 10 & 3 & 2 & 1 \\
 		\hline
-		Efficiency & 8 & 1 & 2 & 3 \\
+		Propulsive Efficiency & 8 & 1 & 2 & 3 \\
 		\hline
 		Lift & 7 & 1 & 2 & 3 \\
 		\hline
@@ -447,7 +441,7 @@ For the propulsion configuration, drag did not make sense as a figure of merit, 
 	\end{tabular}
 \end{table}
 
-\paragraph{Propulsion Placement Selection}
+\subsubsection{Propulsion Placement Selection}
 
 
 
@@ -487,6 +481,8 @@ For the propulsion configuration, drag did not make sense as a figure of merit, 
 	\end{tabular}
 \end{table}
 
+\subsubsection{Payload}
+\label{sssec:payloadconcept}
 
 \lipsum[1]
 
@@ -508,11 +504,11 @@ For the propulsion configuration, drag did not make sense as a figure of merit, 
 		\hline
 		Weight & 10 & & &\\
 		\hline
-		Strength & 4 & & & \\
+		Strength & 8 & & & \\
 		\hline
 		Simplicity & 6 & & & \\
 		\hline
-		Durability & 2 & & & \\
+		Durability & 4 & & & \\
 		\hline
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
 		\hline
@@ -525,7 +521,7 @@ For the propulsion configuration, drag did not make sense as a figure of merit, 
 \lipsum[1]
 
 
-\paragraph{Final Concept}
+\subsubsection{Final Concept}
 \label{sssec:finalconcept}
 
 \lipsum[1]
@@ -580,42 +576,144 @@ For the propulsion configuration, drag did not make sense as a figure of merit, 
 \subsection{Methodology}
 \label{ssec:methodology}
 
+\subsubsection{Quantify Basic Constraints}
+\label{sssec:constraints}
+
+The sensitivity study presented in \cref{ssec:SensitivityStudy} did not include any constraints, but rather simple sensitivities that informed our conceptual design choices.  To begin a preliminary design, we first needed to translate the given constraints (listed in \cref{ssec:MissionReqs}) into mathematical formulas for rapid comparison and trade studies. Aside from the obvious constraints (such as the wing span constraint), we determined the following to be important expressions.
+
+\paragraph{Stall Speed}
+
+\[V_\text{stall} = \left[ \frac{2W}{\rho S_\text{ref} C_{L_\text{max}}} \right]^{1/2}\]
+
+Where \(V_\text{stall}\) is the stall speed, \(W\) is the total aircraft weight, \(\rho\) is the ambient air density, \(S_\text{ref}\) is the reference wing area, and \(C_{L_\text{max}}\) is the maximum aircraft lift coefficient.
+
+\paragraph{Take-off Distance}
+
+\[ d_{LO} = \frac{ W^{5/2} }{ \left( \rho S_\text{ref} C_{L_\text{max}} \right)^{3/2} P_\text{net} } \]
+Where \(d_{LO}\) is the distance to lift-off, \(P_\text{net}\) is the net power, that is, the power accounting for both thrust and drag, and the other variables are as defined previously.
+
+\paragraph{Maximum Speed}
+
+\[ V_\text{max} = \left[ \frac{ \frac{T_a}{S_\text{ref}} + \frac{W}{S_\text{ref}}\sqrt{\left(\frac{T_a}{W}\right)^2 - 4C_{D_0}K } }{\rho C_{D_0}} \right]^{1/2} \]
+
+Where \(V_\text{max}\) is the maximum velocity, \(T_a\) is the available thrust, \(C_{D_0}\) is the zero-lift drag coefficient of the aircraft, and \(K\) is an empirical constant assumed here to be 0.38.
+
+\paragraph{Maximum Range}
+
+\[R = \frac{e_b}{g} \eta \frac{L}{D} \frac{m_b}{m_\text{tot}}\]
+
+Where \(R\) is the total range; \(e_b\) is the battery energy per unit mass; \(g\) is the gravitational constant; \(\eta\) is the combination of efficiency factors from the battery, motor, and propeller (\(\eta=\eta_b\eta_m\eta_p\)); \(L/D\) is the aircraft lift to drag ratio, and \(m_b/m_\text{tot}\) is ratio of the battery mass to total aircraft mass.
+
+\paragraph{\(C_L\) for Maximum Efficiency (and Range)}
+
+\[C_{L_\text{max L/D}} = \left[ C_{D_p} \pi S_\text{ref} Re \right]^{1/2}\]
+
+Where \(C_{D_p}\) is the parasitic drag coefficient for the aircraft, \(Re\) is the Reynolds number, and other variables are defined previously.
+
+
+\paragraph{Climb Rate}
+
+\[ v_z = \frac{V_\infty \left(T - D\right)}{W}\]
+
+Where \(v_z\) is the vertical climb rate, \(V_\infty\) is the flight velocity of the aircraft, \(T\) is the thrust force magnitude, and \(D\) is the drag force magnitude.
+
+
+\paragraph{Coordinated Turn Radius}
+
+\[r_\text{turn} = \frac{V^2}{g \tan\phi}\]
+
+Where \(r_\text{turn}\) is the turn radius, \(V\) is the aircraft speed, and \(\phi\) is the bank angle of the aircraft.
+
+\paragraph{Coordinated Turn Load Factor}
+
+\[n = \frac{1}{\cos\phi}\]
+
+Where \(n\) is the load factor.
+
+\subsubsection{Analysis Models}
+
+
+\paragraph{Weight Estimation}
+
+
+\paragraph{Propulsion Model}
+
+
+\paragraph{Vortex Lattice Method (XFLR5, AVL, or VLM.jl)}
+
+
+\paragraph{Structures Stuff (Beams, composites, etc.)}
+
+
+\paragraph{Code}
+
 
 
 
 \subsection{Trade Studies}
 \label{ssec:tradestudies}
 
+\begin{equation}
+	\label{eqn:optdef}
+	\begin{aligned}
+		\text{maximize}: 
+		& ~~M2 + M3 \\
+		\text{with respect to}:
+		& ~~W, S_\text{ref}, C_{D_0}, \text{\color{\BYUred} [PAYLOAD STUFF]}, P_a \\
+		\text{subject to}: 
+		& ~~V_\text{stall}, V_\text{maneuver}, d_{LO}, R, r_\text{turn}
+	\end{aligned}
+\end{equation}
 
+where \(V_\text{maneuver}\) is the maximum velocity boundary associated with structural failure due to maneuver acceleration.
+
+
+\subsubsection{Wing Design}
+
+\paragraph{Airfoil(s)}
+
+\subsubsection{Wing/Tail Design}
+
+\subsubsection{Fuselage}
+
+\subsubsection{Payload}
+
+\subsubsection{\color{\BYUred} [DESIGN TRADE STUDIES TO FIND THE ANSWER TO THE OPTIMIZATION PROBLEM.]}
 
 
 \subsection{Estimated Aircraft Performance}
 \label{ssec:estaircraftperfomance}
 
-
-
-
-\paragraph{Performance Prediction Methodologies and Uncertainties}
+\subsubsection{Performance Prediction Methodologies and Uncertainties}
 \label{sssec:uncertaintyanalysis}
 
 
 
 
-\paragraph{Lift and Drag}
+\subsubsection{Lift and Drag}
 \label{sssec:liftdrag}
 
 
 
 
-\paragraph{Stability}
+\subsubsection{Stability}
 \label{sssec:stability}
 
 
 
-\paragraph{Mission Performance}
+\subsubsection{Mission Performance}
 \label{sssec:missionperformance}
 
 
+%----------------
+%---  V-n Diagram
+%----------------
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=5in]{draft.pdf}
+	\caption{V-n diagram for our preliminary aircraft design.}
+	\label{fig:vndiagram}
+\end{figure}
 
 
 
@@ -752,11 +850,11 @@ The following are drawings including a 3-View drawing with dimensions of all con
 		\hline
 		Weight & 10 \\
 		\hline
-		Strength & 4 \\
+		Strength & 8 \\
 		\hline
 		Simplicity & 6 \\
 		\hline
-		Durability & 2 \\
+		Durability & 4 \\
 		\hline
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 \\
 		\hline
@@ -782,11 +880,11 @@ The following are drawings including a 3-View drawing with dimensions of all con
 		\hline
 		Weight & 10 & & & \\
 		\hline
-		Strength & 4 & & & \\
+		Strength & 8 & & & \\
 		\hline
 		Simplicity & 6 & & & \\
 		\hline
-		Durability & 2 & & & \\
+		Durability & 4 & & & \\
 		\hline
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
 		\hline
@@ -814,11 +912,11 @@ The following are drawings including a 3-View drawing with dimensions of all con
 	\hline
 	Weight & 10 & & & \\
 	\hline
-	Strength & 4 & & & \\
+	Strength & 8 & & & \\
 	\hline
 	Simplicity & 6 & & & \\
 	\hline
-	Durability & 2 & & & \\
+	Durability & 4 & & & \\
 	\hline
 	{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
 	\hline
@@ -846,11 +944,11 @@ The following are drawings including a 3-View drawing with dimensions of all con
 		\hline
 		Weight & 10 & & &\\
 		\hline
-		Strength & 4 & & & \\
+		Strength & 8 & & & \\
 		\hline
 		Simplicity & 6 & & & \\
 		\hline
-		Durability & 2 & & & \\
+		Durability & 4 & & & \\
 		\hline
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
 		\hline
@@ -883,11 +981,11 @@ The following are drawings including a 3-View drawing with dimensions of all con
 		\hline
 		Weight & 10 & & &\\
 		\hline
-		Strength & 4 & & & \\
+		Strength & 8 & & & \\
 		\hline
 		Simplicity & 6 & & & \\
 		\hline
-		Durability & 2 & & & \\
+		Durability & 4 & & & \\
 		\hline
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
 		\hline

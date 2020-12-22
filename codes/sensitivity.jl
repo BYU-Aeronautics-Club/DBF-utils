@@ -350,7 +350,7 @@ labels = [
 "\\# sensors";
 "sensor length";
 "sensor weight";
-"M2_laps";
+"M2 laps";
 "maxtime";
 "eta";
 "batteryC";
@@ -379,13 +379,13 @@ THEN YOU NEED TO PICK WHICH ONES YOU WANT ON THE FINAL PLOT
 #=
 Note: in this example, all the payload things have the same sensitivities, so we'll put them all together.  Also the wing loading and drag coefficient are the same, so they are together.  It also turns out that weight doesn't matter, so we'll  leave it out.  Furthermore, all the battery and efficiency stuff goes into available power, so we'll combine them under that heading.
 =#
-toplot = [2;5;10]
+toplot = [1;2;3;5;10]
 #get the plot labels you want to show for those variables
-toplotlabels = ["Wing Area and Parasitic Drag"; "Payload"; "Available Power"]
+toplotlabels = ["Weight";"Wing Area"; "Parasitic Drag"; "Payload"; "Available Power"]
 #pick your colors
-colors = ["C0";"C1";"C3"]
+colors = ["C0";"C1";"C3";"C0";"C1";"C2"]
 #pick your styles.
-styles = ["-";"-";"-"]
+styles = ["-";"-";"-";"--";"--";"--"]
 
 
 
@@ -394,14 +394,14 @@ styles = ["-";"-";"-"]
 figure(figsize=(4.5,4.5*3/4))
 clf()
 xlabel("Percent Change in Design Variable (from nominal)")
-ylabel("Percent Change in Score")
+ylabel("Normalized Change in Score")
 #plot the interesting things.
 for i=1:length(toplot)
-    plot(r,(obj[toplot[i],:].-obj0)./obj0,label=toplotlabels[i],linestyle=styles[i],color=colors[i])
+    plot(r,1e3*(obj[toplot[i],:].-obj0)./obj0,label=toplotlabels[i],linestyle=styles[i],color=colors[i])
 end
 legend()
 #save the figure.
-savefig("../reports/template/figures/sensitivityobj.pdf",bbox_inches="tight")
+savefig("../reports/template/designreport/figures/sensitivityobj.pdf",bbox_inches="tight")
 
 
 #### MAYBE PLOT THE DERIVATIVES INSTEAD, IF THAT MAKES MORE SENSE ####
@@ -416,4 +416,4 @@ for i=1:length(toplot)
 end
 legend()
 #save the figure.
-savefig("../reports/template/figures/sensitivitydobj.pdf",bbox_inches="tight")
+savefig("../reports/template/designreport/figures/sensitivitydobj.pdf",bbox_inches="tight")
