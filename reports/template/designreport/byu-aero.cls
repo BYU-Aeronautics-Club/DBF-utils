@@ -44,6 +44,7 @@
 \RequirePackage{microtype}
 \RequirePackage{newtxtext,newtxmath}
 
+\RequirePackage{lipsum}
 
 \RequirePackage[letterpaper,
 				left=0.35in,
@@ -74,22 +75,25 @@
 
 
 \RequirePackage[explicit]{titlesec}
-\renewcommand{\thesection}{\Roman{section}}
-\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
-\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+%\renewcommand{\thesection}{\Roman{section}}
+%\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
+%\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 \titleformat{\section}
   {\color{BYUblue}\bfseries\singlespacing}
-  {\thesection.\space}{0pt}{#1}[]
+  {\Roman{section}\space\space}{0pt}{#1}[]
 \titlespacing{\section}{0pt}{-5pt}{-5pt}
 \titleformat{\subsection}
   {\color{BYUblue}\normalsize\bfseries\singlespacing}
-  {\Alph{subsection}.\space}{0pt}{#1}[]
+  {\Roman{section}.\Alph{subsection}\space\space}{0pt}{#1}[]
 \titlespacing{\subsection}{1ex}{-7pt}{0pt}
-\titleformat{\subsubsection}[runin]
+\titleformat{\subsubsection}
+{\color{BYUblue}\normalsize\bfseries\singlespacing}
+{\Roman{section}.\Alph{subsection}.\arabic{subsubsection}\space\space}{0pt}{#1}[]
+\titlespacing{\subsubsection}{2ex}{-7pt}{0pt}
+\titleformat{\paragraph}[runin]
 	{\normalfont\normalsize\slshape\color{\BYUblue}}
 	{}{0pt}{#1}[]
-\titlespacing{\subsubsection}{-1pt}{-1pt}{1ex}
-\titlespacing{\paragraph}{0em}{0.0pt}{1ex}
+\titlespacing{\paragraph}{-1pt}{-1pt}{1ex}
 
 %\titlespacing*{\section}{0pt}{-5pt}{0pt}
 
@@ -139,6 +143,7 @@
 
 %tables
 \RequirePackage[table]{xcolor}
+\RequirePackage{multirow}
 %\usepackage{booktabs}
 
 %%TIKZ

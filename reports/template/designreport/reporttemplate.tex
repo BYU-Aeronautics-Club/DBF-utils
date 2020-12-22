@@ -4,7 +4,6 @@
 %This sets the visible levels shown on the Table of Contents. 2 will show the Sections and Subsections. This seems okay to save some space. If you want to show subsubsections change it to 3. 1 will just show the sections, but that seems too brief.
 \setcounter{tocdepth}{2}
 
-\usepackage{multirow}
 
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
 %!!!!!!! UNLESS YOU KNOW WHAT YOU'RE DOING, DO NOT TOUCH ANYTHING ABOVE THIS LINE !!!!!!!%
@@ -44,23 +43,27 @@
 % 4) Document the performance/capabilities of your system solution
 
 
+\lipsum[1-6]
+
 % Performance Summary Table
 \begin{table}[h!]
 	\centering
-	\caption{Summary of major system perfomance factors.}
+	\caption{Summary of major system performance factors.}
 	\label{tab:performancesummary}
 	\rowcolors{2}{BYUbluelite}{white}
 	\begin{tabular}{ |c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-    	Metric & \\ 
+		Metric & \\
 		\hline
-	     & Performance (units) \\ 
+		& {\color{\BYUred}[Performance (units)]} \\
 		\hline
-		 & Performance (units) \\ 
+		&  {\color{\BYUred} [Performance (units)]} \\
 		\hline
 	\end{tabular}
 \end{table}
+
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%         MANAGEMENT SUMMARY        %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,16 +76,50 @@
 % 3) Milestone chart showing planned and actual timing of major elements
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% - Team Organization - %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Team Organization}
+\label{ssec:TeamOrganization}
+
 %Team Organization Chart:
 \input{team_organization.tex} %You can change the team_organization.tex file to update this and it will automatically update in this file.
 
 
+%Introduction
+\Cref{fig:personnelassignments} depicts the overall organization of our team structure.  Each of the teams is lead by an individual who answers to the Engineering Lead and Project Manager.  The skills required for each position/team are as follows.
+
+\paragraph{Engineering Lead} As with the team leads, the Engineering Lead primarily requires good decision making and leadership skills, qualities the BYU Aero Club seeks to develop in all of its members.  In addition the Engineering Lead has a well rounded understanding of the various systems and both design and testing expertise.
+\paragraph{Project Manager} The Project Manager has excellent organizational skills  and oversees the logistical side of the project: heading up report writing, budgeting tasks, scheduling, etc.
+\paragraph{Aerodynamics} The Aerodyanmics team members have expertise in aerodynamic analysis and testing, including skills in hand calculations, computational analysis tools, wind tunnel and glide testing.
+\paragraph{Structures} The Structures team members focus on skills in structural analysis and testing, employing hand calculations, computational tools, and various structural testing methods.
+\paragraph{Propulsion} The Propulsion team focuses on analyzing and testing the propulsion system effectiveness and efficiency, but also has skills in electronics related to the propulsion system.
+\paragraph{Systems} The Systems team works very closely with the Engineering Lead, as they oversee all systems interfacing, avionics, etc.  There is a sub-group of the Systems team that is assigned to work on the mission specific payload and related components, as well as related testing. %TODO: consider updating this sentence to reflect the actual specialized mission requirements for the year.
+\paragraph{Manufacturing} The Manufacturing team oversees the manufacturing of all prototypes and testing apparatus.
+\paragraph{Graphics} The Graphics team has skills in CAD design as well as graphical marketing for the team. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% - Timeline - %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Schedule}
+\label{ssec:Schedule}
+
+
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=4.5in]{ganttchart.pdf}
+%		\raisebox{0pt}[\dimexpr\height-1.5\baselineskip\relax]{
+	\includegraphics[]{ganttchart.pdf}
+%	}
 	\caption{This milestone chart reveals our {\color{\BYUblue} original plan} for major elements of our design process compared to the  {\color{\BYUred} actual timing} of these events.  Note that we submitted the proposal on time, as well as this report.  We anticipate remaining on schedule for the {\color{\BYUgreen} future elements} of this chart.}
 	\label{fig:plannedvsactualtiming}
 \end{figure}
+
+%timeline description.
+\Cref{fig:plannedvsactualtiming} depicts our planned vs. actual timeline for the year.
+ \lipsum[2]
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%         CONCEPTUAL DESIGN         %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,36 +137,130 @@
 \subsection{Mission Requirements}
 \label{ssec:missionreqs}
 
+The mission requirements for this year's competition are as follows:
+
+\subsubsection{General Requirements:}
+\begin{itemize}
+	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+\end{itemize}
 
 
-\subsection{Sub-system Design Requirements}
-\label{ssec:systemreqs}
-
-\subsubsection{Aerodynamic Requirements}
-\label{sssec:aeroreqs}
-
-
-\subsubsection{Structural Requirements}
-\label{sssec:structreqs}
+\subsubsection{Safety Requirements:}
+\begin{itemize}
+	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+\end{itemize}
 
 
-\subsubsection{Propulsion Requirements}
-\label{sssec:propreqs}
+\subsubsection{Airframe Requirements:}
+\begin{itemize}
+	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+\end{itemize}
 
 
-\subsubsection{Specialty Requirements} %change this to be specifically what it is (like bomb drop or whatever the specific mission is)
-\label{sssec:specialreqs}
+\subsubsection{Payload Requirements:}
+\begin{itemize}
+	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+\end{itemize}
+
+
+\subsubsection{Ground Mission Requirements:}
+\begin{itemize}
+	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+\end{itemize}
+
+
+\subsubsection{Flight Mission 1 Requirements:}
+\begin{itemize}
+	\item Pass inspection; ready to fly configuration.
+	\item No payload.
+	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+	\item Complete course and successfully land.
+\end{itemize}
+
+
+\subsubsection{Flight Mission 2 Requirements:}
+\begin{itemize}
+	\item Complete Flight Mission 1 and receive score; ready to fly configuration.
+	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+		\item Complete course and successfully land.
+\end{itemize}
+
+
+\subsubsection{Flight Mission 3 Requirements:}
+\begin{itemize}
+	\item Complete Flight Mission 2 and receive score; ready to fly configuration.
+	\item {\color{\BYUred} [THIS YEAR'S REQUIREMENT(S).]}
+	\item Complete course and successfully land. 
+\end{itemize}
 
 
 
-\subsection{Scoring Sensitivity Analysis}
-\label{ssec:scoringsensitivity}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=4.5in]{coursedistances}
+	\caption{This plot breaks down the estimated lengths of the course based on the scale drawing from the mission requirements.}
+	\label{fig:course}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% - Sub-system Reqs - %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mission Requirements Decomposition}
+\label{ssec:MissionReqs}
+
+We have organized our sub-system requirements into aerodynamics, structure, propulsion, and specialty requirements explained below.
+
+\paragraph{Aerodynamics Requirements}
+\label{sssec:AerodynamicReqs}
+
+Some of the major requirements for the aerodynamics sub-system are: Maximize aerodynamic efficiency in order to use less energy to overcome drag for all flight missions.  Design wing loading to be able to take off and fly with design max payload weight.  Keep the wingspan within the maximum of {\color{BYUred}[MAX SPAN CONSTRAINT THIS YEAR]}.  Choose airfoil(s) and configuration that will make take off feasible in the {\color{BYUred}[THIS YEAR'S TAKE-OFF REQUIREMENT]}
+
+\paragraph{Structural Requirements}
+\label{sssec:StructuralReqs}
+
+The breakdown of mission requirements for the structures sub-system include: Minimize the structural weight while maintaining sufficient rigidity to keep the aerodynamics as designed, especially when full payload weight is in use.  Make sure the structure is sufficiently rigid to avoid aerodynamic flutter within the flight envelope. {\color{BYUred}[OTHER MISC. STRUCTURES REQUIREMENTS THIS YEAR (E.G. FOLDING WINGS.)]}
+
+\paragraph{Propulsion Requirements}
+\label{sssec:PropulsionReqs}
+
+The propulsion sub-system requirements are to: Have sufficient system efficiency and battery capacity to enable completion of the flight missions and maximizing speed with sufficient endurance while also providing sufficient thrust for {\color{BYUred}[THIS YEAR'S TAKE-OFF REQUIREMENT]}
+
+\paragraph{Specialty Requirements} %change this to be specifically what it is (like bomb drop or whatever the specific mission is)
+\label{sssec:SpecialReqs}
+
+{\color{BYUred}[REQUIREMENTS FOR THIS YEAR'S SPECIAL STUFF.]} 
+\lipsum[2]
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% - Sensitivity Study - %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Sensitivity Study}
+\label{ssec:SensitivityStudy}
+
+%Figure related to sensitivity study, move around to get formatting correct...
+\begin{figure}[h!]
+	\centering
+	\raisebox{0pt}[\dimexpr\height-2\baselineskip\relax]{
+		\includegraphics[]{sensitivityobj}
+	}
+	\caption{This plot shows the effects of those design parameters that directly affect the increase/decrease in mission scoring beyond simple completion.}
+	\label{fig:sensitivity}
+\end{figure}
+
+For our sensitivity study, we first differentiated between design variables that could increase/decrease our score and those that were only related to the minimum constraints. Based on the scoring metrics, we found the parameters that could affect the score to be: wing area, aircraft weight (including batteries), zero-lift parasitic drag coefficient, {\color{BYUred}[WHICHEVER PAYLOAD ITEMS ARE IMPORTANT]}, and available power.  To perform our study, we took our basic parameters and ran them through common hand calculations to find the mission objective scores. In order to normalize the scores as they are in the competition, we ran the analysis first without normalization, from which we saved the maximum scores like they are in competition. We then used those maxima as the normalization factors and re-ran the analysis, thus making sure all the sensitivities had the same order of magnitude.  In our analysis (results shown in \cref{fig:sensitivity}), we found that the wing area and parasitic drag coefficient had the same sensitivities, thus we want to minimize drag and maximize wing loading (while still being able to take off).  The available power was also important, and can be affected by increasing battery capacity, discharge rate, or voltage, or increasing system efficiency. {\color{BYUred}[TAKE AWAYS FROM PAYLOAD STUFF]}. We should also note that the aircraft weight had a negligible effect on the overall sensitivity, but is important to keep in mind when designing for a feasible aircraft.
+
 
 
 
 \subsection{Concept Weighting and Selection Process}
 \label{ssec:selectionprocess}
 
+\Cref{tab:fom} shows our general figures of merit for our conceptual design choices. Rather than having multiple figures of the same value, we chose to make each figure a distinct value, thereby requiring a true prioritization and less change of ambiguity during the selection process.
+
+We chose weight as the most important factor because it not only relates to the mission objectives, but also concerns the take-off/landing constraints.  Drag was our next highest factor, as speed is important for maximizing flight mission scores.  We placed simplicity next, as we must be able to actually produce our chosen design with our current and realistic potential abilities.  We found stability to be important as well, since our aircraft needs to be controllable if we are to compete, but stability is relatively easy to achieve for most designs, so it was given a relatively lower value to match.  Finally {\color{\BYUred}[TALK ABOUT THE YEAR SPECIFIC METRIC IF THERE IS ONE.]} Each of the decision matrices has additional figures of merit associated with sub-system specific requirements.
 
 %----------------
 %---   Figure of Merit (i.e. the weights used in decision matrices)
@@ -142,21 +273,27 @@
 	\begin{tabular}{ |c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-		Factor & Scale (1-5) \\ 
+		Factor & Scale (1-5) \\
 		\hline
-		Weight & 5 \\ 
+		Weight & 10 \\
 		\hline
-		Drag & 4 \\ 
+		Drag & 8 \\
 		\hline
-		Simplicity & 3 \\ 
+		Simplicity & 6 \\
 		\hline
-		Stability & 2 \\ 
+		Stability & 4 \\
 		\hline
-		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 \\ 
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 \\
 		\hline
 	\end{tabular}
 \end{table}
 
+
+\paragraph{Wing Configuration Selection}
+
+For our wing configuration, we needed to take overall potential lift into account, due to the take-off/landing requirements.  \Cref{tab:wingconfiguration} shows our scoring for single wing, tandem wing, and bi/tri-wing configurations.  Note that we eliminated flying wing/blended wing body configurations up front based on our previous experience with that concept.
+
+\lipsum[1]
 
 
 %----------------
@@ -170,24 +307,32 @@
 	\begin{tabular}{ |c|c|c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-    	& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+    	& & Single Wing & Tandem Wing & Bi/Tri-wing \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{singlewing}} & \parbox[c]{1in}{\includegraphics[width=1in]{tandemwing}} &  \parbox[c]{1in}{\includegraphics[width=1in]{biwing}} \\
 		\hline
-		Weight & 5 & & &\\ 
+		Weight & 10 & 3 & 2 & 1 \\
 		\hline
-		Drag & 4 & & & \\ 
+		Drag & 8 & 3 & 2 & 1 \\
 		\hline
-		Simplicity & 3 & & & \\ 
+		Simplicity & 6 & 3 & 1 & 2 \\
 		\hline
-		Stability & 2 & & & \\ 
+		Lift & 5 & 2 & 2 & 3 \\
 		\hline
-		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		Stability & 4 & 3 & 2 & 3 \\
 		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
+		\hline
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
 		\hline
 	\end{tabular}
 \end{table}
+
+\paragraph{Wing Placement Selection}
+
+For the wing placement, we compared high, mid, and low wing placement.  An addition figure of merit here is the accessibility, that is, the accessibility of the payload and electronics.  This is important not only for the ground mission, but also for setting up the aircraft for flight.
+
+\lipsum[1]
 
 
 %----------------
@@ -201,24 +346,32 @@
 	\begin{tabular}{ |c|c|c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		& & High Wing & Mid Wing & Low Wing \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{highwing}} & \parbox[c]{1in}{\includegraphics[width=1in]{midwing}} &  \parbox[c]{1in}{\includegraphics[width=1in]{lowwing}} \\
 		\hline
-		Weight & 5 & & &\\ 
+		Weight & 10 & 3 & 2 & 3 \\
 		\hline
-		Drag & 4 & & & \\ 
+		Drag & 8 & 2 & 3 & 2 \\
 		\hline
-		Simplicity & 3 & & & \\ 
+		Simplicity & 6 & 3 & 1 & 2 \\
 		\hline
-		Stability & 2 & & & \\ 
+		Accessibility & 5 & 1 & 2 & 3 \\
 		\hline
-		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		Stability & 4 & 3 & 2 & 1 \\
 		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
+		\hline
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
 		\hline
 	\end{tabular}
 \end{table}
+
+\paragraph{Empennage Configuration Selection}
+
+For the tail configuration selection, we did not see the need for any further figures of merit.  We compared three families of configuration: T-tail family, including conventional, cruciform, and T-tail designs; V-tail family, including V- and inverted V-tail designs; and H-tail family, including U-, H-, and inverted U-tail designs.
+
+\lipsum[1]
 
 
 %----------------
@@ -232,24 +385,34 @@
 	\begin{tabular}{ |c|c|c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		& & T-Tail Variations & V-Tail Variations & H-Tail Variations \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  &
+		\parbox[c]{1in}{\includegraphics[width=1in]{ttail}} &
+		\parbox[c]{1in}{\includegraphics[width=1in]{vtail}} &
+		\parbox[c]{1in}{\includegraphics[width=1in]{htail}} \\
 		\hline
-		Weight & 5 & & &\\ 
+		Weight & 10 & 2 & 3 & 1 \\
 		\hline
-		Drag & 4 & & & \\ 
+		Drag & 8 & 2 & 3 & 2 \\
 		\hline
-		Simplicity & 3 & & & \\ 
+		Simplicity & 6 & 3 & 2 & 1 \\
 		\hline
-		Stability & 2 & & & \\ 
+		Stability & 4 & 2 & 1 & 3 \\
 		\hline
-		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
 		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
 		\hline
 	\end{tabular}
 \end{table}
+
+
+\paragraph{Propulsion Configuration Selection}
+
+For the propulsion configuration, drag did not make sense as a figure of merit, since the system is in direct opposition to drag.  Therefore we exchanged drag for efficiency, since efficiency directly affects available power (which we found to be important in \cref{ssec:SensitivityStudy}).  We also included lift as a figure of merit for the propulsion system, because blown wing configurations can experience increased lift (due to higher induced velocities over the wing).
+
+\lipsum[1]
 
 
 %----------------
@@ -263,25 +426,32 @@
 	\begin{tabular}{ |c|c|c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		& & Single Prop & Dual Prop & Distributed Prop \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{singleprop}} & \parbox[c]{1in}{\includegraphics[width=1in]{dualprop}} &  \parbox[c]{1in}{\includegraphics[width=1in]{distributedprop}} \\
 		\hline
-		Weight & 5 & & &\\ 
+		Weight & 10 & 3 & 2 & 1 \\
 		\hline
-		Drag & 4 & & & \\ 
+		Efficiency & 8 & 1 & 2 & 3 \\
 		\hline
-		Simplicity & 3 & & & \\ 
+		Lift & 7 & 1 & 2 & 3 \\
 		\hline
-		Stability & 2 & & & \\ 
+		Simplicity & 6 & 3 & 2 & 1 \\
 		\hline
-		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		Stability & 4 & 3 & 2 & 3 \\
 		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
+		\hline
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
 		\hline
 	\end{tabular}
 \end{table}
 
+\paragraph{Propulsion Placement Selection}
+
+
+
+\lipsum[1]
 
 
 %----------------
@@ -289,31 +459,36 @@
 %----------------
 \begin{table}[h!]
 	\centering
-	\caption{Weighted decision matrix for wing placement.}
+	\caption{Weighted decision matrix for propulsion placement.}
 	\label{tab:propplacement}
 	\rowcolors{2}{BYUbluelite}{white}
 	\begin{tabular}{ |c|c|c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		& & Pull Variations & Push Variations & Combinations \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & 
+		\parbox[c]{1in}{\includegraphics[width=1in]{puller}} &
+		\parbox[c]{1in}{\includegraphics[width=1in]{pusher}} &
+		\parbox[c]{1in}{\includegraphics[width=1in]{combopushpull}} \\
 		\hline
-		Weight & 5 & & &\\ 
+		Weight & 10 & 3 & 3 & 3 \\
 		\hline
-		Drag & 4 & & & \\ 
+		Lift & 4 & 3 & 1 & 2 \\
 		\hline
-		Simplicity & 3 & & & \\ 
+		Simplicity & 6 & 3 & 2 & 1 \\
 		\hline
-		Stability & 2 & & & \\ 
+		Propulsive Efficiency & 4 & 3 & 1 & 2 \\
 		\hline
-		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
 		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
 		\hline
 	\end{tabular}
 \end{table}
 
+
+\lipsum[1]
 
 
 %----------------
@@ -327,38 +502,64 @@
 	\begin{tabular}{ |c|c|c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\
 		\hline
-		Weight & 5 & & &\\ 
+		Weight & 10 & & &\\
 		\hline
-		Drag & 4 & & & \\ 
+		Strength & 4 & & & \\
 		\hline
-		Simplicity & 3 & & & \\ 
+		Simplicity & 6 & & & \\
 		\hline
-		Stability & 2 & & & \\ 
+		Durability & 2 & & & \\
 		\hline
-		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
 		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
 		\hline
 	\end{tabular}
 \end{table}
 
 
+\lipsum[1]
 
-\subsubsection{Final Concept}
+
+\paragraph{Final Concept}
 \label{sssec:finalconcept}
+
+\lipsum[1]
 
 %----------------
 %---  Figure of the final concept
 %----------------
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=3.5in]{draft.pdf}
-	\caption{Our final conceptual design incorporates the highest scoring options in the decision matrices described above.}
-	\label{fig:finalconcept}
+	\begin{subfigure}[b]{0.475\textwidth}
+		\includegraphics[width=\textwidth]{draft2x1}
+		\caption{Top View}
+		\label{fig:topview}
+	\end{subfigure}
+	%
+	\begin{subfigure}[b]{0.475\textwidth}
+		\includegraphics[width=\textwidth]{draft2x1}
+		\caption{Side View}
+		\label{fig:sideview}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{0.475\textwidth}
+		\includegraphics[width=\textwidth]{draft2x1}
+		\caption{Front View}
+		\label{fig:frontview}
+	\end{subfigure}
+	%
+	\begin{subfigure}[b]{0.475\textwidth}
+		\includegraphics[width=\textwidth]{draft2x1}
+		\caption{Rendered View}
+		\label{fig:renderedview}
+	\end{subfigure}
+	\caption{Drawings and rendering of our conceptual aircraft design.}
+	\label{fig:prelimdrawings}
 \end{figure}
 
 
@@ -394,24 +595,24 @@
 
 
 
-\subsubsection{Performance Prediction Methodologies and Uncertainties}
+\paragraph{Performance Prediction Methodologies and Uncertainties}
 \label{sssec:uncertaintyanalysis}
 
 
 
 
-\subsubsection{Lift and Drag}
+\paragraph{Lift and Drag}
 \label{sssec:liftdrag}
 
 
 
 
-\subsubsection{Stability}
+\paragraph{Stability}
 \label{sssec:stability}
 
 
 
-\subsubsection{Mission Performance}
+\paragraph{Mission Performance}
 \label{sssec:missionperformance}
 
 
@@ -447,7 +648,7 @@
 
 
 
-\subsection{System Selection, Integration, and Architecture}
+\subsection{Systems and Sub-system Selection, Integration, and Architecture}
 \label{ssec:systemdetails}
 
 
@@ -468,26 +669,26 @@
 	\begin{tabular}{ |c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-    	Configuration & Weight (grams) & CG Location (mm) \\ 
+    	Configuration & Weight (grams) & CG Location (mm) \\
 		\hline
-	    Mission 1 &  &  \\ 
+	    Mission 1 (Empty) &  &  \\
 		\hline
-		Mission 2 &  &  \\ 
+		Mission 2 &  &  \\
 		\hline
-		Mission 3 &  &  \\ 
+		Mission 3 &  &  \\
 		\hline
 	\end{tabular}
 \end{table}
 
 
 
-\subsection{Flight Performance Parameters}
+\subsection{Expected Flight Performance Parameters}
 \label{ssec:flightperformanceparams}
 
 
 
 
-\subsection{Mission Performance}
+\subsection{Expected Mission Performance}
 \label{ssec:missionperformance}
 
 
@@ -533,6 +734,9 @@ The following are drawings including a 3-View drawing with dimensions of all con
 % 2) Manufacturing processes investigated and selection process and results
 % 3) Manufacturing milestones chart: plan and actual
 
+\Cref{tab:fomman} shows our figures of merit for our manufacturing technique decision matrices.  Note that we prioritized in a similar fashion to our design figures with some changes to more applicable figures.  First, again, is weight.  The lower the aircraft weight, the more points can be had through {\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}}.  After weight, we prioritized strength, as our structures need to be able to carry the loads required.  Third is simplicity; we need to be able to actually manufacture something with a given technique.  Note that simplicity is relative to our team's expertise at the time of our decisions and feasible future abilities within the time frame of the competition.  We next chose to include durability.  It is not very high on our list since we would hope to be able to design an aircraft that has no unscheduled landings, however, one cannot predict the future enough to know whether or not durability will be required, and experience shows that it most likely will.  Finally, {\color{\BYUred}[TALK ABOUT THE YEAR SPECIFIC METRIC IF THERE IS ONE.]} Because many of these factors depend on intelligent design (e.g. a built-up balsa wing could be heavier than a foam core wing, depending on how it is designed), as well as manufacturer skill, we did some prototyping and testing of representative models before completing our decision factor calculations.
+
+
 %----------------
 %---  Figure of Merit (i.e. the weights used in decision matrices)
 %----------------
@@ -544,17 +748,17 @@ The following are drawings including a 3-View drawing with dimensions of all con
 	\begin{tabular}{ |c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-    	Factor & Relative Importance (1-5) \\ 
+		Factor & Relative Importance (1-5) \\
 		\hline
-	     &  \\ 
+		Weight & 10 \\
 		\hline
-		 &  \\ 
+		Strength & 4 \\
 		\hline
-		 &  \\ 
+		Simplicity & 6 \\
 		\hline
-		 &  \\ 
+		Durability & 2 \\
 		\hline
-		 &  \\ 
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -565,29 +769,62 @@ The following are drawings including a 3-View drawing with dimensions of all con
 %----------------
 \begin{table}[h!]
 	\centering
-	\caption{Weighted decision matrix for wing manufacturing technique.}
+	\caption{Weighted decision matrix for wing manufacturing technique. Factors here come from our initial testing of balsa and fiber reinforced polymer (FRP) techniques.}
 	\label{tab:wingmanufacturedecision}
 	\rowcolors{2}{BYUbluelite}{white}
 	\begin{tabular}{ |c|c|c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		& & Foam Core FRP & Hollow Core FRP & Built-up/Balsa \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  &
+		\parbox[c]{1in}{\includegraphics[width=1in]{foamcore}} & \parbox[c]{1in}{\includegraphics[width=1in]{hollowcore}} &  \parbox[c]{1in}{\includegraphics[width=1in]{balsa}} \\
 		\hline
-		Weight & 5 & & &\\ 
+		Weight & 10 & & & \\
 		\hline
-		Drag & 4 & & & \\ 
+		Strength & 4 & & & \\
 		\hline
-		Simplicity & 3 & & & \\ 
+		Simplicity & 6 & & & \\
 		\hline
-		Stability & 2 & & & \\ 
+		Durability & 2 & & & \\
 		\hline
-		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
 		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
 		\hline
 	\end{tabular}
+\end{table}
+
+
+%----------------
+%---   Tail Manufacture Decision Matrix  (single prop, dual prop, distributed propulsion, etc.)
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Weighted decision matrix for tail manufacturing technique.}
+	\label{tab:tailmanufacturedecision}
+	\rowcolors{2}{BYUbluelite}{white}
+\begin{tabular}{ |c|c|c|c|c| } 
+	\hline
+	\rowcolor{BYUbluemid}
+	& & Foam Core FRP & Hollow Core FRP & Built-up/Balsa \\
+	\rowcolor{BYUbluemid}
+	\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  &
+	\parbox[c]{1in}{\includegraphics[width=1in]{foamcore}} & \parbox[c]{1in}{\includegraphics[width=1in]{hollowcore}} &  \parbox[c]{1in}{\includegraphics[width=1in]{balsa}} \\
+	\hline
+	Weight & 10 & & & \\
+	\hline
+	Strength & 4 & & & \\
+	\hline
+	Simplicity & 6 & & & \\
+	\hline
+	Durability & 2 & & & \\
+	\hline
+	{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
+	\hline
+	\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
+	\hline
+\end{tabular}
 \end{table}
 
 
@@ -603,56 +840,27 @@ The following are drawings including a 3-View drawing with dimensions of all con
 	\begin{tabular}{ |c|c|c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		& & 3D Printing & Hollow Core FRP & Built-up/Balsa \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{3dprint}} & \parbox[c]{1in}{\includegraphics[width=1in]{hollowcore}} &  \parbox[c]{1in}{\includegraphics[width=1in]{balsa}} \\
 		\hline
-		Weight & 5 & & &\\ 
+		Weight & 10 & & &\\
 		\hline
-		Drag & 4 & & & \\ 
+		Strength & 4 & & & \\
 		\hline
-		Simplicity & 3 & & & \\ 
+		Simplicity & 6 & & & \\
 		\hline
-		Stability & 2 & & & \\ 
+		Durability & 2 & & & \\
 		\hline
-		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
 		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
 		\hline
 	\end{tabular}
 \end{table}
 
 
 
-%----------------
-%---   Tail Manufacture Decision Matrix  (single prop, dual prop, distributed propulsion, etc.)
-%----------------
-\begin{table}[h!]
-	\centering
-	\caption{Weighted decision matrix for tail manufacturing technique.}
-	\label{tab:tailmanufacturedecision}
-	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c|c|c|c| } 
-		\hline
-		\rowcolor{BYUbluemid}
-		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
-		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
-		\hline
-		Weight & 5 & & &\\ 
-		\hline
-		Drag & 4 & & & \\ 
-		\hline
-		Simplicity & 3 & & & \\ 
-		\hline
-		Stability & 2 & & & \\ 
-		\hline
-		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
-		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
-		\hline
-	\end{tabular}
-\end{table}
 
 
 
@@ -669,21 +877,21 @@ The following are drawings including a 3-View drawing with dimensions of all con
 	\begin{tabular}{ |c|c|c|c|c| } 
 		\hline
 		\rowcolor{BYUbluemid}
-		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\ 
+		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\ 
+		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\
 		\hline
-		Weight & 5 & & &\\ 
+		Weight & 10 & & &\\
 		\hline
-		Drag & 4 & & & \\ 
+		Strength & 4 & & & \\
 		\hline
-		Simplicity & 3 & & & \\ 
+		Simplicity & 6 & & & \\
 		\hline
-		Stability & 2 & & & \\ 
+		Durability & 2 & & & \\
 		\hline
-		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 1 & & & \\ 
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
 		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\ %BOLD WINNING OPTION
+		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
 		\hline
 	\end{tabular}
 \end{table}
@@ -718,12 +926,12 @@ The following are drawings including a 3-View drawing with dimensions of all con
 
 
 
-\subsubsection{Ground Testing}
+\paragraph{Ground Testing}
 \label{sssec:groundtesting}
 
 
 
-\subsubsection{Flight Testing}
+\paragraph{Flight Testing}
 \label{sssec:flighttesting}
 
 
