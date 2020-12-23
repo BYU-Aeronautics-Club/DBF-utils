@@ -4,7 +4,6 @@
 %This sets the visible levels shown on the Table of Contents. 2 will show the Sections and Subsections. This seems okay to save some space. If you want to show subsubsections change it to 3. 1 will just show the sections, but that seems too brief.
 \setcounter{tocdepth}{2}
 
-
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
 %!!!!!!! UNLESS YOU KNOW WHAT YOU'RE DOING, DO NOT TOUCH ANYTHING ABOVE THIS LINE !!!!!!!%
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
@@ -1071,8 +1070,70 @@ The following are drawings including a 3-View drawing with dimensions of all con
 \lipsum[1]
 
 \subsection{Test and Flight Checklists}
-
-
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\begin{table}[h!]
+	\centering
+	\caption{Testing Checklist}
+	\label{tab:testchecklist}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{subtable}[t]{0.495\textwidth}
+		\centering
+		\caption{Testing Checklist A}
+	\begin{tabular}{ |C{1in}|C{1em}|p{2in}| } 
+		\hline
+		\rowcolor{BYUbluemid}
+		Component &		\multicolumn{2}{|c|}{Task}   \\
+		\hline
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
+		\hline
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
+		\hline
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
+		\hline
+	\end{tabular}
+	\end{subtable}
+%
+	\begin{subtable}[t]{0.495\textwidth}
+		\centering
+		\caption{Testing Checklist B}
+	\begin{tabular}{ |C{1in}|C{1em}|p{2in}| }
+		\hline
+		\rowcolor{BYUbluemid}
+		Component &		\multicolumn{2}{|c|}{Task}   \\
+		\hline
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
+		\hline
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
+		\hline
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
+		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
+		\hline
+	\end{tabular}
+	\end{subtable}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%          PERFORMANCE RESULTS          %%%%%%%%%%%%%%%%%%%%%%%%
