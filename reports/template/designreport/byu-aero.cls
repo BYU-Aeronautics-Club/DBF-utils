@@ -190,50 +190,6 @@ draw
 ]
 
 
-%GANTT CHART
-\usepackage{pgfgantt}
-\ganttset{
-	time slot format=isodate,
-	time slot unit=day,
-	x unit=0.05cm,
-	y unit title=0.45cm,
-	y unit chart=0.35cm,
-	hgrid,
-	canvas/.append style={draw=\BYUblue},
-	%
-	title label font=\bfseries\small,
-	title height=1,
-	title/.style={fill=\BYUbluelite,draw=\BYUblue},
-	%
-	today = \nextyear-02-20,
-	today label = Current Date,
-	today label font=\itshape\footnotesize,
-	today rule/.style={draw=\BYUgray,dashed},
-	%
-	group/.append style={fill=\BYUbluemid,draw=\BYUblue},
-	group top shift=0.25,
-	group height=.25,
-	group right peak tip position=0.0,
-	group left peak tip position=0.0,
-	group peaks width=2.0,
-	group peaks height=0.25,
-	group label font = \bfseries\small,
-	%
-	bar/.append style={fill=\BYUblue,draw=\BYUblue},
-	bar label font=\small,
-	bar height = 0.25,
-%	bar top shift = 0.25,
-	progress label text = {},
-	%
-	milestone/.append style={fill=\BYUbluelite,draw=\BYUblue,xscale=6},
-	milestone height = 0.95,
-	milestone top shift = 0.0,
-	milestone label font = \itshape\small,
-	%
-%	link/.append style={draw=\BYUblue},
-	link tolerance = 10,
-	link bulge = 10,
-}
 %XDSM Chart
 \RequirePackage{amsfonts}
 %\RequirePackage{amssymb}
