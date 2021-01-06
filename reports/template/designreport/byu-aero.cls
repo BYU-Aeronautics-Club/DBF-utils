@@ -1,19 +1,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% new-aiaa.cls, v1.2, 2018/01/10
-% Developed by Overleaf
+% byu-aero.cls, v1.1, 2020/01/04
+% Developed by Judd Mehr
 % 
-% This class file enables authors to prepare papers
-% for submission to AIAA Technical Journals and
-% Conferences.
+% This class file enables authors to prepare contracts, proposals, and design reports
+% related to the AIAA Design Build Fly Competition
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\ProvidesClass{byu-aero}[2019/11/08, v1.0]
+\ProvidesClass{byu-aero}[2020/01/04, v1.0]
 
 \newif\if@proposal
- \newif\if@report
 \DeclareOption{proposal}{\@proposaltrue}
- \DeclareOption{report}{\@reporttrue}
+\newif\if@report
+\DeclareOption{report}{\@reporttrue}
+\newif\if@contract
+\DeclareOption{contract}{\@contracttrue}
 
 \ExecuteOptions{}
 \ProcessOptions\relax
@@ -244,6 +245,14 @@ draw
 }
 \fi
 
+\if@contract %
+\chead{
+	\parbox[b][3em][t]{0.75\textwidth}{
+		\centering
+		\Large{\color{BYUblue} Brigham Young University Aeronautics Club}\\
+		\small{AIAA Design Build Fly Team Contract}}
+}
+\fi
 
 %Fix spacing in Table of Contents
 \RequirePackage{titletoc}

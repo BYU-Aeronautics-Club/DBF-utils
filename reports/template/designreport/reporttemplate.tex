@@ -4,6 +4,12 @@
 %This sets the visible levels shown on the Table of Contents. 2 will show the Sections and Subsections. This seems okay to save some space. If you want to show subsubsections change it to 3. 1 will just show the sections, but that seems too brief.
 \setcounter{tocdepth}{2}
 
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{B}[1]{>{\cellcolor{BYUbluemid}\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{?}{!{\color{white}\vrule width 2pt}}
+\newcolumntype{/}{!{\color{BYUgray}\vrule}}
+
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
 %!!!!!!! UNLESS YOU KNOW WHAT YOU'RE DOING, DO NOT TOUCH ANYTHING ABOVE THIS LINE !!!!!!!%
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
@@ -50,15 +56,15 @@
 	\caption{Summary of major system performance factors.}
 	\label{tab:performancesummary}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c| } 
-		\hline
+	\begin{tabular}{ c c } 
+
 		\rowcolor{BYUbluemid}
 		Metric & \\
-		\hline
+
 		& {\color{\BYUred}[Performance (units)]} \\
-		\hline
+
 		&  {\color{\BYUred} [Performance (units)]} \\
-		\hline
+
 	\end{tabular}
 \end{table}
 
@@ -230,9 +236,9 @@ The propulsion sub-system requirements are to: Have sufficient system efficiency
 %Figure related to sensitivity study, move around to get formatting correct...
 \begin{figure}[h!]
 	\centering
-	\raisebox{0pt}[\dimexpr\height-2\baselineskip\relax]{
+%	\raisebox{0pt}[\dimexpr\height-2\baselineskip\relax]{
 		\includegraphics[]{sensitivityobj}
-	}
+%	}
 	\caption{This plot shows the effects of those design parameters that directly affect the increase/decrease in mission scoring beyond simple completion.}
 	\label{fig:sensitivity}
 \end{figure}
@@ -263,21 +269,21 @@ We chose weight as the most important factor because it not only relates to the 
 	\caption{Figures of Merit}
 	\label{tab:fom}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c| } 
-		\hline
+	\begin{tabular}{ c c } 
+
 		\rowcolor{BYUbluemid}
 		Factor & Scale (1-5) \\
-		\hline
+
 		Weight & 10 \\
-		\hline
+
 		Drag & 8 \\
-		\hline
+
 		Simplicity & 6 \\
-		\hline
+
 		Stability & 4 \\
-		\hline
+
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 \\
-		\hline
+
 	\end{tabular}
 \end{table}
 
@@ -296,28 +302,29 @@ For our wing configuration, we needed to take overall potential lift into accoun
 	\centering
 	\caption{Weighted decision matrix for wing configuration.}
 	\label{tab:wingconfiguration}
-	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c|c|c|c| } 
-		\hline
+	\rowcolors{2}{white}{BYUbluelite}
+	\begin{tabular}{ c c c c c } 
+
 		\rowcolor{BYUbluemid}
-    	& & Single Wing & Tandem Wing & Bi/Tri-wing \\
-		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{singlewing}} & \parbox[c]{1in}{\includegraphics[width=1in]{tandemwing}} &  \parbox[c]{1in}{\includegraphics[width=1in]{biwing}} \\
-		\hline
+    	\multicolumn{2}{c}{} & \parbox[c]{1in}{\includegraphics[width=1in]{singlewing}} & \parbox[c]{1in}{\includegraphics[width=1in]{tandemwing}} &  \parbox[c]{1in}{\includegraphics[width=1in]{biwing}} \\
+    	
+		\rowcolor{BYUbluemid} 
+		Factor & Scale & Single Wing & Tandem Wing & Bi/Tri-wing \\
+		
 		Weight & 10 & 3 & 2 & 1 \\
-		\hline
+
 		Drag & 8 & 3 & 2 & 1 \\
-		\hline
+
 		Simplicity & 6 & 3 & 1 & 2 \\
-		\hline
+
 		Lift & 5 & 2 & 2 & 3 \\
-		\hline
+
 		Stability & 4 & 3 & 2 & 3 \\
-		\hline
+
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
-		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
-		\hline
+
+		\multicolumn{2}{c}{Totals} &  &  &  \\%BOLD WINNING OPTION
+
 	\end{tabular}
 \end{table}
 
@@ -336,27 +343,27 @@ For the wing placement, we compared high, mid, and low wing placement.  An addit
 	\caption{Weighted decision matrix for wing placement.}
 	\label{tab:wingplacement}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c|c|c|c| } 
-		\hline
+	\begin{tabular}{ c c c c c } 
+
 		\rowcolor{BYUbluemid}
 		& & High Wing & Mid Wing & Low Wing \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{highwing}} & \parbox[c]{1in}{\includegraphics[width=1in]{midwing}} &  \parbox[c]{1in}{\includegraphics[width=1in]{lowwing}} \\
-		\hline
+		Factor & Scale & \parbox[c]{1in}{\includegraphics[width=1in]{highwing}} & \parbox[c]{1in}{\includegraphics[width=1in]{midwing}} &  \parbox[c]{1in}{\includegraphics[width=1in]{lowwing}} \\
+
 		Weight & 10 & 3 & 2 & 3 \\
-		\hline
+
 		Drag & 8 & 2 & 3 & 2 \\
-		\hline
+
 		Simplicity & 6 & 3 & 1 & 2 \\
-		\hline
+
 		Accessibility & 5 & 1 & 2 & 3 \\
-		\hline
+
 		Stability & 4 & 3 & 2 & 1 \\
-		\hline
+
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
-		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
-		\hline
+
+		\multicolumn{2}{c }{Totals} &  &  &  \\%BOLD WINNING OPTION
+
 	\end{tabular}
 \end{table}
 
@@ -375,28 +382,28 @@ For the tail configuration selection, we did not see the need for any further fi
 	\caption{Weighted decision matrix for tail configuration.}
 	\label{tab:tailconfiguration}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c|c|c|c| } 
-		\hline
+	\begin{tabular}{ c c c c c } 
+
 		\rowcolor{BYUbluemid}
 		& & T-Tail Variations & V-Tail Variations & H-Tail Variations \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  &
+		Factor & Scale &
 		\parbox[c]{1in}{\includegraphics[width=1in]{ttail}} &
 		\parbox[c]{1in}{\includegraphics[width=1in]{vtail}} &
 		\parbox[c]{1in}{\includegraphics[width=1in]{htail}} \\
-		\hline
+
 		Weight & 10 & 2 & 3 & 1 \\
-		\hline
+
 		Drag & 8 & 2 & 3 & 2 \\
-		\hline
+
 		Simplicity & 6 & 3 & 2 & 1 \\
-		\hline
+
 		Stability & 4 & 2 & 1 & 3 \\
-		\hline
+
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
-		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
-		\hline
+
+		\multicolumn{2}{c }{Totals} &  &  &  \\%BOLD WINNING OPTION
+
 	\end{tabular}
 \end{table}
 
@@ -416,27 +423,27 @@ For the propulsion configuration, drag did not make sense as a figure of merit, 
 	\caption{Weighted decision matrix for propulsion configuration.}
 	\label{tab:propconfiguration}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c|c|c|c| } 
-		\hline
+	\begin{tabular}{ c c c c c } 
+
 		\rowcolor{BYUbluemid}
 		& & Single Prop & Dual Prop & Distributed Prop \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{singleprop}} & \parbox[c]{1in}{\includegraphics[width=1in]{dualprop}} &  \parbox[c]{1in}{\includegraphics[width=1in]{distributedprop}} \\
-		\hline
+		Factor & Scale & \parbox[c]{1in}{\includegraphics[width=1in]{singleprop}} & \parbox[c]{1in}{\includegraphics[width=1in]{dualprop}} &  \parbox[c]{1in}{\includegraphics[width=1in]{distributedprop}} \\
+
 		Weight & 10 & 3 & 2 & 1 \\
-		\hline
+
 		Propulsive Efficiency & 8 & 1 & 2 & 3 \\
-		\hline
+
 		Lift & 7 & 1 & 2 & 3 \\
-		\hline
+
 		Simplicity & 6 & 3 & 2 & 1 \\
-		\hline
+
 		Stability & 4 & 3 & 2 & 3 \\
-		\hline
+
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
-		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
-		\hline
+
+		\multicolumn{2}{c }{Totals} &  &  &  \\%BOLD WINNING OPTION
+
 	\end{tabular}
 \end{table}
 
@@ -455,28 +462,28 @@ For the propulsion configuration, drag did not make sense as a figure of merit, 
 	\caption{Weighted decision matrix for propulsion placement.}
 	\label{tab:propplacement}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c|c|c|c| } 
-		\hline
+	\begin{tabular}{ c c c c c } 
+
 		\rowcolor{BYUbluemid}
 		& & Pull Variations & Push Variations & Combinations \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & 
+		Factor & Scale & 
 		\parbox[c]{1in}{\includegraphics[width=1in]{puller}} &
 		\parbox[c]{1in}{\includegraphics[width=1in]{pusher}} &
 		\parbox[c]{1in}{\includegraphics[width=1in]{combopushpull}} \\
-		\hline
+
 		Weight & 10 & 3 & 3 & 3 \\
-		\hline
+
 		Lift & 4 & 3 & 1 & 2 \\
-		\hline
+
 		Simplicity & 6 & 3 & 2 & 1 \\
-		\hline
+
 		Propulsive Efficiency & 4 & 3 & 1 & 2 \\
-		\hline
+
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
-		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
-		\hline
+
+		\multicolumn{2}{c }{Totals} &  &  &  \\%BOLD WINNING OPTION
+
 	\end{tabular}
 \end{table}
 
@@ -494,25 +501,25 @@ For the propulsion configuration, drag did not make sense as a figure of merit, 
 	\caption{Weighted decision matrix for {\color{\BYUred} [SPECIFY THIS YEAR'S PAYLOAD DESIGN]}.}
 	\label{tab:payloadconfiguration}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c|c|c|c| } 
-		\hline
+	\begin{tabular}{ c c c c c } 
+
 		\rowcolor{BYUbluemid}
 		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\
-		\hline
+		Factor & Scale & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\
+
 		Weight & 10 & & &\\
-		\hline
+
 		Strength & 8 & & & \\
-		\hline
+
 		Simplicity & 6 & & & \\
-		\hline
+
 		Durability & 4 & & & \\
-		\hline
+
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
-		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
-		\hline
+
+		\multicolumn{2}{c }{Totals} &  &  &  \\%BOLD WINNING OPTION
+
 	\end{tabular}
 \end{table}
 
@@ -558,6 +565,8 @@ For the propulsion configuration, drag did not make sense as a figure of merit, 
 \end{figure}
 
 
+\clearpage
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%         PRELIMINARY DESIGN        %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -671,7 +680,61 @@ where \(V_\text{maneuver}\) is the maximum velocity boundary associated with str
 
 \paragraph{Airfoil(s)}
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=5in]{draft2x1}
+	\caption{Airfoil geometry comparison.}
+	\label{fig:airfoilgeometrycomp}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=4in]{draft4x3}
+	\caption{Airfoil polar comparison.}
+	\label{fig:airfoilpolarcomp}
+\end{figure}
+
+
 \paragraph{Sizing}
+
+
+%----------------
+%---   Preliminary wing and tail sizes.
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Preliminary wing and tail sizes.}
+	\label{tab:prelimwingsize}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ C{1in}  C{1in}  C{1in}  C{1in}}
+		
+		\rowcolor{BYUbluemid}
+		Parameter & Wing & Vertical Tail & Horizontal Tail \\
+		
+		Span (ft) & & &\\
+		
+		Root Chord (ft) & & &\\
+		
+		Tip Chord (ft) & & &\\
+		
+		Wing Area (ft\(^2\)) & & &\\
+		
+		Aspect Ratio & & &\\
+		
+	\end{tabular}
+\end{table}
+
+
+%----------------
+%---   Preliminary lift distribution plot (superimpose all missions)
+%----------------
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=5in]{draft2x1}
+	\caption{Lift distribution at cruise for each mission.}
+	\label{fig:prelimliftdist}
+\end{figure}
+
 
 \subsubsection{Fuselage}
 
@@ -692,11 +755,170 @@ where \(V_\text{maneuver}\) is the maximum velocity boundary associated with str
 \subsubsection{Lift and Drag}
 \label{sssec:liftdrag}
 
-
+%----------------
+%---   Estimated Lift and Drag values
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Estimated Lift and Drag values.}
+	\label{tab:estimatedLD}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ C{1in}  C{1in}  C{1in}  C{1in}}
+		
+		\rowcolor{BYUbluemid}
+		Parameter & M1 & M2 & M3 \\
+		
+		\(C_{L_\text{max}}\) & & &\\
+		
+		\(C_{L_\text{avg}}\) & & &\\
+		
+		\(C_{D_0}\) & & &\\
+		
+		\(L/D_\text{cruise}\) & & &\\
+		
+	\end{tabular}
+\end{table}
 
 
 \subsubsection{Stability}
 \label{sssec:stability}
+
+%----------------
+%---  M1 Stability Derivatives (these are not control derivatives)
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Stability derivatives for Flight Mission 1.}
+	\label{tab:stabilityderivatives1}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ B{1in} ? C{3em} C{3em}?C{3em} C{3em}?C{3em} C{3em}?C{3em} C{3em}?C{3em} C{3em} }
+
+	\rowcolor{BYUbluemid}
+
+	\cellcolor{white} & Angle of Attack & \(V_{TO}\)/ \(V_C\) & Side Slip Angle & \(V_{TO}\)/ \(V_C\) & Roll Rate & \(V_{TO}\)/ \(V_C\) & Pitch Rate & \(V_{TO}\)/ \(V_C\) & Yaw rate & \(V_{TO}\)/ \(V_C\)  \\
+
+	Lift  Force &  \(C_{L_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{L_{\beta}}\) & 0.0000/ 0.0000 & \(C_{L_{p}}\) & 0.0000/ 0.0000 & \(C_{L_{q}}\) & 0.0000/ 0.0000 & \(C_{L_{r}}\) & 0.0000/ 0.0000 \\
+
+	Drag  Force & \(C_{D_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{D_{\beta}}\) & 0.0000/ 0.0000 & \(C_{D_{p}}\) & 0.0000/ 0.0000 & \(C_{D_{q}}\) & 0.0000/ 0.0000 & \(C_{D_{r}}\) & 0.0000/ 0.0000 \\
+
+	Lateral Force &  \(C_{Y_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{Y_{\beta}}\) & 0.0000/ 0.0000 & \(C_{Y_{p}}\) & 0.0000/ 0.0000 & \(C_{Y_{q}}\) & 0.0000/ 0.0000 & \(C_{Y_{r}}\) & 0.0000/ 0.0000 \\
+
+	Rolling Moment &  \(C_{\ell_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{\ell_{\beta}}\) & 0.0000/ 0.0000 & \(C_{\ell_{p}}\) & 0.0000/ 0.0000 & \(C_{\ell_{q}}\) & 0.0000/ 0.0000 & \(C_{\ell_{r}}\) & 0.0000/ 0.0000 \\
+
+	Pitching Moment &  \(C_{m_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{m_{\beta}}\) & 0.0000/ 0.0000 & \(C_{m_{p}}\) & 0.0000/ 0.0000 & \(C_{m_{q}}\) & 0.0000/ 0.0000 & \(C_{m_{r}}\) & 0.0000/ 0.0000 \\
+
+	Yawing Moment &  \(C_{n_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{n_{\beta}}\) & 0.0000/ 0.0000 & \(C_{n_{p}}\) & 0.0000/ 0.0000 & \(C_{n_{q}}\) & 0.0000/ 0.0000 & \(C_{n_{r}}\) & 0.0000/ 0.0000 \\
+
+\end{tabular}
+\end{table}
+
+%----------------
+%---  M2 Stability Derivatives (these are not control derivatives)
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Stability derivatives for Flight Mission 2.}
+	\label{tab:stabilityderivatives2}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ B{1in} ? C{3em} C{3em}?C{3em} C{3em}?C{3em} C{3em}?C{3em} C{3em}?C{3em} C{3em} }
+	
+	\rowcolor{BYUbluemid}
+	
+	\cellcolor{white} & Angle of Attack & Value & Side Slip Angle & Value & Roll Rate & Value & Pitch Rate & Value & Yaw rate & Value  \\
+	
+	Lift  Force &  \(C_{L_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{L_{\beta}}\) & 0.0000/ 0.0000 & \(C_{L_{p}}\) & 0.0000/ 0.0000 & \(C_{L_{q}}\) & 0.0000/ 0.0000 & \(C_{L_{r}}\) & 0.0000/ 0.0000 \\
+	
+	Drag  Force & \(C_{D_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{D_{\beta}}\) & 0.0000/ 0.0000 & \(C_{D_{p}}\) & 0.0000/ 0.0000 & \(C_{D_{q}}\) & 0.0000/ 0.0000 & \(C_{D_{r}}\) & 0.0000/ 0.0000 \\
+	
+	Lateral Force &  \(C_{Y_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{Y_{\beta}}\) & 0.0000/ 0.0000 & \(C_{Y_{p}}\) & 0.0000/ 0.0000 & \(C_{Y_{q}}\) & 0.0000/ 0.0000 & \(C_{Y_{r}}\) & 0.0000/ 0.0000 \\
+	
+	Rolling Moment &  \(C_{\ell_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{\ell_{\beta}}\) & 0.0000/ 0.0000 & \(C_{\ell_{p}}\) & 0.0000/ 0.0000 & \(C_{\ell_{q}}\) & 0.0000/ 0.0000 & \(C_{\ell_{r}}\) & 0.0000/ 0.0000 \\
+	
+	Pitching Moment &  \(C_{m_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{m_{\beta}}\) & 0.0000/ 0.0000 & \(C_{m_{p}}\) & 0.0000/ 0.0000 & \(C_{m_{q}}\) & 0.0000/ 0.0000 & \(C_{m_{r}}\) & 0.0000/ 0.0000 \\
+	
+	Yawing Moment &  \(C_{n_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{n_{\beta}}\) & 0.0000/ 0.0000 & \(C_{n_{p}}\) & 0.0000/ 0.0000 & \(C_{n_{q}}\) & 0.0000/ 0.0000 & \(C_{n_{r}}\) & 0.0000/ 0.0000 \\
+	
+\end{tabular}
+\end{table}
+
+%----------------
+%---  M3 Stability Derivatives (these are not control derivatives)
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Stability derivatives for Flight Mission 3.}
+	\label{tab:stabilityderivatives3}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ B{1in} ? C{3em} C{3em}?C{3em} C{3em}?C{3em} C{3em}?C{3em} C{3em}?C{3em} C{3em} }
+	
+	\rowcolor{BYUbluemid}
+	
+	\cellcolor{white} & Angle of Attack & Value & Side Slip Angle & Value & Roll Rate & Value & Pitch Rate & Value & Yaw rate & Value  \\
+	
+	Lift  Force &  \(C_{L_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{L_{\beta}}\) & 0.0000/ 0.0000 & \(C_{L_{p}}\) & 0.0000/ 0.0000 & \(C_{L_{q}}\) & 0.0000/ 0.0000 & \(C_{L_{r}}\) & 0.0000/ 0.0000 \\
+	
+	Drag  Force & \(C_{D_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{D_{\beta}}\) & 0.0000/ 0.0000 & \(C_{D_{p}}\) & 0.0000/ 0.0000 & \(C_{D_{q}}\) & 0.0000/ 0.0000 & \(C_{D_{r}}\) & 0.0000/ 0.0000 \\
+	
+	Lateral Force &  \(C_{Y_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{Y_{\beta}}\) & 0.0000/ 0.0000 & \(C_{Y_{p}}\) & 0.0000/ 0.0000 & \(C_{Y_{q}}\) & 0.0000/ 0.0000 & \(C_{Y_{r}}\) & 0.0000/ 0.0000 \\
+	
+	Rolling Moment &  \(C_{\ell_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{\ell_{\beta}}\) & 0.0000/ 0.0000 & \(C_{\ell_{p}}\) & 0.0000/ 0.0000 & \(C_{\ell_{q}}\) & 0.0000/ 0.0000 & \(C_{\ell_{r}}\) & 0.0000/ 0.0000 \\
+	
+	Pitching Moment &  \(C_{m_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{m_{\beta}}\) & 0.0000/ 0.0000 & \(C_{m_{p}}\) & 0.0000/ 0.0000 & \(C_{m_{q}}\) & 0.0000/ 0.0000 & \(C_{m_{r}}\) & 0.0000/ 0.0000 \\
+	
+	Yawing Moment &  \(C_{n_{\alpha}}\) & 0.0000/ 0.0000 & \(C_{n_{\beta}}\) & 0.0000/ 0.0000 & \(C_{n_{p}}\) & 0.0000/ 0.0000 & \(C_{n_{q}}\) & 0.0000/ 0.0000 & \(C_{n_{r}}\) & 0.0000/ 0.0000 \\
+	
+\end{tabular}
+\end{table}
+
+
+
+%----------------
+%---   Stability Derivatives (these are not control derivatives)
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Dynamic stability characteristics.}
+	\label{tab:dynamicstab}
+	\rowcolors{2}{white}{BYUbluelite}
+	\begin{tabular}{ C{1in} ? C{3em}/C{3em}/C{3em} ? C{3em}/C{3em}/C{3em} ? C{3em}/C{3em}/C{3em} }
+		
+		\rowcolor{BYUbluemid}
+		& \multicolumn{3}{c?}{Eigenvalue} & \multicolumn{3}{c?}{Damping Ratio} & \multicolumn{3}{c}{Undamped Frequency (Hz)} \\
+		\rowcolor{BYUbluemid}
+		\multirow{-2}{*}{Mode} & M1 & M2 & M3 & M1 & M2 & M3 & M1 & M2 & M3  \\
+		
+		Short Period (I) & \(-0.0\pm0.0i\) &\(-0.0\pm0.0i\) &\(-0.0\pm0.0i\) 
+		& 0.0 & 0.0 & 0.0
+		& 0.0 & 0.0 & 0.0 \\
+		
+		Phugoid (II) & \(-0.0\pm0.0i\) &\(-0.0\pm0.0i\) &\(-0.0\pm0.0i\)
+		& 0.0 & 0.0 & 0.0
+		& 0.0 & 0.0 & 0.0 \\
+		
+		Dutch Roll (III) & \(-0.0\pm0.0i\) &\(-0.0\pm0.0i\) &\(-0.0\pm0.0i\)
+		& 0.0 & 0.0 & 0.0
+		& 0.0 & 0.0 & 0.0 \\
+		
+		Roll (IV) & \(-0.0\pm0.0i\) &\(-0.0\pm0.0i\) &\(-0.0\pm0.0i\)
+		& 0.0 & 0.0 & 0.0
+		& 0.0 & 0.0 & 0.0 \\
+		
+		Spiral (V) & \(-0.0\pm0.0i\) &\(-0.0\pm0.0i\) &\(-0.0\pm0.0i\)
+		& 0.0 & 0.0 & 0.0
+		& 0.0 & 0.0 & 0.0 \\
+		
+	\end{tabular}
+\end{table}
+
+%----------------
+%---   Root Locus Plot For dynamic stability
+%----------------
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=5in]{draft4x3}
+	\caption{Root-locus plot for stability modes.}
+	\label{fig:stabilityeigen}
+\end{figure}
 
 
 
@@ -714,7 +936,39 @@ where \(V_\text{maneuver}\) is the maximum velocity boundary associated with str
 	\label{fig:vndiagram}
 \end{figure}
 
+%----------------
+%---   Estimated Mission Performance
+%----------------
+\begin{table}[h!]
+	\centering
+	\caption{Estimated Mission Performance.}
+	\label{tab:estimatedmissionperformance}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ C{1.5in}  C{1in}  C{1in}  C{1in}}
+		
+		\rowcolor{BYUbluemid}
+		Parameter & M1 & M2 & M3 \\
+		
+		Total Weight (lbs) & & &\\
+		
+		Wing Loading (lbs/ft\(^2\)) & & &\\
+		
+		\(V_C\)(ft/s) & & &\\
+		
+		\(V_{TO}\)(ft/s) & & &\\
+		
+		Payload & & &\\
+		
+		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & & &\\
+		
+		Raw Mission Score & & &\\
+		
+	\end{tabular}
+\end{table}
 
+
+\clearpage
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%           DETAIL DESIGN           %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -763,17 +1017,17 @@ where \(V_\text{maneuver}\) is the maximum velocity boundary associated with str
 	\caption{Weight and Balance table including empty aircraft and each possible configuration.}
 	\label{tab:wieghtsandbalance}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c|c| } 
-		\hline
+	\begin{tabular}{ c c c } 
+
 		\rowcolor{BYUbluemid}
     	Configuration & Weight (grams) & CG Location (mm) \\
-		\hline
+
 	    Mission 1 (Empty) &  &  \\
-		\hline
+
 		Mission 2 &  &  \\
-		\hline
+
 		Mission 3 &  &  \\
-		\hline
+
 	\end{tabular}
 \end{table}
 
@@ -782,15 +1036,49 @@ where \(V_\text{maneuver}\) is the maximum velocity boundary associated with str
 \subsection{Expected Flight Performance Parameters}
 \label{ssec:flightperformanceparams}
 
+\begin{table}[h!]
+	\centering
+	\caption{Expected flight performance parameters for each mission.}
+	\label{tab:detailflightperformance}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ c c c } 
 
+		\rowcolor{BYUbluemid}
+		Configuration & Parameter & Value \\
+
+		Mission 1 (Empty) &  &  \\
+
+		Mission 2 &  &  \\
+
+		Mission 3 &  &  \\
+
+	\end{tabular}
+\end{table}
 
 
 \subsection{Expected Mission Performance}
 \label{ssec:missionperformance}
 
+\begin{table}[h!]
+	\centering
+	\caption{Expected mission performance characteristics.}
+	\label{tab:detailmissionperformance}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ c c c } 
+
+		\rowcolor{BYUbluemid}
+		Configuration & Parameter & Value \\
+
+		Mission 1 (Empty) &  &  \\
+
+		Mission 2 &  &  \\
+
+		Mission 3 &  &  \\
+
+	\end{tabular}
+\end{table}
 
 
- 
 \subsection{Drawing Package}
 \label{ssec:drawings}
 
@@ -845,21 +1133,21 @@ The following are drawings including a 3-View drawing with dimensions of all con
 	\caption{Figures of Merit}
 	\label{tab:fomman}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c| } 
-		\hline
+	\begin{tabular}{ c c } 
+
 		\rowcolor{BYUbluemid}
 		Factor & Relative Importance (1-5) \\
-		\hline
+
 		Weight & 10 \\
-		\hline
+
 		Strength & 8 \\
-		\hline
+
 		Simplicity & 6 \\
-		\hline
+
 		Durability & 4 \\
-		\hline
+
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 \\
-		\hline
+
 	\end{tabular}
 \end{table}
 
@@ -875,26 +1163,25 @@ The following are drawings including a 3-View drawing with dimensions of all con
 	\caption{Weighted decision matrix for wing manufacturing technique. Factors here come from our initial testing of balsa and fiber reinforced polymer (FRP) techniques.}
 	\label{tab:wingmanufacturedecision}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c|c|c|c| } 
-		\hline
+	\begin{tabular}{ c c c c c}
+
 		\rowcolor{BYUbluemid}
 		& & Foam Core FRP & Hollow Core FRP & Built-up/Balsa \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  &
+		Factor & Scale &
 		\parbox[c]{1in}{\includegraphics[width=1in]{foamcore}} & \parbox[c]{1in}{\includegraphics[width=1in]{hollowcore}} &  \parbox[c]{1in}{\includegraphics[width=1in]{balsa}} \\
-		\hline
 		Weight & 10 & & & \\
-		\hline
+
 		Strength & 8 & & & \\
-		\hline
+
 		Simplicity & 6 & & & \\
-		\hline
+
 		Durability & 4 & & & \\
-		\hline
+
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
-		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
-		\hline
+
+		\multicolumn{2}{c }{Totals} &  &  &  \\%BOLD WINNING OPTION
+
 	\end{tabular}
 \end{table}
 
@@ -911,26 +1198,26 @@ The following are drawings including a 3-View drawing with dimensions of all con
 	\caption{Weighted decision matrix for tail manufacturing technique.}
 	\label{tab:tailmanufacturedecision}
 	\rowcolors{2}{BYUbluelite}{white}
-\begin{tabular}{ |c|c|c|c|c| } 
-	\hline
+\begin{tabular}{ c c c c c } 
+
 	\rowcolor{BYUbluemid}
 	& & Foam Core FRP & Hollow Core FRP & Built-up/Balsa \\
 	\rowcolor{BYUbluemid}
-	\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  &
+	Factor & Scale &
 	\parbox[c]{1in}{\includegraphics[width=1in]{foamcore}} & \parbox[c]{1in}{\includegraphics[width=1in]{hollowcore}} &  \parbox[c]{1in}{\includegraphics[width=1in]{balsa}} \\
-	\hline
+
 	Weight & 10 & & & \\
-	\hline
+
 	Strength & 8 & & & \\
-	\hline
+
 	Simplicity & 6 & & & \\
-	\hline
+
 	Durability & 4 & & & \\
-	\hline
+
 	{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
-	\hline
-	\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
-	\hline
+
+	\multicolumn{2}{c }{Totals} &  &  &  \\%BOLD WINNING OPTION
+
 \end{tabular}
 \end{table}
 
@@ -947,25 +1234,25 @@ The following are drawings including a 3-View drawing with dimensions of all con
 	\caption{Weighted decision matrix for fuselage manufacturing technique.}
 	\label{tab:fuselagemanufacturingdecision}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c|c|c|c| } 
-		\hline
+	\begin{tabular}{ c c c c c } 
+
 		\rowcolor{BYUbluemid}
 		& & 3D Printing & Hollow Core FRP & Built-up/Balsa \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{3dprint}} & \parbox[c]{1in}{\includegraphics[width=1in]{hollowcore}} &  \parbox[c]{1in}{\includegraphics[width=1in]{balsa}} \\
-		\hline
+		Factor & Scale & \parbox[c]{1in}{\includegraphics[width=1in]{3dprint}} & \parbox[c]{1in}{\includegraphics[width=1in]{hollowcore}} &  \parbox[c]{1in}{\includegraphics[width=1in]{balsa}} \\
+
 		Weight & 10 & & &\\
-		\hline
+
 		Strength & 8 & & & \\
-		\hline
+
 		Simplicity & 6 & & & \\
-		\hline
+
 		Durability & 4 & & & \\
-		\hline
+
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
-		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
-		\hline
+
+		\multicolumn{2}{c }{Totals} &  &  &  \\%BOLD WINNING OPTION
+
 	\end{tabular}
 \end{table}
 
@@ -984,25 +1271,25 @@ The following are drawings including a 3-View drawing with dimensions of all con
 	\caption{Weighted decision matrix for {\color{\BYUred} [SPECIFY THIS YEAR'S PAYLOAD DESIGN]}.}
 	\label{tab:payloadmanufacturedecision}
 	\rowcolors{2}{BYUbluelite}{white}
-	\begin{tabular}{ |c|c|c|c|c| } 
-		\hline
+	\begin{tabular}{ c c c c c } 
+
 		\rowcolor{BYUbluemid}
 		& & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} & {\color{BYUred} [OPTION]} \\
 		\rowcolor{BYUbluemid}
-		\multirow{-2}{*}{Factor} & \multirow{-2}{*}{Scale}  & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\
-		\hline
+		Factor & Scale & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} & \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} &  \parbox[c]{1in}{\includegraphics[width=1in]{draft4x3}} \\
+
 		Weight & 10 & & &\\
-		\hline
+
 		Strength & 8 & & & \\
-		\hline
+
 		Simplicity & 6 & & & \\
-		\hline
+
 		Durability & 4 & & & \\
-		\hline
+
 		{\color{\BYUred} {\color{BYUred} [YEAR SPECIFIC ITEM]}} & 2 & & & \\
-		\hline
-		\multicolumn{2}{|c|}{Totals} &  &  &  \\%BOLD WINNING OPTION
-		\hline
+
+		\multicolumn{2}{c }{Totals} &  &  &  \\%BOLD WINNING OPTION
+
 	\end{tabular}
 \end{table}
 
@@ -1017,7 +1304,7 @@ The following are drawings including a 3-View drawing with dimensions of all con
 %----------------
 \begin{figure}[h!]
 	\centering
-	\includegraphics[]{manufacturingchart.pdf}
+	\includegraphics[width=\textwidth]{manufacturingchart.pdf}
 	\caption{This milestone chart reveals our {\color{\BYUblue}original plan} for major elements of our manufacturing process compared to the {\color{\BYUred}actual timing} of these events for our detailed prototype, we hope to hold to a similar planned schedule for our competition build.}
 	\label{fig:plannedvsactualtimingmanufacturing}
 \end{figure}
@@ -1057,7 +1344,27 @@ The following are drawings including a 3-View drawing with dimensions of all con
 \subsubsection{Ground Testing}
 \label{sssec:groundtesting}
 
-\lipsum[1-10]
+\paragraph{Aerodynamic Testing}
+
+\paragraph{Structural Testing}
+
+\paragraph{Propulsion Testing}
+
+\paragraph{Systems Testing}
+
+
+\lipsum[1-5]
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{draft4x3}
+	\caption{example figure. will need several throughout the testing section}
+	\label{fig:}
+\end{figure}
+
+\lipsum[6-10]
+
+
 
 \subsubsection{Flight Testing}
 \label{sssec:flighttesting}
@@ -1070,7 +1377,7 @@ The following are drawings including a 3-View drawing with dimensions of all con
 \lipsum[1]
 
 \subsection{Test and Flight Checklists}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
 \begin{table}[h!]
 	\centering
 	\caption{Testing Checklist}
@@ -1079,58 +1386,58 @@ The following are drawings including a 3-View drawing with dimensions of all con
 	\begin{subtable}[t]{0.495\textwidth}
 		\centering
 		\caption{Testing Checklist A}
-	\begin{tabular}{ |C{1in}|C{1em}|p{2in}| } 
-		\hline
+	\begin{tabular}{ B{1in}/C{1em}/p{2in} } 
+
 		\rowcolor{BYUbluemid}
-		Component &		\multicolumn{2}{|c|}{Task}   \\
-		\hline
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
-		\hline
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
-		\hline
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
-		\hline
+		Component &		\multicolumn{2}{c }{Task}   \\
+\arrayrulecolor{BYUgray}\hline
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+		\multirow{-5}{*}{Component} & $\square$ & Task  \\
+\arrayrulecolor{BYUgray}\hline
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+		\multirow{-5}{*}{Component} & $\square$ & Task  \\
+\arrayrulecolor{BYUgray}\hline
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+		\multirow{-5}{*}{Component} & $\square$ & Task  \\
+
 	\end{tabular}
 	\end{subtable}
 %
 	\begin{subtable}[t]{0.495\textwidth}
 		\centering
 		\caption{Testing Checklist B}
-	\begin{tabular}{ |C{1in}|C{1em}|p{2in}| }
-		\hline
+	\begin{tabular}{ B{1in}/C{1em}/p{2in} }
+
 		\rowcolor{BYUbluemid}
-		Component &		\multicolumn{2}{|c|}{Task}   \\
-		\hline
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
-		\hline
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
-		\hline
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\cellcolor{\BYUbluemid}		& $\square$ & Task  \\
-		\multirow{-5}{*}{\cellcolor{\BYUbluemid}Component} & $\square$ & Task  \\
-		\hline
+		Component &		\multicolumn{2}{c }{Task}   \\
+\arrayrulecolor{BYUgray}\hline
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+		\multirow{-5}{*}{Component} & $\square$ & Task  \\
+\arrayrulecolor{BYUgray}\hline
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+		\multirow{-5}{*}{Component} & $\square$ & Task  \\
+\arrayrulecolor{BYUgray}\hline
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+				& $\square$ & Task  \\
+		\multirow{-5}{*}{Component} & $\square$ & Task  \\
+
 	\end{tabular}
 	\end{subtable}
 \end{table}
@@ -1146,8 +1453,32 @@ The following are drawings including a 3-View drawing with dimensions of all con
 % ) Describe the demonstrated performance of your complete aircraft solution
 % ) Compare to predictions and explain any differences and improvements made
 
+\subsection{Key Subsystem Demonstrated Performance}
 
+\subsection{Comparison to Analytic Predictions for Subsystems}
 
+\subsection{Complete Aircraft Demonstrated Performance}
+
+\begin{table}[h!]
+	\centering
+	\caption{Actual aircraft performance characteristics.}
+	\label{tab:actualaircraftperformance}
+	\rowcolors{2}{BYUbluelite}{white}
+	\begin{tabular}{ c c c } 
+
+		\rowcolor{BYUbluemid}
+		Configuration & Parameter & Value \\
+
+		Mission 1 (Empty) &  &  \\
+
+		Mission 2 &  &  \\
+
+		Mission 3 &  &  \\
+
+	\end{tabular}
+\end{table}
+
+\subsection{Comparison to Analytic Predictions for Complete Aircraft}
 
 
 

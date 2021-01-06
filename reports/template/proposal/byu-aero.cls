@@ -1,19 +1,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% new-aiaa.cls, v1.2, 2018/01/10
-% Developed by Overleaf
+% byu-aero.cls, v1.1, 2020/01/04
+% Developed by Judd Mehr
 % 
-% This class file enables authors to prepare papers
-% for submission to AIAA Technical Journals and
-% Conferences.
+% This class file enables authors to prepare contracts, proposals, and design reports
+% related to the AIAA Design Build Fly Competition
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\ProvidesClass{byu-aero}[2019/11/08, v1.0]
+\ProvidesClass{byu-aero}[2020/01/04, v1.0]
 
 \newif\if@proposal
-\newif\if@report
 \DeclareOption{proposal}{\@proposaltrue}
+\newif\if@report
 \DeclareOption{report}{\@reporttrue}
+\newif\if@contract
+\DeclareOption{contract}{\@contracttrue}
 
 \ExecuteOptions{}
 \ProcessOptions\relax
@@ -39,12 +40,12 @@
 \newcommand{\BYUgreenlite}{rgb,255:red,164; green,233; blue,164}
 \newcommand{\BYUgray}{rgb,255:red,128; green,128; blue,128}
 
-
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{microtype}
 \RequirePackage{newtxtext,newtxmath}
 
+\RequirePackage{lipsum}
 
 \RequirePackage[letterpaper,
 left=0.35in,
@@ -75,22 +76,25 @@ marginparsep=0pt,
 
 
 \RequirePackage[explicit]{titlesec}
-\renewcommand{\thesection}{\Roman{section}}
-\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
-\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+%\renewcommand{\thesection}{\Roman{section}}
+%\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
+%\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 \titleformat{\section}
 {\color{BYUblue}\bfseries\singlespacing}
-{\thesection.\space}{0pt}{#1}[]
-\titlespacing{\section}{0pt}{-5pt}{-5pt}
+{\Roman{section}\space\space}{0pt}{#1}[]
+\titlespacing{\section}{0pt}{-1ex}{-1ex}
 \titleformat{\subsection}
 {\color{BYUblue}\normalsize\bfseries\singlespacing}
-{\Alph{subsection}.\space}{0pt}{#1}[]
-\titlespacing{\subsection}{1ex}{-7pt}{0pt}
-\titleformat{\subsubsection}[runin]
+{\Roman{section}.\Alph{subsection}\space\space}{0pt}{#1}[]
+\titlespacing{\subsection}{1ex}{-1ex}{-0.5ex}
+\titleformat{\subsubsection}
+{\color{BYUblue}\normalsize\bfseries\singlespacing}
+{\Roman{section}.\Alph{subsection}.\arabic{subsubsection}\space\space}{0pt}{#1}[]
+\titlespacing{\subsubsection}{2ex}{-1.5ex}{-0.5ex}
+\titleformat{\paragraph}[runin]
 {\normalfont\normalsize\slshape\color{\BYUblue}}
 {}{0pt}{#1}[]
-\titlespacing{\subsubsection}{-1pt}{-1pt}{1ex}
-\titlespacing{\paragraph}{0em}{0.0pt}{1ex}
+\titlespacing{\paragraph}{-1pt}{-1pt}{1ex}
 
 %\titlespacing*{\section}{0pt}{-5pt}{0pt}
 
@@ -100,7 +104,7 @@ marginparsep=0pt,
 \renewcommand{\thefigure}{\color{\BYUblue}\arabic{figure}}
 \renewcommand{\tablename}{\color{\BYUblue}Table}
 \renewcommand{\thetable}{\color{\BYUblue}\arabic{table}}
-\captionsetup*{labelsep=quad}
+\captionsetup*{labelsep=space}
 \RequirePackage{subcaption}
 \renewcommand{\thesubfigure}{\color{\BYUblue}\alph{subfigure})}
 \captionsetup[subfigure]{labelsep=space,labelformat=simple}
@@ -140,6 +144,7 @@ marginparsep=0pt,
 
 %tables
 \RequirePackage[table]{xcolor}
+\RequirePackage{multirow}
 %\usepackage{booktabs}
 
 %%TIKZ
@@ -186,50 +191,6 @@ draw
 ]
 
 
-%GANTT CHART
-\usepackage{pgfgantt}
-\ganttset{
-	time slot format=isodate,
-	time slot unit=day,
-	x unit=0.025cm,
-	y unit title=0.4cm,
-	y unit chart=0.3cm,
-	hgrid,
-	canvas/.append style={draw=\BYUblue},
-	%
-	title label font=\bfseries\scriptsize,
-	title height=1,
-	title/.style={fill=\BYUbluelite,draw=\BYUblue},
-	%
-	today = \the\year-10-30,
-	today label = Current Date,
-	today label font=\itshape\tiny,
-	today rule/.style={draw=\BYUgray,dashed},
-	%
-	group/.append style={fill=\BYUbluemid,draw=\BYUblue},
-	group top shift=0.25,
-	group height=.25,
-	group right peak tip position=0.0,
-	group left peak tip position=0.0,
-	group peaks width=2.0,
-	group peaks height=0.25,
-	group label font = \bfseries\footnotesize,
-	%
-	bar/.append style={fill=\BYUblue,draw=\BYUblue},
-	bar label font=\footnotesize,
-	bar height = 0.25,
-	%	bar top shift = 0.25,
-	progress label text = {},
-	%
-	milestone/.append style={fill=\BYUbluelite,draw=\BYUblue,xscale=12},
-	milestone height = 0.95,
-	milestone top shift = 0.0,
-	milestone label font = \itshape\footnotesize,
-	%
-	%	link/.append style={draw=\BYUblue},
-	link tolerance = 10,
-	link bulge = 10,
-}
 %XDSM Chart
 \RequirePackage{amsfonts}
 %\RequirePackage{amssymb}
@@ -284,6 +245,14 @@ draw
 }
 \fi
 
+\if@contract %
+\chead{
+	\parbox[b][3em][t]{0.75\textwidth}{
+		\centering
+		\Large{\color{BYUblue} Brigham Young University Aeronautics Club}\\
+		\small{AIAA Design Build Fly Team Contract}}
+}
+\fi
 
 %Fix spacing in Table of Contents
 \RequirePackage{titletoc}

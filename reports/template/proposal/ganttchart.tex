@@ -1,6 +1,7 @@
 % expanded CO architecture diagram produced by the TikZ package
 \documentclass[]{byu-aero}
 
+\def \theyear {2020}
 \def \nextyear {2021}
 
 \usepackage[active,tightpage]{preview}
@@ -8,48 +9,94 @@
 \setlength{\PreviewBorder}{0em}
 
 
+%GANTT CHART
+\usepackage{pgfgantt}
+\ganttset{
+	time slot format=isodate,
+	time slot unit=day,
+	x unit=0.025cm,
+	y unit title=0.4cm,
+	y unit chart=0.3cm,
+	hgrid,
+	canvas/.append style={draw=\BYUblue},
+	%
+	title label font=\bfseries\scriptsize,
+	title height=1,
+	title/.style={fill=\BYUbluelite,draw=\BYUblue},
+	%
+	today = \theyear-10-30,
+	today label = Current Date,
+	today label font=\itshape\tiny,
+	today rule/.style={draw=\BYUgray,dashed},
+	%
+	group/.append style={fill=\BYUbluemid,draw=\BYUblue},
+	group top shift=0.25,
+	group height=.25,
+	group right peak tip position=0.0,
+	group left peak tip position=0.0,
+	group peaks width=2.0,
+	group peaks height=0.25,
+	group label font = \bfseries\footnotesize,
+	%
+	bar/.append style={fill=\BYUblue,draw=\BYUblue},
+	bar label font=\footnotesize,
+	bar height = 0.25,
+	%	bar top shift = 0.25,
+	progress label text = {},
+	%
+	milestone/.append style={fill=\BYUbluelite,draw=\BYUblue,xscale=12},
+	milestone height = 0.95,
+	milestone top shift = 0.0,
+	milestone label font = \itshape\footnotesize,
+	%
+	%	link/.append style={draw=\BYUblue},
+	link tolerance = 10,
+	link bulge = 10,
+}
+
+
 \begin{document}
 	\begin{figure}[h!]
 		\centering
-		\begin{ganttchart}[]{\the\year-09-01}{\nextyear-04-30}
+		\begin{ganttchart}[]{\theyear-09-01}{\nextyear-04-30}
 			\gantttitlecalendar{year, month=shortname} \\
 			%
 			%%--DESIGN--%%
 			%
-			\ganttgroup{Design}{\the\year-09-14}{\nextyear-01-28} \\
-			\ganttbar[progress=100]{Conceptual Design}{\the\year-09-14}{\the\year-10-07} \\
-			\ganttbar[progress=0]{Preliminary Design}{\the\year-10-31}{\the\year-12-01} \\
-			\ganttbar[progress=0]{Detailed Design}{\the\year-12-28}{\nextyear-01-28} \\
+			\ganttgroup{Design}{\theyear-09-14}{\nextyear-01-28} \\
+			\ganttbar[progress=100]{Conceptual Design}{\theyear-09-14}{\theyear-10-07} \\
+			\ganttbar[progress=0]{Preliminary Design}{\theyear-10-31}{\theyear-12-01} \\
+			\ganttbar[progress=0]{Detailed Design}{\theyear-12-28}{\nextyear-01-28} \\
 			%
 			%%--PROTOTYPING--%%
 			%
-			\ganttgroup{Build}{\the\year-10-01}{\nextyear-02-01} \\
-			\ganttbar[progress=100]{Conceptual Prototypes}{\the\year-10-01}{\the\year-10-14} \\
-			\ganttbar[progress=0]{Preliminary Prototypes}{\the\year-11-14}{\the\year-12-14} \\
+			\ganttgroup{Build}{\theyear-10-01}{\nextyear-02-01} \\
+			\ganttbar[progress=100]{Conceptual Prototypes}{\theyear-10-01}{\theyear-10-14} \\
+			\ganttbar[progress=0]{Preliminary Prototypes}{\theyear-11-14}{\theyear-12-14} \\
 			\ganttbar[progress=0]{Detailed Prototypes}{\nextyear-01-07}{\nextyear-02-01} \\
 			\ganttbar[progress=0]{Final Build}{\nextyear-02-20}{\nextyear-03-21}\\
 			%
 			%%--TESTING--%%
 			%
-			\ganttgroup{Fly}{\the\year-10-07}{\nextyear-03-28} \\
-			\ganttbar[progress=100]{Conceptual Testing}{\the\year-10-07}{\the\year-10-28}\\
-			\ganttbar[progress=0]{Preliminary Testing}{\the\year-12-01}{\the\year-12-21}\\
+			\ganttgroup{Fly}{\theyear-10-07}{\nextyear-03-28} \\
+			\ganttbar[progress=100]{Conceptual Testing}{\theyear-10-07}{\theyear-10-28}\\
+			\ganttbar[progress=0]{Preliminary Testing}{\theyear-12-01}{\theyear-12-21}\\
 			\ganttbar[progress=0]{Detailed Testing}{\nextyear-01-14}{\nextyear-02-07}\\
 			\ganttbar[progress=0]{Practice Runs}{\nextyear-03-21}{\nextyear-03-28}\\
 			%
 			%%--COMPETING--%%
 			%
-			\ganttgroup{Competition Milestones}{\the\year-10-30}{\nextyear-04-16} \\
-			\ganttmilestone{Submit Proposal}{\the\year-10-30} \\
-			\ganttmilestone{Preliminary Design Review}{\the\year-12-21} \\
+			\ganttgroup{Competition Milestones}{\theyear-10-30}{\nextyear-04-16} \\
+			\ganttmilestone{Submit Proposal}{\theyear-10-30} \\
+			\ganttmilestone{Preliminary Design Review}{\theyear-12-21} \\
 			\ganttmilestone{Submit Design Report}{\nextyear-02-20} \\
 			\ganttmilestone{Submit Proof of Flight}{\nextyear-04-01} \\
 			\ganttmilestone{Fly-off}{\nextyear-04-16}
 			%
 			%
 			%%--VERTICAL RULE--%%
-%			\ganttvrule[vrule/.append style={draw=\BYUgray}]{\tiny \textit{Current Date}}{\the\year-10-30}
-			today=\the\year-10-30
+%			\ganttvrule[vrule/.append style={draw=\BYUgray}]{\tiny \textit{Current Date}}{\theyear-10-30}
+			today=\theyear-10-30
 			%
 			%%--LINKS--%%
 			%

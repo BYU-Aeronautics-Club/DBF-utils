@@ -1,6 +1,7 @@
 % expanded CO architecture diagram produced by the TikZ package
 \documentclass[]{byu-aero}
 
+\def \theyear {2020}
 \def \nextyear {2021}
 
 \usepackage[active,tightpage]{preview}
@@ -56,52 +57,52 @@
 \begin{document}
 	\begin{figure}[h!]
 	\centering
-	\begin{ganttchart}[]{\the\year-09-01}{\nextyear-04-30}
+	\begin{ganttchart}[]{\theyear-09-01}{\nextyear-04-30}
 		%
 		\gantttitlecalendar{year, month=shortname} \\
 		%
 		%%--DESIGN--%%
-		\ganttgroup{Design}{\the\year-09-14}{\nextyear-02-07};
+		\ganttgroup{Design}{\theyear-09-14}{\nextyear-02-07};
 		% ACTUAL
 		\ganttgroup[group/.append style={fill=\BYUredlite,draw=\BYUred}, group height = 0.125,
-		group top shift = 0.5675]{}{\the\year-09-14}{\nextyear-02-07}\\
+		group top shift = 0.5675]{}{\theyear-09-14}{\nextyear-02-07}\\
 		%
 		% PLANNED
-		\ganttbar[progress=100]{Conceptual Design}{\the\year-09-14}{\the\year-10-07};
+		\ganttbar[progress=100]{Conceptual Design}{\theyear-09-14}{\theyear-10-07};
 		% ACTUAL
-		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\theyear-10-01}{\theyear-10-21}\\
 		%
 		% PLANNED
-		\ganttbar[progress=100]{Preliminary Design}{\the\year-10-31}{\the\year-12-01};
+		\ganttbar[progress=100]{Preliminary Design}{\theyear-10-31}{\theyear-12-01};
 		% ACTUAL
-		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\theyear-10-01}{\theyear-10-21}\\
 		%
 		% PLANNED
-		\ganttbar[progress=100]{Detailed Design}{\the\year-12-28}{\nextyear-01-28};
+		\ganttbar[progress=100]{Detailed Design}{\theyear-12-28}{\nextyear-01-28};
 		% ACTUAL
-		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\theyear-10-01}{\theyear-10-21}\\
 		%
 		%%--PROTOTYPING--%%
 		% PLANNED
-		\ganttgroup{Build}{\the\year-10-01}{\nextyear-03-21};
+		\ganttgroup{Build}{\theyear-10-01}{\nextyear-03-21};
 		% ACTUAL
 		\ganttgroup[group/.append style={fill=\BYUredlite,draw=\BYUred}, group height = 0.125,
-		group top shift = 0.5675]{}{\the\year-09-14}{\nextyear-02-07}\\
+		group top shift = 0.5675]{}{\theyear-09-14}{\nextyear-02-07}\\
 		%
 		% PLANNED
-		\ganttbar[progress=100]{Conceptual Prototypes}{\the\year-10-01}{\the\year-10-14};
+		\ganttbar[progress=100]{Conceptual Prototypes}{\theyear-10-01}{\theyear-10-14};
 		% ACTUAL
-		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\theyear-10-01}{\theyear-10-21}\\
 		%
 		% PLANNED
-		\ganttbar[progress=100]{Preliminary Prototypes}{\the\year-11-14}{\the\year-12-14};
+		\ganttbar[progress=100]{Preliminary Prototypes}{\theyear-11-14}{\theyear-12-14};
 		% ACTUAL
-		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\theyear-10-01}{\theyear-10-21}\\
 		%
 		% PLANNED
 		\ganttbar[progress=100]{Detailed Prototypes}{\nextyear-01-07}{\nextyear-02-01};
 		% ACTUAL
-		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\theyear-10-01}{\theyear-10-21}\\
 		%
 		% PLANNED
 		\ganttbar[progress=100, bar/.append style={fill=\BYUgreen}]{Final Build}{\nextyear-02-20}{\nextyear-03-21}\\
@@ -109,25 +110,25 @@
 		%%--TESTING--%%
 		%
 		% PLANNED
-		\ganttgroup{Fly}{\the\year-10-07}{\nextyear-03-28};
+		\ganttgroup{Fly}{\theyear-10-07}{\nextyear-03-28};
 		% ACTUAL
 		\ganttgroup[group/.append style={fill=\BYUredlite,draw=\BYUred}, group height = 0.125,
-		group top shift = 0.5675]{}{\the\year-09-14}{\nextyear-02-07}\\
+		group top shift = 0.5675]{}{\theyear-09-14}{\nextyear-02-07}\\
 		%
 		% PLANNED
-		\ganttbar[progress=100]{Conceptual Testing}{\the\year-10-07}{\the\year-10-28};
+		\ganttbar[progress=100]{Conceptual Testing}{\theyear-10-07}{\theyear-10-28};
 		% ACTUAL
-		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\theyear-10-01}{\theyear-10-21}\\
 		%
 		% PLANNED
-		\ganttbar[progress=100]{Preliminary Testing}{\the\year-12-01}{\the\year-12-21};
+		\ganttbar[progress=100]{Preliminary Testing}{\theyear-12-01}{\theyear-12-21};
 		% ACTUAL
-		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\theyear-10-01}{\theyear-10-21}\\
 		%
 		% PLANNED
 		\ganttbar[progress=100]{Detailed Testing}{\nextyear-01-14}{\nextyear-02-07};
 		% ACTUAL
-		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\the\year-10-01}{\the\year-10-21}\\
+		\ganttbar[progress=100, bar height=0.125, bar top shift = 0.5675, bar/.append style={fill=\BYUredlite,draw=none}]{}{\theyear-10-01}{\theyear-10-21}\\
 		%
 		% PLANNED
 		\ganttbar[progress=100,bar/.append style={fill=\BYUgreen}]{Practice Runs}{\nextyear-03-21}{\nextyear-03-28} \\
@@ -135,13 +136,13 @@
 		% PLANNED
 		%%--COMPETING--%%
 		%Final Build happens after testing and everything for Design Report is completed. It's okay for this to take a while since we want it to be nice, but we still need to submit proof of flight.
-		\ganttgroup{Competition Milestones}{\the\year-10-30}{\nextyear-04-16} \\
+		\ganttgroup{Competition Milestones}{\theyear-10-30}{\nextyear-04-16} \\
 		%Submit Proposal the day before it is due
-		\ganttmilestone[milestone/.append style={fill=\BYUredlite}]{Submit Proposal}{\the\year-10-30} \\
+		\ganttmilestone[milestone/.append style={fill=\BYUredlite}]{Submit Proposal}{\theyear-10-30} \\
 		%Submit the Design Report a Day before it is due.
-		\ganttmilestone{Preliminary Design Review}{\the\year-12-21};
+		\ganttmilestone{Preliminary Design Review}{\theyear-12-21};
 		% ACTUAL
-		\ganttmilestone[milestone/.append style={fill=\BYUredlite, draw=\BYUred}]{}{\the\year-12-28} \\
+		\ganttmilestone[milestone/.append style={fill=\BYUredlite, draw=\BYUred}]{}{\theyear-12-28} \\
 		%
 		\ganttmilestone[milestone/.append style={fill=\BYUredlite}]{Submit Design Report}{\nextyear-02-20} \\
 		\ganttmilestone[milestone/.append style={fill=\BYUgreen}]{Submit Proof of Flight}{\nextyear-04-01} \\
