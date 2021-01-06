@@ -145,7 +145,13 @@
 %tables
 \RequirePackage[table]{xcolor}
 \RequirePackage{multirow}
-%\usepackage{booktabs}
+\usepackage{booktabs}
+
+%Various usefule column types for tables.
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{B}[1]{>{\cellcolor{BYUbluemid}\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{?}{!{\color{white}\vrule width 2pt}}
+\newcolumntype{/}{!{\color{BYUgray}\vrule}}
 
 %%TIKZ
 \usepackage{tikz}
@@ -241,7 +247,7 @@ draw
 	\parbox[b][3em][t]{0.75\textwidth}{
 		\centering
 		\Large{\color{BYUblue} Brigham Young University Aeronautics Club}\\
-		\small{\NextYear~AIAA Design Build Fly Competition Design Report}}
+		\small{\the\year~AIAA Design Build Fly Competition Design Report}}
 }
 \fi
 
