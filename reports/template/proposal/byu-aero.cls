@@ -21,7 +21,8 @@
 \LoadClass[10pt]{article}
 
 
-\RequirePackage[usenames,dvipsnames]{color}% This loads a package that allows extra colors for links.
+
+\RequirePackage[usenames,dvipsnames,table]{xcolor}% This loads a package that allows extra colors for links.
 \definecolor{BYUblue}{RGB}{0,46,93}
 \definecolor{BYUbluelite}{RGB}{221,227,233}
 \definecolor{BYUbluemid}{RGB}{151,169,189}
@@ -143,7 +144,6 @@ marginparsep=0pt,
 \RequirePackage{wrapfig}
 
 %tables
-\RequirePackage[table]{xcolor}
 \RequirePackage{multirow}
 %\usepackage{booktabs}
 
