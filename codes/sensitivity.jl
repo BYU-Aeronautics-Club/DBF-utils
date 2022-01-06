@@ -13,14 +13,14 @@ using FLOWMath
 Calculates score from mission 2 based on relavent inputs.
 
 **Inputs:**
-- num_sensors::Int64 : the number of sensors.
+- num_syringes::Int64 : the number of syringes.
 - time::Float64 : the time to complete 3 laps, in seconds.
 """
-function mission2(num_sensors, time)
+function mission2(num_syringes, time)
 
     global maxM2 #note, using globals like this is poor form, but convenient.
 
-    M2 = num_sensors/time
+    M2 = num_syringes/time
 
     if M2 > maxM2
         global maxM2 = M2
@@ -37,14 +37,11 @@ Calculates score from mission 3 based on relavent inputs.
 
 **Inputs:**
 - num_laps::Int64 : the number of laps completed in 10 minutes.
-- length_sensor::Float64 : the length of the sensor, in meters.
-- weight_sensor::Float64 : the weight of the sensor, in kilograms.
 """
-function mission3(num_laps, length_sensor, weight_sensor)
+function mission3(num_laps)
     global maxM3
 
-    M3 = num_laps * length_sensor * weight_sensor
-
+    M3 = num_laps
 
     if M3 > maxM3
         global maxM3 = M3
@@ -180,15 +177,14 @@ function objective(x0)
     S               = x0[2]
     CD0             = x0[3]
     lap_distance    = x0[4]
-    num_sensors     = x0[5]
-    length_sensor   = x0[6]
-    weight_sensor   = x0[7]
-    M2_laps         = x0[8]
-    maxtime         = x0[9]
-    eta             = x0[10]
-    batteryC        = x0[11]
-    batterycells    = x0[12]
-    batterycapacity = x0[13]
+    num_syringes    = x0[5]
+    num_vials       = x0[6]
+    M2_laps         = 3
+    maxtime         = 10*60
+    eta             = x0[7]
+    batteryC        = x0[8]
+    batterycells    = x0[9]
+    batterycapacity = x0[10]
 
     batteryvoltage = batterycells*3.7
 
@@ -197,8 +193,9 @@ function objective(x0)
 
     ### MISSION 2 ###
 
+    weight_syringes = 0.05/2.2
     #get loaded weight for mission 2
-    W2 = get_weight([W; weight_sensor*num_sensors])
+    W2 = get_weight([W; weight_syringes*num_syringes])
 
     #get velocity for mission 2, assume max velocity the whole time
     findV2(V) = maxvelocity(get_thrust(Pa,V), W2, S, CD0) - V
@@ -209,29 +206,29 @@ function objective(x0)
 
 
     ### MISSION 3 ###
+    weight_vial=0.5/2.2
 
-    #get loaded weight for mission 3
-    W3 = get_weight([W; weight_sensor])
+    W3 = zeros(floor(Int,num_vials))
+    V3 = zeros(floor(Int,num_vials))
+    for i=1:floor(Int,num_vials)
+        #get loaded weight for mission 3
+        W3 = get_weight([W; weight_vial*(num_vials-i+1)])
 
-    #get velocity for mission 3, assume max velocity the whole time
-    findV3(V) = maxvelocity(Pa/V, W3, S, CD0) - V
-    V3 = find_zeros(findV3,1.0,1000.0)[1]
+        #get velocity for mission 3, assume max velocity the whole time
+        findV3(V) = maxvelocity(Pa/V, W3, S, CD0) - V
+        V3[i] = find_zeros(findV3,1.0,1000.0)[1]
+    end
 
     #get time for a single lap in mission 3
-    time3 = lap_distance/V3
+    time3 = sum(lap_distance./V3)
 
     #get number of laps completable in time
-    num_laps = maxtime/time3
+    num_laps = min(floor(Int,num_vials),maxtime/time3)
 
     ### SUM UP OBJECTIVES ###
+    M2 = mission2(num_syringes, time2)
 
-    M2 = mission2(num_sensors, time2)
-
-    #convert units for metrics:
-    length_sensor *= 39.3701 #meters to inches
-    weight_sensor *= 35.274 #kg to oz
-
-    M3 = mission3(num_laps, length_sensor, weight_sensor)
+    M3 = mission3(floor(Int,num_vials))
     totalpoints = 100.0 + 1.0 + 1.0 + M2 + M3 #assumes perfect on report and GM and M1 completion.
 
     return totalpoints
@@ -250,36 +247,32 @@ global maxM3 = 0.0
 
 
 #Define all the variables that might be important.
-W               = 2.5       # aircraft weight (including battery), kilograms
-S               = 2.5       # aircraft wing area, meters squared
-CD0             = 0.01      # zero-lift parasitic drag coefficient
+W               = 5.0       # aircraft weight (including battery), kilograms
+S               = 5.0       # aircraft wing area, meters squared
+CD0             = 0.03      # zero-lift parasitic drag coefficient
 lap_distance    = 1000.0    # lap distance, meters, from rules image: (500.0*4.0 + pi*285.0 + pi*200.0)*0.3048
-num_sensors     = 5.0       # number of sensors
-length_sensor   = 0.15      # length of sensors, meters
-weight_sensor   = 0.1       # weight of sensors, kilograms
+num_syringes     = 80.0       # number of syringes
+num_vials     = 8.0       # number of vial boxes
 M2_laps         = 3         # laps for mission 2
-maxtime         = 10*60     # maximum time for mission 3
+
 eta             = 0.75      # efficiency of propulsion system (battery, motor, prop)
 batteryC        = 25        # C-rating of battery
 batterycells    = 4         # number of battery cells (assumes single battery)
-batterycapacity = 3         # battery capacity (assumes single battery)
+batterycapacity = 6         # battery capacity (assumes single battery)
 
 
 #Define input array for objective function.
-x0      = zeros(13)
+x0      = zeros(10)
 x0[1]   = W
 x0[2]   = S
 x0[3]   = CD0
 x0[4]   = lap_distance
-x0[5]   = num_sensors
-x0[6]   = length_sensor
-x0[7]   = weight_sensor
-x0[8]   = M2_laps
-x0[9]   = maxtime
-x0[10]  = eta
-x0[11]  = batteryC
-x0[12]  = batterycells
-x0[13]  = batterycapacity
+x0[5]   = num_syringes
+x0[6]   = num_vials
+x0[7]  = eta
+x0[8]  = batteryC
+x0[9]  = batterycells
+x0[10]  = batterycapacity
 
 #define range of percentages to do sensitivity study over.
 r = range(-50,stop=50,length=50)
@@ -303,7 +296,7 @@ for i = 1:length(x0)
             #throw away the answer, we don't need it, we're just getting the globals to be the right values.
             _ = (objective(x0copy)-obj0)/obj0
         catch
-            println("i: $i, j: $j")
+            # println("i: $i, j: $j")
         end
     end
 end
@@ -347,17 +340,15 @@ labels = [
 "S";
 "CD0";
 "lap distance";
-"\\# sensors";
-"sensor length";
-"sensor weight";
-"M2 laps";
-"maxtime";
+"\\# syringes";
+"\\# vial packages";
 "eta";
 "batteryC";
 "batterycells";
 "batterycapacity"]
 
 #plot each variable on it's own plot so you can clearly see its sensitivity.
+println(length(x0))
 for i=1:length(x0)
     figure()
     clf()
@@ -379,13 +370,15 @@ THEN YOU NEED TO PICK WHICH ONES YOU WANT ON THE FINAL PLOT
 #=
 Note: in this example, all the payload things have the same sensitivities, so we'll put them all together.  Also the wing loading and drag coefficient are the same, so they are together.  It also turns out that weight doesn't matter, so we'll  leave it out.  Furthermore, all the battery and efficiency stuff goes into available power, so we'll combine them under that heading.
 =#
-toplot = [1;2;3;5;10]
+toplot = [1;2;4;5;6;7]
+
 #get the plot labels you want to show for those variables
-toplotlabels = ["Weight";"Wing Area"; "Parasitic Drag"; "Payload"; "Available Power"]
-#pick your colors
-colors = ["C0";"C1";"C3";"C0";"C1";"C2"]
-#pick your styles.
-styles = ["-";"-";"-";"--";"--";"--"]
+toplotlabels = ["Empty Weight"; "Wing Area"; "Lap Distance"; "\\# Syringes"; "\\# Vial Boxes"; "Available Power"]
+
+# #pick your colors
+# colors = ["C0";"C1";"C3";"C4";"C5";"C6";"C7"]
+# #pick your styles.
+# styles = ["-";"-";"-";"-";"-";"-";"-"]
 
 
 
@@ -397,7 +390,7 @@ xlabel("Percent Change in Design Variable (from nominal)")
 ylabel("Normalized Change in Score")
 #plot the interesting things.
 for i=1:length(toplot)
-    plot(r,1e3*(obj[toplot[i],:].-obj0)./obj0,label=toplotlabels[i],linestyle=styles[i],color=colors[i])
+    plot(r,1e3*(obj[toplot[i],:].-obj0)./obj0,label=toplotlabels[i])#,linestyle=styles[i],color=colors[i])
 end
 legend()
 #save the figure.
@@ -412,7 +405,7 @@ xlabel("Percent Change in Design Variable (from nominal)")
 ylabel("Differential Percent Change in Score (dScore/dx)")
 #plot the interesting things.
 for i=1:length(toplot)
-    plot(r,dobj[toplot[i],:],label=toplotlabels[i],linestyle=styles[i],color=colors[i])
+    plot(r,dobj[toplot[i],:],label=toplotlabels[i])#,linestyle=styles[i],color=colors[i])
 end
 legend()
 #save the figure.
